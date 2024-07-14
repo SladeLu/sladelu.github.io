@@ -1,0 +1,36 @@
+# papers links links
+
+conferences:
+  - abbrv: "SEC'22"
+    author: "<b> Rui Lu* </b>, S. Shi*, D. Wang, C. Hu, and B. Zhang,"
+    paperurl: "https://ieeexplore.ieee.org/abstract/document/9996786"
+    title: "Preva: Protecting Inference Privacy through Policy-based Video-frame Transformation"
+    conference: "the 7th IEEE/ACM Symposium on Edge Computing"
+    address: "Seattle, WA, US"
+    date: "Dec., 2022"
+
+  - abbrv: "SEC'22"
+    author: "<b> Rui Lu </b>, C. Hu, D. Wang, and J. Zhang,"
+    paperurl: "https://ieeexplore.ieee.org/abstract/document/9996757"
+    title: "Gemini: a Real-time Video Analytics System with Dual Computing Resource Control"
+    conference: "the 7th IEEE/ACM Symposium on Edge Computing"
+    address: "Seattle, WA, US"
+    date: "Dec., 2022"
+
+journals:
+  - abbrv: "SEC'22"
+    author: "<b> Rui Lu </b>, C. Hu, D. Wang, and J. Zhang,"
+    paperurl: "https://ieeexplore.ieee.org/abstract/document/9996757"
+    title: "Gemini: a Real-time Video Analytics System with Dual Computing Resource Control"
+    cate: "in Proceedings of "
+    conference: "the 7th IEEE/ACM Symposium on Edge Computing"
+    address: "Seattle, WA, US"
+    date: "Dec., 2022"
+
+patents:
+  - title: "An accelerator based on multi-image FPGAs, an acceleration implement method, a terminal device and a computer-readable storage medium"
+    no: "ZL202210087349.8"
+  - title: "A new type of 3D printer nozzle structure and 3D printer"
+    no: "ZL20172049378.0"
+  - title: "A new type of soil environment monitoring system"
+    no: "ZL201721384825.3"

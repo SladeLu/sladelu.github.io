@@ -1,0 +1,48 @@
+# papers links links
+conferences:
+  - abbrv: "SEC'22"
+    author: "<b> Rui Lu*</b>, S. Shi*, D. Wang, C. Hu, and B. Zhang"
+    paperurl: "https://ieeexplore.ieee.org/abstract/document/9996786"
+    title: "Preva: Protecting Inference Privacy through Policy-based Video-frame Transformation"
+    conference: "the 7th IEEE/ACM Symposium on Edge Computing"
+    address: "Seattle, WA, US"
+    date: "Dec., 2022"
+    downloadurl: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
+    
+  - abbrv: "SEC'22"
+    author: "<b> Rui Lu</b>, C. Hu, D. Wang, and J. Zhang"
+    paperurl: "https://ieeexplore.ieee.org/abstract/document/9996757"
+    title: "Gemini: a Real-time Video Analytics System with Dual Computing Resource Control"
+    conference: "the 7th IEEE/ACM Symposium on Edge Computing"
+    address: "Seattle, WA, US"
+    date: "Dec., 2022"
+    downloadurl: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Gemini.pdf"
+
+journals:
+  - abbrv: "TC"
+    author: "C. Hu, <b> Rui Lu </b>, Q. Sang, H. Liang, D. Wang, D. Cheng, J. Zhang, Q. Li, and J. Peng"
+    paperurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
+    title: "An Edge-side Real-time Video Analytics System with Dual Computing Resource Control"
+    conference: "IEEE Transactions on Computers"
+    page: "vol. 72, no. 12, pp. 3399-3415"
+    date: "Dec. 2023"
+    downloadurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
+
+  - abbrv: "IEEE Network"
+    author: "C. Hu*, <b>Rui Lu*</b>, and D. Wang"
+    paperurl: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9687522"
+    title: "FEVA: A FEderated Video Analytics Architecture for Networked Smart Cameras"
+    conference: "IEEE Network, special issue on Interplay Between Machine Learning and Networking Systems"
+    page: "vol. 35, no. 6, pp. 163-170"
+    date: "Nov./Dec. 2021"
+    downloadurl: "http://icslab.whu.edu.cn/src/paper/FEVA_A_Federated_Video_Analytics_Architecture_for_Networked_Smart_Cameras.pdf"
+
+patents:
+  - title: "An accelerator based on multi-image FPGAs, an acceleration implement method, a terminal device and a computer-readable storage medium"
+    pid: "ZL202210087349.8"
+
+  - title: "A new type of 3D printer nozzle structure and 3D printer"
+    pid: "ZL20172049378.0"
+
+  - title: "A new type of soil environment monitoring system"
+    pid: "ZL201721384825.3"
