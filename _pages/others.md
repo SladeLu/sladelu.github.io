@@ -8,12 +8,12 @@ author_profile: true
 ## My Mountain Hiking Adventures
 ### 2024
 <div style="text-align: center;">
-  <img src='/images/500x300.png'>
+  <img src='/images/Mount_SGN_II.png'>
   <figcaption>Mount Siguniang II Peak, Sichuang, China (5276m)</figcaption>
 </div>
 
 <div style="text-align: center;">
-  <img src='/images/500x300.png'>
-  <figcaption>Mount Siguniang II Peak, Sichuang, China (5276m)</figcaption>
+  <img src='/images/ABC.png'>
+  <figcaption> Annapurna Base Camp (A.B.C), Nepal (4130m)</figcaption>
 </div>
 
