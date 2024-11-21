@@ -12,3 +12,8 @@ author_profile: true
   <figcaption>Mount Siguniang II Peak, Sichuang, China (5276m)</figcaption>
 </div>
 
+<div style="text-align: center;">
+  <img src='/images/500x300.png'>
+  <figcaption>Mount Siguniang II Peak, Sichuang, China (5276m)</figcaption>
+</div>
+
