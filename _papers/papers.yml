@@ -17,7 +17,7 @@ conferences:
     address: "Seattle, WA, US"
     date: "Dec., 2022"
 
-  - abbrv: "SEC'22"
+  - abbrv: "SEC'23"
     author: "<b> Rui Lu </b>, C. Hu, D. Wang, and J. Zhang,"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/9996757"
     title: "Gemini: a Real-time Video Analytics System with Dual Computing Resource Control"
