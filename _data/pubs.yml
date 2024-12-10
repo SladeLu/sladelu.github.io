@@ -1,5 +1,13 @@
 # papers links links
 conferences:
+  - abbrv: "AAAI'25"
+    author: "<b> Rui Lu </b>, B. Zhang, and D. Wang,"
+    paperurl: "https://ieeexplore.ieee.org/abstract/document/9996786"
+    title: "VVRec: Reconstruction Attacks on DL-based Volumetric Video Upstreaming via Latent Diffusion Model with Gamma Distribution"
+    conference: "the 39th Annual AAAI Conference on Artificial Intelligence"
+    address: "Philadelphia, PA, USA"
+    date: "Feb., 2025"
+    
   - abbrv: "SEC'22"
     author: "<b> Rui Lu*</b>, S. Shi*, D. Wang, C. Hu, and B. Zhang"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/9996786"
