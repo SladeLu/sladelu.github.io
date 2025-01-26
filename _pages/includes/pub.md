@@ -17,7 +17,6 @@
     {% if {{paper.slidesurl}} %}
             <a href="{{ paper.slidesurl }}">[Slides]</a>
     {% endif %}
-    </div></div>
 </div></div>
 
 {% include base_path %}
