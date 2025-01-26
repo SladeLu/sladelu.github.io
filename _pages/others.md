@@ -15,7 +15,7 @@ author_profile: true
       <figcaption>Mount Siguniang II Peak, Sichuan, China (5276m)</figcaption>
     </td>
     <td style="text-align: center;">
-      <img src="https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl" alt="Annapurna Base Camp" style="width: 80%; max-width: 400px;">
+      <img src="/images/ABC.jpg" alt="Annapurna Base Camp" style="width: 80%; max-width: 400px;">
       <figcaption>Annapurna Base Camp (A.B.C), Nepal (4130m)</figcaption>
     </td>
   </tr>
