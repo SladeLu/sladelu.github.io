@@ -1,6 +1,8 @@
 # 📝 Publications 
 ## Conference Papers
 {% for paper in site.data.pubs.fontpages %}
+<div style="display: flex; width: 100%;">
+        <div style="width: 30%;">
 <div class='paper-box'>
 <div class='paper-box-image'>
     <div>
@@ -8,6 +10,9 @@
             <img src='{{paper.imgurl}}' alt="sym" width="90%">
         </div>
     </div>
+</div>
+        </div>
+        <div style="width: 70%;">
 <div class='paper-box-text' markdown="1">
 <div style="display: flex; width: 100%;">
     <div style="width: 90%;">
@@ -18,7 +23,8 @@
         {% endif %}
     </div></div>
 </div>
-</div> 
+    </div> 
+</div>
 {% endfor %}
 
 {% include base_path %}
