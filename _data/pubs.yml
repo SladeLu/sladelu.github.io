@@ -1,15 +1,27 @@
 # papers links links
+fontpages:
+  - abbrv: "MM'23"
+    author: "<u> <b> Rui Lu </b> </u>, L. Wei, S. Zhu, C. Hu, D. Wang,"
+    paperurl: "https://dl.acm.org/doi/abs/10.1145/3581783.3611946"
+    title: "Pagoda: Privacy Protection for Volumetric Video Streaming through Poisson Diffusion Model"
+    conference: "the 31st ACM International Conference on Multimedia"
+    address: "Ottawa, Canada,"
+    date: "Oct. 2023"
+    downloadurl: "http://www4.comp.polyu.edu.hk/~csdwang/Publication/MM23.pdf"
+    slidesurl: " "
+    imgurl: "/images/pagoda_frontpage.jpg"
+
 conferences:
   - abbrv: "AAAI'25"
     author: "<u> <b> Rui Lu </b> </u>, B. Zhang, and D. Wang,"
-    paperurl: "https://ieeexplore.ieee.org/abstract/document/9996786"
+    paperurl: " "
     title: "VVRec: Reconstruction Attacks on DL-based Volumetric Video Upstreaming via Latent Diffusion Model with Gamma Distribution"
     conference: "the 39th Annual AAAI Conference on Artificial Intelligence"
     address: "Philadelphia, PA, US"
     date: "Feb. 2025"
     downloadurl: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
     slidesurl: " "
-    
+
   - abbrv: "SEC'22"
     author: "<u> <b> Rui Lu </b> </u>, S. Shi, D. Wang, C. Hu, and B. Zhang"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/9996786"
