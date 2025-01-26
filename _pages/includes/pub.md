@@ -15,7 +15,10 @@
 
 {{paper.author}},
 
-[**Paper**]({{paper.downloadurl}})|[**Slides**]({paper.slidesurl})
+<a href="{{paper.downloadurl}}">[**Paper**]</a>
+{% if {{paper.slidesurl}} %}
+    <a href="{{ paper.slidesurl }}">[**Slides**]</a>
+{% endif %}
 </div>
 </div>
 {% endfor %}
