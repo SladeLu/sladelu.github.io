@@ -21,7 +21,7 @@ author_profile: true
   </tr>
   <tr>
     <td style="text-align: center;">
-      <img src="/images/Example1.jpg" alt="Example 1" style="width: 80%; max-width: 400px;">
+      <img src="https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl/view?usp=drive_link" alt="Example 1" style="width: 80%; max-width: 400px;">
       <figcaption>Example 1 Caption</figcaption>
     </td>
     <td style="text-align: center;">
