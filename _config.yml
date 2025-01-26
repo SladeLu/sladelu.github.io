@@ -23,9 +23,9 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Rui LU"
   avatar           : "/images/android-chrome-512x512.png"
-  bio              : "Postdoctoral Fellow at the Department of Computing"
+  bio              : "Postdoctoral Fellow"
   location         : "Hong Kong"
-  employer         : #"Hong Kong Polytechnic University"
+  employer         : "The Hong Kong Polytechnic University (PolyU)"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=n4rWRCYAAAAJ"
   email            : "wilsonlu0410@gmail.com"
