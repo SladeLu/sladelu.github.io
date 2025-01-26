@@ -1,7 +1,7 @@
 # 📝 Publications 
 
 ## Conference Paper
-{% for paper in site.data.pubs.conferences %}
+{% for paper in site.data.pubs.fontpages %}
 <div class='paper-box'>
 <div class='paper-box-image'>
     <div>
@@ -11,7 +11,7 @@
     </div>
 <div class='paper-box-text' markdown="1">
 
-["{paper.title}"]({paper.paperurl}), in Proceedings of <u><i> {paper.conference} {paper.abbrv}</i></u>, {{paper.address}}, {{paper.date}}.
+["{{paper.title}}"]({{paper.paperurl}}), in Proceedings of <u><i> {{paper.conference}} {{paper.abbrv}}</i></u>, {{paper.address}}, {{paper.date}}.
 
 {{paper.author}},
 
