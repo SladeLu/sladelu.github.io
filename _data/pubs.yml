@@ -9,7 +9,7 @@ conferences:
     date: "Feb. 2025"
     
   - abbrv: "SEC'22"
-    author: "<b> Rui Lu*</b>, S. Shi*, D. Wang, C. Hu, and B. Zhang"
+    author: "<b> Rui Lu </b>, S. Shi*, D. Wang, C. Hu, and B. Zhang"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/9996786"
     title: "Preva: Protecting Inference Privacy through Policy-based Video-frame Transformation"
     conference: "the 7th IEEE/ACM Symposium on Edge Computing"
@@ -18,7 +18,7 @@ conferences:
     downloadurl: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
     
   - abbrv: "SEC'22"
-    author: "<b> Rui Lu</b>, C. Hu, D. Wang, and J. Zhang"
+    author: "<b> Rui Lu </b>, C. Hu, D. Wang, and J. Zhang"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/9996757"
     title: "Gemini: a Real-time Video Analytics System with Dual Computing Resource Control"
     conference: "the 7th IEEE/ACM Symposium on Edge Computing"
@@ -37,7 +37,7 @@ journals:
     downloadurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
 
   - abbrv: "IEEE Network"
-    author: "C. Hu*, <b>Rui Lu*</b>, and D. Wang"
+    author: "C. Hu, <b> Rui Lu </b>, and D. Wang"
     paperurl: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9687522"
     title: "FEVA: A FEderated Video Analytics Architecture for Networked Smart Cameras"
     conference: "IEEE Network, special issue on Interplay Between Machine Learning and Networking Systems"
