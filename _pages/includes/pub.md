@@ -1,6 +1,6 @@
 # 📝 Publications 
 
-## Conference Paper
+## Conference Papers
 {% for paper in site.data.pubs.fontpages %}
 <div class='paper-box'>
 <div class='paper-box-image'>
