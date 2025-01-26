@@ -11,8 +11,12 @@
 <div class='paper-box-text' markdown="1">
 <div style="display: flex; width: 100%;">
     <div style="width: 90%;">
-    <div class="badge2">{{paper.abbrv}}</div> <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. </div>
-    <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a><a href="{{ paper.slidesurl}}">[Slides]</a></div></div>
+    <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. </div>
+    <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
+        {% if {{paper.slidesurl}} %}
+            <a href="{{ paper.slidesurl}}">[Slides]</a>
+        {% endif %}
+    </div></div>
 </div>
 </div> 
 {% endfor %}
