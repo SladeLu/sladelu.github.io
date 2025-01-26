@@ -9,7 +9,6 @@
             <img src='{{paper.imgurl}}' alt="sym" width="90%">
         </div>
     </div>
-</div>
 <div style="display: flex; width: 65%;">
     <div style="width: 90%;">
     <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. </div>
@@ -19,6 +18,8 @@
         {% endif %}
     </div>
 </div>
+</div>
+
 {% endfor %}
 
 {% include base_path %}
