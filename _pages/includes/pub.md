@@ -40,7 +40,7 @@
 
 ***
 
-\* indicates equal contributions (co-first author).
+<!-- \* indicates equal contributions (co-first author). -->
 
 ***
 ## Patents
