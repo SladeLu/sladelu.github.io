@@ -35,7 +35,7 @@
 - <div style="display: flex; width: 100%;">
     <div style="width: 87.5%;">
     <div class="badge2">{{paper.abbrv}}</div> {{paper.author}}, <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, in <u><i>{{paper.conference}}</i></u>, {{paper.page}}, {{paper.date}}. </div>
-    <div style="width: 12.5%; text-align: right;"> <a href="{{paper.downloadurl}}">[Paper]</a><a href="{{paper.slidesurl}}">[Slides]</a></div></div>
+    <div style="width: 12.5%; text-align: right;"> <a href="{{paper.downloadurl}}">[Paper]</a></div></div>
 {% endfor %}
 
 ***
