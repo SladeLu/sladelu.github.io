@@ -10,7 +10,6 @@
         </div>
     </div>
 </div>
-<div class='paper-box-text' markdown="1" style="flex: 2; padding-left: 10px;">
 <div style="display: flex; width: 65%;">
     <div style="width: 90%;">
     <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. </div>
@@ -19,7 +18,6 @@
             <a href="{{ paper.slidesurl}}">[Slides]</a>
         {% endif %}
     </div>
-</div>
 </div>
 {% endfor %}
 
