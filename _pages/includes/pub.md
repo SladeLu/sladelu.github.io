@@ -1,5 +1,5 @@
 # 📝 Publications 
-
+{% include base_path %}
 ## Conference Papers
 {% for paper in site.data.pubs.fontpages %}
 <div class='paper-box'>
@@ -18,8 +18,8 @@
             <a href="{{ paper.slidesurl }}">[Slides]</a>
     {% endif %}
 </div></div>
+{% endfor %}
 
-{% include base_path %}
 {% for paper in site.data.pubs.conferences %}
 - <div style="display: flex; width: 100%;">
     <div style="width: 87.5%;">
