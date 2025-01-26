@@ -17,7 +17,7 @@
         {% if {{paper.slidesurl}} %}
             <a href="{{ paper.slidesurl}}">[Slides]</a>
         {% endif %}
-    </div></div>
+    </div>
 </div>
 </div>
 {% endfor %}
