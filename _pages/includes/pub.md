@@ -5,7 +5,7 @@
 <div class='paper-box'>
 <div class='paper-box-image'>
     <div>
-        <div class="badge">paper.abbrv</div>
+        <div class="badge">{{paper.abbrv}}</div>
             <img src='{{paper.imgurl}}' alt="sym" width="90%">
         </div>
     </div>
