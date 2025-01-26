@@ -25,7 +25,7 @@ author_profile: true
       <figcaption>Example 1 Caption</figcaption>
     </td>
     <td style="text-align: center;">
-      <img src="/images/Example2.jpg" alt="Example 2" style="width: 80%; max-width: 400px;">
+      <img src="https://drive.google.com/uc?export=view&id=1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl" alt="Example 2" style="width: 80%; max-width: 400px;">
       <figcaption>Example 2 Caption</figcaption>
     </td>
   </tr>
