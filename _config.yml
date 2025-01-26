@@ -25,7 +25,7 @@ author:
   avatar           : "/images/android-chrome-512x512.png"
   bio              : "Postdoctoral Fellow"
   location         : "Hong Kong"
-  employer         : "The Hong Kong Polytechnic University (PolyU)"
+  employer         : #"The Hong Kong Polytechnic University (PolyU)"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=n4rWRCYAAAAJ"
   email            : "wilsonlu0410@gmail.com"
