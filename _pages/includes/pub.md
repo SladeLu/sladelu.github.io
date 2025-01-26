@@ -9,7 +9,7 @@
             <img src='{{paper.imgurl}}' alt="sym" width="90%">
         </div>
     </div>
-<div class='paper-box-text' markdown="1">
+% <div class='paper-box-text' markdown="1">
 <div style="display: flex; width: 100%;">
     <div style="width: 87.5%;">
     <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. </div>
@@ -19,6 +19,8 @@
     {% endif %}
 </div></div>
 {% endfor %}
+
+***
 
 {% for paper in site.data.pubs.conferences %}
 - <div style="display: flex; width: 100%;">
