@@ -1,7 +1,7 @@
 # 📝 Publications 
+
 ## Conference Papers
 {% for paper in site.data.pubs.fontpages %}
-
 <div class='paper-box' style="display: flex; align-items: center; width: 100%;">
 <div class='paper-box-image' style="flex: 1; padding-right: 10px;">
     <div>
@@ -11,9 +11,9 @@
     </div>
 </div>
 <div class='paper-box-text' markdown="1" style="flex: 2; padding-left: 10px;">
-<div style="display: flex; width: 100%;">
+<div style="display: flex; width: 65%;">
     <div style="width: 90%;">
--   <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. </div>
+    <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. </div>
     <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
         {% if {{paper.slidesurl}} %}
             <a href="{{ paper.slidesurl}}">[Slides]</a>
@@ -21,7 +21,6 @@
     </div>
 </div>
 </div>
-
 {% endfor %}
 
 {% include base_path %}
