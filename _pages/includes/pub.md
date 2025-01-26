@@ -6,7 +6,7 @@
 <div class='paper-box-image'>
     <div>
         <div class="badge">paper.abbrv</div>
-            <img src='/images/pagoda_frontpage.jpg' alt="sym" width="90%">
+            <img src='{{paper.imgurl}}' alt="sym" width="90%">
         </div>
     </div>
 <div class='paper-box-text' markdown="1">
