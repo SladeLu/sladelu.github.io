@@ -6,7 +6,7 @@
 <div class='paper-box-image' style="flex: 1; padding-right: 2.5px;">
     <div>
         <div class="badge">{{paper.abbrv}}</div>
-            <img src='{{paper.imgurl}}' alt="sym" width="100%">
+            <img src='{{paper.imgurl}}' alt="sym" width="90%">
         </div>
 </div>
 <div class='paper-box-text'>
