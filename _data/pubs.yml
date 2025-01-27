@@ -12,7 +12,7 @@ fontpages:
     slidesurl: "https://drive.google.com/file/d/1N_RNSNz2FPIIxApDU-Xrlj0x4brcC-QC/view?usp=drive_link"
 
 conferences:
-  - abbrv: "AAAI'25"
+  - abbrv: "AAAI'25 [Oral]"
     author: "<u> <b> Rui Lu </b> </u>, B. Zhang, and D. Wang"
     paperurl: " "
     title: "VVRec: Reconstruction Attacks on DL-based Volumetric Video Upstreaming via Latent Diffusion Model with Gamma Distribution"
