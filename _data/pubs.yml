@@ -20,6 +20,7 @@ conferences:
     address: "Philadelphia, PA, US"
     date: "Feb. 2025"
     downloadurl: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
+    papertype: "ORAL"
 #    slidesurl: " "
 
   - abbrv: "SEC'22"
