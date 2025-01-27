@@ -9,7 +9,7 @@
             <img src='{{paper.imgurl}}' alt="sym" width="90%">
         </div>
 </div>
-<div class='paper-box-text' markdown="1">
+<div class='paper-box-text'>
     <div style="display: flex; width: 65%;">
         <div style="width: 90%;">
             <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. 
