@@ -3,7 +3,7 @@
 ## Conference Papers
 {% for paper in site.data.pubs.fontpages %}
 <div class='paper-box' style="display: flex; align-items: center; width: 100%;">
-<div class='paper-box-image' style="flex: 1; padding-right: 2.5px;">
+<div class='paper-box-image' style="flex: 1; padding-right: 1px;">
     <div>
         <div class="badge">{{paper.abbrv}}</div>
             <img src='{{paper.imgurl}}' alt="sym" width="90%">
@@ -11,10 +11,10 @@
 </div>
 <div class='paper-box-text'>
     <div style="display: flex; width: 100%;">
-        <div style="width: 87.5%;">
+        <div style="width: 92.5%;">
             <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. 
         </div>
-        <div style="width: 12.5%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
+        <div style="width: 7.5%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
             {% if {{paper.slidesurl}} %}
                 <a href="{{ paper.slidesurl}}">[Slides]</a>
             {% endif %}
@@ -30,9 +30,9 @@
 {% include base_path %}
 {% for paper in site.data.pubs.conferences %}
 - <div style="display: flex; width: 100%;">
-    <div style="width: 90%;">
+    <div style="width: 92.5%;">
     <div class="badge2">{{paper.abbrv}}</div> <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. </div>
-    <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>
+    <div style="width: 7.5%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>
         {% if {{paper.slidesurl}} %}
             <a href="{{ paper.slidesurl }}">[Slides]</a>
         {% endif %}
