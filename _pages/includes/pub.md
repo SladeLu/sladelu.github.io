@@ -34,8 +34,8 @@
 - <div style="display: flex; width: 100%;">
     <div style="width: 90%;">
             <div class="badge2">{{paper.abbrv}}</div>
-        {% if {{paper.type}} %}
-            <div class="typemark"> {{paper.type}} </div>
+        {% if {{paper.papertype}} %}
+            <div class="typemark"> {{paper.papertype}} </div>
         {% endif %}
             <a href="{{paper.paperurl}}"> {{paper.title}} </a>
             <br>
