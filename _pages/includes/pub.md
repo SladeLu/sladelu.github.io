@@ -12,7 +12,7 @@
 <div class='paper-box-text' style= "padding-left: 1em; max-width: 77.5%;">
     <div style="display: flex; width: 100%;">
         <div style="width: 92.5%;">
-            <a href={{paper.paperurl}}> {{paper.title}} </a> <br>
+            <a href= "{{paper.paperurl}}"> {{paper.title}} </a> <br>
             {{paper.author}} <br>
             Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
         </div>
@@ -34,7 +34,7 @@
 - <div style="display: flex; width: 100%;">
     <div style="width: 92.5%;">
         <div class="badge2">{{paper.abbrv}}</div> 
-            <a href={{paper.paperurl}}> "{{paper.title}}"</a>
+            <a href="{{paper.paperurl}}"> {{paper.title}} </a>
             <br>
             {{paper.author}}
             <br>
