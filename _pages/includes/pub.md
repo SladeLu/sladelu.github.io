@@ -33,7 +33,10 @@
 {% for paper in site.data.pubs.conferences %}
 - <div style="display: flex; width: 100%;">
     <div style="width: 90%;">
-            <div class="badge2">{{paper.abbrv}}</div> 
+            <div class="badge2">{{paper.abbrv}}</div>
+        {% if {{paper.type}} %}
+            <div class="typemark"> {{paper.type}} </div>
+        {% endif %}
             <a href="{{paper.paperurl}}"> {{paper.title}} </a>
             <br>
             {{paper.author}}
