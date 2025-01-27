@@ -6,10 +6,10 @@
 <div class='paper-box-image' style="flex: 1; padding-right: 0.5em;">
     <div style="padding-right: 0.5em;">
         <div class="badge">{{paper.abbrv}}</div>
-            <img src='{{paper.imgurl}}' alt="sym" width="90%">
+            <img src='{{paper.imgurl}}' alt="sym" width="100%">
         </div>
 </div>
-<div class='paper-box-text' style= "padding-left: 0.5em;">
+<div class='paper-box-text' style= "padding-left: 1em;">
     <div style="display: flex; width: 100%;">
         <div style="width: 92.5%;">
             <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. 
