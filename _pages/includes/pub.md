@@ -57,7 +57,7 @@
 - <div style="display: flex; width: 100%;">
     <div style="width: 90%;">
         <div class="badge2">{{paper.abbrv}}</div> 
-        <a href="{{paper.paperurl}}"> "{{paper.title}}"</a> 
+        <a href="{{paper.paperurl}}"> {{paper.title}}</a> 
         <br>
             {{paper.author}} 
         <br>
