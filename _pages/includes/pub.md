@@ -12,7 +12,9 @@
 <div class='paper-box-text' style= "padding-left: 1em; max-width: 77.5%;">
     <div style="display: flex; width: 100%;">
         <div style="width: 92.5%;">
-            <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. 
+            <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, 
+            {{paper.author}}, 
+            in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. 
         </div>
         <div style="width: 7.5%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
             {% if {{paper.slidesurl}} %}
