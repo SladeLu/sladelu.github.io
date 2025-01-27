@@ -56,9 +56,16 @@
 {% for paper in site.data.pubs.journals %}
 - <div style="display: flex; width: 100%;">
     <div style="width: 90%;">
-    <div class="badge2">{{paper.abbrv}}</div> <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in <u><i>{{paper.conference}}</i></u>, {{paper.page}}, {{paper.date}}. </div>
+    <div class="badge2">{{paper.abbrv}}</div> 
+        <a href="{{paper.paperurl}}"> "{{paper.title}}"</a> 
+        <br>
+            {{paper.author}} 
+        <br>
+        <u><i>{{paper.conference}}</i></u>, {{paper.page}}, {{paper.date}} 
+    </div>
     <div style="width: 10%; text-align: right;"> <a href="{{paper.downloadurl}}">[Paper]</a>
-    </div></div>
+    </div>
+</div>
 {% endfor %}
 
 ***
