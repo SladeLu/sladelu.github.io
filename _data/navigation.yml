@@ -9,8 +9,8 @@ main:
   - title: "Educations"
     url: "/#-educations"
 
-  - title: "Others"
-    url: "/others/"
+#  - title: "Others"
+#    url: "/others/"
 
   - title: "中文"
     url: "/chinese/"
