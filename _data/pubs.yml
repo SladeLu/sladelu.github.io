@@ -20,7 +20,7 @@ conferences:
     address: "Philadelphia, PA, US"
     date: "Feb. 2025"
     downloadurl: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
-    slidesurl: " "
+#    slidesurl: " "
 
   - abbrv: "SEC'22"
     author: "<u> <b> Rui Lu </b> </u>, S. Shi, D. Wang, C. Hu, and B. Zhang"
