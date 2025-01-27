@@ -9,15 +9,17 @@
             <img src='{{paper.imgurl}}' alt="sym" width="90%">
         </div>
     </div>
-</div>
-<div style="display: flex; width: 65%;">
-    <div style="width: 90%;">
-    <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. </div>
-    <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
-        {% if {{paper.slidesurl}} %}
-            <a href="{{ paper.slidesurl}}">[Slides]</a>
-        {% endif %}
+    <div class='paper-box-text' markdown="1">
+        <div style="display: flex; width: 65%;">
+        <div style="width: 90%;">
+        <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. </div>
+        <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
+            {% if {{paper.slidesurl}} %}
+                <a href="{{ paper.slidesurl}}">[Slides]</a>
+            {% endif %}
     </div>
+</div>
+        </div>
 </div>
 {% endfor %}
 
