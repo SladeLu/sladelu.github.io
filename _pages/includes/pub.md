@@ -11,12 +11,12 @@
 </div>
 <div class='paper-box-text' style= "padding-left: 1em; max-width: 77.5%;">
     <div style="display: flex; width: 100%;">
-        <div style="width: 95%;">
+        <div style="width: 05%;">
             <a href= "{{paper.paperurl}}"> {{paper.title}} </a> <br>
             {{paper.author}} <br>
-            Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
+            <u><i>Proceedings of {{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
         </div>
-        <div style="width: 5%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
+        <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
             {% if {{paper.slidesurl}} %}
                 <a href="{{ paper.slidesurl}}">[Slides]</a>
             {% endif %}
@@ -32,15 +32,15 @@
 {% include base_path %}
 {% for paper in site.data.pubs.conferences %}
 - <div style="display: flex; width: 100%;">
-    <div style="width: 95%;">
+    <div style="width: 90%;">
         <div class="badge2">{{paper.abbrv}}</div> 
             <a href="{{paper.paperurl}}"> {{paper.title}} </a>
             <br>
             {{paper.author}}
             <br>
-            Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
+            <u><i>Proceedings of {{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
     </div>
-    <div style="width: 5%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>
+    <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>
         {% if {{paper.slidesurl}} %}
             <a href="{{ paper.slidesurl }}">[Slides]</a>
         {% endif %}
@@ -55,12 +55,9 @@
 ## Journals
 {% for paper in site.data.pubs.journals %}
 - <div style="display: flex; width: 100%;">
-    <div style="width: 87.5%;">
+    <div style="width: 90%;">
     <div class="badge2">{{paper.abbrv}}</div> <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in <u><i>{{paper.conference}}</i></u>, {{paper.page}}, {{paper.date}}. </div>
-    <div style="width: 12.5%; text-align: right;"> <a href="{{paper.downloadurl}}">[Paper]</a>
-        {% if {{paper.slidesurl}} %}
-            <a href="{{ paper.slidesurl }}">[Slides]</a>
-        {% endif %}
+    <div style="width: 10%; text-align: right;"> <a href="{{paper.downloadurl}}">[Paper]</a>
     </div></div>
 {% endfor %}
 
