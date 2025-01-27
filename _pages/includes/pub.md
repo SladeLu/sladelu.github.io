@@ -11,7 +11,7 @@
 </div>
 <div class='paper-box-text' style= "padding-left: 1em; max-width: 77.5%;">
     <div style="display: flex; width: 100%;">
-        <div style="width: 90%;">
+        <div style="width: 90%;font-size: 20px;">
             <a href= "{{paper.paperurl}}"> {{paper.title}} </a> <br>
             {{paper.author}} <br>
             <u><i>Proceedings of {{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
