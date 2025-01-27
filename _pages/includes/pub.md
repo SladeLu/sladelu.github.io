@@ -63,9 +63,11 @@
         <br>
         <u><i>{{paper.conference}}</i></u>, {{paper.page}}, {{paper.date}} 
     </div>
-    <div style="width: 10%; text-align: right;"> <a href="{{paper.downloadurl}}">[Paper]</a>
+    <div style="width: 10%; text-align: right;"> 
+        <a href="{{paper.downloadurl}}">[Paper]</a>
     </div>
 </div>
+
 {% endfor %}
 
 ***
