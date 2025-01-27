@@ -11,13 +11,17 @@
 </div>
 <div class='paper-box-text' style= "padding-left: 1em; max-width: 77.5%;">
     <div style="display: flex; width: 100%;">
-        <div style="width: 90%;font-size: 17px;">
+        <div style="width: 90%">
         {% if {{paper.papertype}} %}
             <div class="typemark">{{paper.papertype}}</div>
         {% endif %}
-            <a href= "{{paper.paperurl}}"> {{paper.title}} </a> <br>
+            <div style="font-size: 17px;"> 
+                <a href= "{{paper.paperurl}}"> {{paper.title}} </a> <br>
+            </div>
+            <div style="font-size: 15px;"> 
             {{paper.author}} <br>
             <u><i>Proceedings of {{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
+            </div>
         </div>
         <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
             {% if {{paper.slidesurl}} %}
