@@ -9,6 +9,7 @@ fontpages:
     date: "Oct. 2023"
     downloadurl: "http://www4.comp.polyu.edu.hk/~csdwang/Publication/MM23.pdf"
     imgurl: "/images/pagoda_frontpage.jpg"
+    slidesurl: "https://drive.google.com/file/d/1N_RNSNz2FPIIxApDU-Xrlj0x4brcC-QC/view?usp=drive_link"
 
 conferences:
   - abbrv: "AAAI'25"
