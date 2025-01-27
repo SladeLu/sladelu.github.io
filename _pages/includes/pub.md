@@ -36,6 +36,9 @@
         {% if {{paper.slidesurl}} %}
             <a href="{{ paper.slidesurl }}">[Slides]</a>
         {% endif %}
+        {% if {{paper.videourl}} %}
+                <a href="{{ paper.videourl}}">[Video]</a>
+        {% endif %}
     </div></div>
 {% endfor %}
 
