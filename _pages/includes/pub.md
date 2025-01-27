@@ -4,7 +4,7 @@
 {% for paper in site.data.pubs.fontpages %}
 <div class='paper-box' style="display: flex; align-items: center; width: 100%;">
 <div class='paper-box-image' style="flex: 1; padding-right: 0.5em;">
-    <div>
+    <div style="padding-right: 0.5em;">
         <div class="badge">{{paper.abbrv}}</div>
             <img src='{{paper.imgurl}}' alt="sym" width="90%">
         </div>
