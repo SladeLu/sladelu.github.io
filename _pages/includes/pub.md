@@ -3,13 +3,13 @@
 ## Conference Papers
 {% for paper in site.data.pubs.fontpages %}
 <div class='paper-box' style="display: flex; align-items: center; width: 100%;">
-<div class='paper-box-image' style="flex: 1; padding-right: 0.5em; max-width: 30%; min-width: 100px;">
+<div class='paper-box-image' style="flex: 1; padding-right: 0.5em; max-width: 20%; min-width: 100px;">
     <div style="padding-right: 0.5em;">
         <div class="badge">{{paper.abbrv}}</div>
             <img src='{{paper.imgurl}}' alt="sym" width="100%">
         </div>
 </div>
-<div class='paper-box-text' style= "padding-left: 1em; max-width: 70%;">
+<div class='paper-box-text' style= "padding-left: 1em; max-width: 80%;">
     <div style="display: flex; width: 100%;">
         <div style="width: 92.5%;">
             <a href="{{paper.paperurl}}"> "{{paper.title}}"</a>, {{paper.author}}, in Proceedings of <u><i>{{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}. 
