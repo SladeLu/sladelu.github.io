@@ -8,7 +8,6 @@
         <div class="badge">{{paper.abbrv}}</div>
             <img src='{{paper.imgurl}}' alt="sym" width="90%">
         </div>
-    </div>
     <div class='paper-box-text' markdown="1">
         <div style="display: flex; width: 65%;">
         <div style="width: 90%;">
