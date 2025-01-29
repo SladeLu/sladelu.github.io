@@ -93,10 +93,10 @@
 ## Patents
 {% for paper in site.data.pubs.patents %}
 - <div style="display: flex; width: 100%;">
-        <div style="width: 20%;">
+        <div style="width: 15%;">
          <div class="patentid">{{paper.pid}}</div>
         </div>
-    <div style="width: 80%;"> {{paper.title}} </div></div>
+    <div style="width: 85%;"> {{paper.title}} </div></div>
 
 {% endfor %}
 ***
