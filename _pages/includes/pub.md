@@ -92,6 +92,6 @@
          <div class="patentid">{{paper.pid}}</div> 
     </div>
 </div>
-{% endfor %}
 
+{% endfor %}
 ***
