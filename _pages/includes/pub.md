@@ -90,8 +90,7 @@
     <div style="width: 60%;"> {{paper.title}} </div>
     <div style="width: 40%;">
          <div class="patentid">{{paper.pid}}</div> 
-    </div>
-</div>
+    </div></div>
 
 {% endfor %}
 ***
