@@ -5,4 +5,4 @@ excerpt: ""
 author_profile: true
 ---
 
-{% include_relative includes/cn/edu.md %}
+{% include_relative cn/edu.md %}
