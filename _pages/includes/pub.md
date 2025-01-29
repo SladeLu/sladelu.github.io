@@ -30,6 +30,9 @@
             {% if {{paper.videourl}} %}
                 <a href="{{ paper.videourl}}">[Video]</a>
             {% endif %}
+            {% if {{paper.posterurl}} %}
+                <a href="{{paper.posterurl}}">[Poster]</a>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -56,6 +59,9 @@
         {% endif %}
         {% if {{paper.videourl}} %}
                 <a href="{{ paper.videourl}}">[Video]</a>
+        {% endif %}
+        {% if {{paper.posterurl}} %}
+                <a href="{{paper.posterurl}}">[Poster]</a>
         {% endif %}
     </div></div>
 {% endfor %}
@@ -88,9 +94,9 @@
 {% for paper in site.data.pubs.patents %}
 - <div style="display: flex; width: 100%;">
         <div style="width: 25%;">
-         <div class="patentid">{{paper.pid}}</div> </div>
-    <div style="width: 75%;"> {{paper.title}} </div>
-</div>
+         <div class="patentid">{{paper.pid}}</div>
+        </div>
+    <div style="width: 75%;"> {{paper.title}} </div></div>
 
 {% endfor %}
 ***
