@@ -1,5 +1,24 @@
 <span class='anchor' id='about-me'></span>
 
+<p id="sentenceToCopy">This is the sentence to be copied.</p>
+
+<!-- Button that triggers the copy action -->
+<button onclick="copySentence()">Copy Sentence</button>
+
+<script>
+    // Function to copy the sentence
+    function copySentence() {
+        const sentence = document.getElementById('sentenceToCopy').textContent;
+        navigator.clipboard.writeText(sentence)
+            .then(() => {
+                alert('Sentence copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy sentence:', err);
+                alert('Failed to copy sentence.');
+            });
+    }
+</script>
 # About me
 
 I am currently a postdoctoral researcher, starting in December 2024. I completed my Ph.D. in 2024 from the Department of Computing at The Hong Kong Polytechnic University ([HK PolyU](https://www.polyu.edu.hk/)).
