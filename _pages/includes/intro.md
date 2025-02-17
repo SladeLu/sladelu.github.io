@@ -10,6 +10,8 @@
 
 <input type="hidden" id="sentenceToCopy" value="Rui Lu is a postdoctoral fellow at the Hong Kong Polytechnic University where he completed his Ph.D. in 2024. Before that, he graduated with a B.Eng in Computer Science and Technology from the Southern University of Science and Technology in 2019. His research interests are Edge Computing, Video Analytics, Privacy Protection, and Large Language Model Inference.">
 
+<span class="clickable-text" onclick="copySentence()">[copy]</span>
+
 <script>
     // Function to copy the sentence
     function copySentence() {
@@ -30,7 +32,7 @@
             # About me 
         <\div>
         <div style="width: 10%">
-            <span class="clickable-text" onclick="copySentence()">[copy]</span>
+            Copy
         <\div>
 <\div>
 
