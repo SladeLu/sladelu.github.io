@@ -23,7 +23,7 @@
     }
 </script>
 
-<div style="width: 100%;">
+<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
         <div style="width: 90%">
         <h1> About me </h1>
         </div>
