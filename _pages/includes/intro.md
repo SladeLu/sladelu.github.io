@@ -25,7 +25,7 @@
 
 <div style="display: flex; width: 100%;">
         <div style="width: 90%">
-# About me 
+        <h1> About me </h1>
         </div>
         <div style="width: 10%">
             <span class="clickable-text" onclick="copySentence()">[copy]</span>
