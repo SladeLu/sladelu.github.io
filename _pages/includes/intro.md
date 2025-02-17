@@ -27,7 +27,7 @@
         <div style="width: 90%">
         <h1> About me </h1>
         </div>
-        <div style="width: 10%">
+        <div style="width: 10% text-align: right;">
             <span class="clickable-text" onclick="copySentence()">[copy]</span>
         </div>
 </div>
