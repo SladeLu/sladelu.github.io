@@ -1,8 +1,7 @@
 <span class='anchor' id='about-me'></span>
 <style>
-        /* Optional styling to make the text look clickable */
         .clickable-text {
-            color: #007bff;
+            color: #224b8d;
             text-decoration: underline;
             cursor: pointer;
         }
@@ -16,18 +15,17 @@
         const sentence = document.getElementById('sentenceToCopy').value;
         navigator.clipboard.writeText(sentence)
             .then(() => {
-                alert('Sentence copied to clipboard!');
+                console.log('Sentence copied to clipboard!');
             })
             .catch(err => {
-                console.error('Failed to copy sentence:', err);
-                alert('Failed to copy sentence.');
+                console.log('Failed to copy sentence.');
             });
     }
 </script>
 
 <div style="display: flex; width: 100%;">
         <div style="width: 90%">
-            # About me 
+# About me 
         </div>
         <div style="width: 10%">
             <span class="clickable-text" onclick="copySentence()">[copy]</span>
