@@ -1,15 +1,5 @@
 # papers links links
 fontpages:
-  - abbrv: "MM'23"
-    author: "<u> <b> Rui Lu </b> </u>, L. Wei, S. Zhu, C. Hu, D. Wang"
-    paperurl: "https://dl.acm.org/doi/abs/10.1145/3581783.3611946"
-    title: "Pagoda: Privacy Protection for Volumetric Video Streaming through Poisson Diffusion Model"
-    conference: "the 31st ACM International Conference on Multimedia"
-    address: "Ottawa, Canada"
-    date: "Oct. 2023"
-    downloadurl: "http://www4.comp.polyu.edu.hk/~csdwang/Publication/MM23.pdf"
-    imgurl: "/images/pagoda_frontpage.jpg"
-    slidesurl: "https://drive.google.com/file/d/1N_RNSNz2FPIIxApDU-Xrlj0x4brcC-QC/view?usp=drive_link"
 
 conferences:
   - abbrv: "AAAI'25"
@@ -24,7 +14,18 @@ conferences:
     posterurl: "https://drive.google.com/file/d/1POVJvg0p_Hqkx9E5QTddXz3T21kuBTVc/view?usp=sharing"
     videourl: "https://drive.google.com/file/d/1AWvHsK1A17c0QxYu0FxYc0KDEASBj06q/view?usp=sharing"
     slidesurl: "https://arxiv.org/pdf/2502.17880"
-
+    
+  - abbrv: "MM'23"
+    author: "<u> <b> Rui Lu </b> </u>, L. Wei, S. Zhu, C. Hu, D. Wang"
+    paperurl: "https://dl.acm.org/doi/abs/10.1145/3581783.3611946"
+    title: "Pagoda: Privacy Protection for Volumetric Video Streaming through Poisson Diffusion Model"
+    conference: "the 31st ACM International Conference on Multimedia"
+    address: "Ottawa, Canada"
+    date: "Oct. 2023"
+    downloadurl: "http://www4.comp.polyu.edu.hk/~csdwang/Publication/MM23.pdf"
+    imgurl: "/images/pagoda_frontpage.jpg"
+    slidesurl: "https://drive.google.com/file/d/1N_RNSNz2FPIIxApDU-Xrlj0x4brcC-QC/view?usp=drive_link"
+    
   - abbrv: "SEC'22"
     author: "<u> <b> Rui Lu </b> </u>, S. Shi, D. Wang, C. Hu, and B. Zhang"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/9996786"
