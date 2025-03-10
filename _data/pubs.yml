@@ -47,6 +47,15 @@ conferences:
     slidesurl: "https://drive.google.com/file/d/1SCLs7FIyUu4bCHBan2Dj612yAlilmBsn/view?usp=sharing"
 
 journals:
+  - abbrv: "TMC"
+    author: "Y. Liu, <u> <b> Rui Lu </b> </u>, D. Wang"
+    paperurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
+    title: "LVMScissor: Split and Schedule Large Vision Model Inference on Mobile Edges via Salp Swarm Algorithm"
+    conference: "IEEE Transactions on Mobile Computing"
+    page: "to be appeared"
+    date: "May. 2025"
+    downloadurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
+    
   - abbrv: "TC"
     author: "C. Hu, <u> <b> Rui Lu </b> </u>, Q. Sang, H. Liang, D. Wang, D. Cheng, J. Zhang, Q. Li, and J. Peng"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
@@ -55,6 +64,7 @@ journals:
     page: "vol. 72, no. 12, pp. 3399-3415"
     date: "Dec. 2023"
     downloadurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
+    
   - abbrv: "IEEE Network"
     author: "C. Hu, <u> <b> Rui Lu </b> </u>, and D. Wang"
     paperurl: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9687522"
