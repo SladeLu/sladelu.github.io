@@ -15,12 +15,17 @@ author_profile: true
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map {
-      height: 500px;
+      height: 400px;
+      width: 500px;
     }
     .popup-image {
       width: 250px;
       height: auto;
       display: block;
+    }
+    .leaflet-control-attribution,
+    .leaflet-control-container .leaflet-control-logo {
+      display: none !important;
     }
   </style>
 </head>
@@ -37,10 +42,10 @@ author_profile: true
   const map = L.map('map').setView(centerCoords, 13);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
+    attribution: ''
   }).addTo(map);
 
-  const imageUrl = 'https://simple.wikipedia.org/wiki/Hong_Kong_Polytechnic_University#/media/File:Hkpolyu.jpg'; // Replace with your own image URL
+  const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Hong_Kong_Polytechnic_University_campus.jpg/640px-Hong_Kong_Polytechnic_University_campus.jpg';
 
   L.marker(centerCoords)
     .addTo(map)
