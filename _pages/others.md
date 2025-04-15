@@ -14,7 +14,8 @@ author_profile: true
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map {
-      height: 400px;
+      width: 400px;
+      height: 300px;
     }
     .popup-image {
       width: 500px;
