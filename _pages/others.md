@@ -5,41 +5,42 @@ excerpt: ""
 author_profile: true
 ---
 
-<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>Map Example</title>
+  <meta charset="utf-8">
+  <title>Google Map Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map {
-      height: 500px; /* Set height */
+      height: 500px;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
-<h2>My Map</h2>
+<h2>Google Map</h2>
 <div id="map"></div>
 
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- Load Google Maps API -->
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+
 <script>
-  // Create map and set center & zoom
-  const map = L.map('map').setView([51.505, -0.09], 13);
+  function initMap() {
+    const center = { lat: 37.7749, lng: -122.4194 }; // San Francisco
+    const map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: center,
+    });
 
-  // Add OpenStreetMap tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(map);
-
-  // Add a marker
-  L.marker([51.505, -0.09]).addTo(map)
-    .bindPopup('A sample marker')
-    .openPopup();
+    const marker = new google.maps.Marker({
+      position: center,
+      map: map,
+      title: "Hello San Francisco!",
+    });
+  }
 </script>
 
 </body>
