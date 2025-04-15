@@ -16,13 +16,18 @@ author_profile: true
   <style>
     #map {
       height: 400px;
-      width: 500px;
+      width: 800px;
     }
     .popup-image {
-      max-width: 90%;
+      max-width: 85%;
       height: auto;
       display: block;
-      margin: 0 auto;
+      margin: 10px auto;
+    }
+    .popup-text {
+      font-size: 14px;
+      margin-top: 8px;
+      color: #333;
     }
     .leaflet-popup-content {
       margin: 0;
@@ -52,15 +57,24 @@ author_profile: true
   }).addTo(map);
 
   const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/4/43/Hkpolyu.jpg';
+  const description = 'The Hong Kong Polytechnic University is a public university located in Hung Hom, Hong Kong.';
+
+  const popupContent = `
+    <div style="width:300px;">
+      <img class="popup-image" src="${imageUrl}" alt="The HK PolyU" />
+      <div class="popup-text">${description}</div>
+    </div>
+  `;
 
   L.marker(centerCoords)
     .addTo(map)
-    .bindPopup(`<div style="width:300px;"><img class="popup-image" src="${imageUrl}" alt="The HK PolyU" /></div>`)
+    .bindPopup(popupContent)
     .openPopup();
 </script>
 
 </body>
 </html>
+
 
 ## My Mountain Hiking Adventures
 ### 2024
