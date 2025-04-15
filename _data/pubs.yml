@@ -7,7 +7,7 @@ conferences:
     paperurl: " "
     title: "VVRec: Reconstruction Attacks on DL-based Volumetric Video Upstreaming via Latent Diffusion Model with Gamma Distribution"
     conference: "the 39th Annual AAAI Conference on Artificial Intelligence"
-    address: "Philadelphia, PA, US"
+    address: "PHL, PA, US"
     date: "Feb. 2025"
     downloadurl: "https://arxiv.org/pdf/2502.17880"
     papertype: "ORAL"
@@ -49,12 +49,12 @@ conferences:
 journals:
   - abbrv: "TMC"
     author: "Y. Liu, <u> <b> Rui Lu </b> </u>, D. Wang"
-    paperurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
+    paperurl: "https://ieeexplore.ieee.org/abstract/document/10923690"
     title: "LVMScissor: Split and Schedule Large Vision Model Inference on Mobile Edges via Salp Swarm Algorithm"
     conference: "IEEE Transactions on Mobile Computing"
     page: "to be appeared"
     date: "May. 2025"
-    downloadurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
+    downloadurl: "https://ieeexplore.ieee.org/iel8/7755/4358975/10923690.pdf"
     
   - abbrv: "TC"
     author: "C. Hu, <u> <b> Rui Lu </b> </u>, Q. Sang, H. Liang, D. Wang, D. Cheng, J. Zhang, Q. Li, and J. Peng"
