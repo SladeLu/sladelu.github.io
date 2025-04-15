@@ -33,9 +33,9 @@ author_profile: true
   const map = L.map('map').setView([51.505, -0.09], 13);
 
   // OpenStreetMap tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(map);
+  // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //   attribution: '© OpenStreetMap contributors'
+  // }).addTo(map);
 
   // Sample marker data: [latitude, longitude, image URL]
   const locations = [
