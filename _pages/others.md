@@ -49,7 +49,7 @@ author_profile: true
 
   L.marker(centerCoords)
     .addTo(map)
-    .bindPopup(`<img class="popup-image" src="${imageUrl}" alt="The HK PolyU" />`)
+    .bindPopup(`<div style="width:300px;"><img class="popup-image" src="${imageUrl}" alt="The HK PolyU" /></div>`)
     .openPopup();
 </script>
 
