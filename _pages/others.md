@@ -16,10 +16,10 @@ author_profile: true
   <style>
     #map {
       height: 400px;
-      width: 500px;
+      width: 700px;
     }
     .popup-image {
-      width: 250px;
+      width: 400px;
       height: auto;
       display: block;
     }
