@@ -14,10 +14,10 @@ author_profile: true
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map {
-      height: 500px;
+      height: 400px;
     }
     .popup-image {
-      width: 400px;
+      width: 500px;
       height: auto;
     }
   </style>
