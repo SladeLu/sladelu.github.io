@@ -16,12 +16,18 @@ author_profile: true
   <style>
     #map {
       height: 400px;
-      width: 700px;
+      width: 500px;
     }
     .popup-image {
       max-width: 95%;
       height: auto;
       display: block;
+      margin: 0 auto;
+    }
+    .leaflet-popup-content {
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
     .leaflet-control-attribution,
     .leaflet-control-container .leaflet-control-logo {
@@ -55,9 +61,6 @@ author_profile: true
 
 </body>
 </html>
-
-
-
 
 ## My Mountain Hiking Adventures
 ### 2024
