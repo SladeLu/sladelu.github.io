@@ -19,7 +19,7 @@ author_profile: true
       width: 700px;
     }
     .popup-image {
-      width: 400px;
+      width: 500px;
       height: auto;
       display: block;
     }
