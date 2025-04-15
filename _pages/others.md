@@ -31,6 +31,7 @@ author_profile: true
     .map-module-map {
       flex: 1;
       height: 100%;
+      width: 225px;
     }
     .popup-image {
       max-width: 82.5%;
@@ -157,6 +158,7 @@ author_profile: true
 
 </body>
 </html>
+
 
 
 
