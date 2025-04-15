@@ -33,15 +33,15 @@ author_profile: true
   const map = L.map('map').setView([51.505, -0.09], 13);
 
   // OpenStreetMap tile layer
-  // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  //   attribution: '© OpenStreetMap contributors'
-  // }).addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: ''
+  }).addTo(map);
 
   // Sample marker data: [latitude, longitude, image URL]
   const locations = [
     [51.505, -0.09, 'https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl/view?usp=drive_link'],
-    [51.51, -0.1, 'https://placebear.com/300/200'],
-    [51.507, -0.08, 'https://placebeard.it/300x200']
+    [51.51, -0.1, 'https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl/view?usp=drive_link'],
+    [51.507, -0.08, 'https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl/view?usp=drive_link']
   ];
 
   // Add each marker with image popup
