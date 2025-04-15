@@ -45,15 +45,17 @@ author_profile: true
     attribution: ''
   }).addTo(map);
 
-  const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Hong_Kong_Polytechnic_University_campus.jpg/640px-Hong_Kong_Polytechnic_University_campus.jpg';
+  const imageUrl = 'https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl';
 
   L.marker(centerCoords)
     .addTo(map)
-    .bindPopup(`<img class="popup-image" src="${imageUrl}" alt="Location Image" />`);
+    .bindPopup(`<img class="popup-image" src="${imageUrl}" alt="The HK PolyU" />`)
+    .openPopup();
 </script>
 
 </body>
 </html>
+
 
 
 
