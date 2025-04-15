@@ -4,47 +4,57 @@ title: "Others"
 excerpt: ""
 author_profile: true
 ---
-
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Google Map Example</title>
+  <meta charset="utf-8" />
+  <title>Leaflet Map with Image Popups</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map {
       height: 500px;
-      width: 100%;
+    }
+    .popup-image {
+      width: 200px;
+      height: auto;
     }
   </style>
 </head>
 <body>
 
-<h2>Google Map</h2>
+<h2>Interactive Map with Images</h2>
 <div id="map"></div>
 
-<!-- Load Google Maps API -->
-<script async
-  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-</script>
-
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-  function initMap() {
-    const center = { lat: 37.7749, lng: -122.4194 }; // San Francisco
-    const map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 12,
-      center: center,
-    });
+  const map = L.map('map').setView([51.505, -0.09], 13);
 
-    const marker = new google.maps.Marker({
-      position: center,
-      map: map,
-      title: "Hello San Francisco!",
-    });
-  }
+  // OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Sample marker data: [latitude, longitude, image URL]
+  const locations = [
+    [51.505, -0.09, 'https://placekitten.com/300/200'],
+    [51.51, -0.1, 'https://placebear.com/300/200'],
+    [51.507, -0.08, 'https://placebeard.it/300x200']
+  ];
+
+  // Add each marker with image popup
+  locations.forEach(([lat, lon, img]) => {
+    L.marker([lat, lon])
+      .addTo(map)
+      .bindPopup(`<img class="popup-image" src="${img}" alt="Location Image" />`);
+  });
 </script>
 
 </body>
 </html>
+
 
 ## My Mountain Hiking Adventures
 ### 2024
