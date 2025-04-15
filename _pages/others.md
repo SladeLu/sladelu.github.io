@@ -45,7 +45,7 @@ author_profile: true
     attribution: ''
   }).addTo(map);
 
-  const imageUrl = 'https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl';
+  const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/4/43/Hkpolyu.jpg';
 
   L.marker(centerCoords)
     .addTo(map)
