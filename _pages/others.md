@@ -5,6 +5,46 @@ excerpt: ""
 author_profile: true
 ---
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Map Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 500px; /* Set height */
+    }
+  </style>
+</head>
+<body>
+
+<h2>My Map</h2>
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Create map and set center & zoom
+  const map = L.map('map').setView([51.505, -0.09], 13);
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Add a marker
+  L.marker([51.505, -0.09]).addTo(map)
+    .bindPopup('A sample marker')
+    .openPopup();
+</script>
+
+</body>
+</html>
+
 ## My Mountain Hiking Adventures
 ### 2024
 
