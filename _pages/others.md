@@ -14,24 +14,21 @@ author_profile: true
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    body {
+    .map-module-container {
       display: flex;
       flex-direction: row;
+      height: 500px;
+      border: 1px solid #ccc;
+      overflow: hidden;
     }
-    #sidebar {
+    .map-module-sidebar {
       width: 300px;
       padding: 15px;
       box-shadow: 2px 0 4px rgba(0,0,0,0.1);
       background: #f9f9f9;
-      height: 100%;
       overflow-y: auto;
     }
-    #map {
+    .map-module-map {
       flex: 1;
       height: 100%;
     }
@@ -67,11 +64,13 @@ author_profile: true
 </head>
 <body>
 
-<div id="sidebar">
-  <h3>Locations</h3>
-  <div id="location-list"></div>
+<div class="map-module-container">
+  <div class="map-module-sidebar">
+    <h3>Locations</h3>
+    <div id="location-list"></div>
+  </div>
+  <div id="map" class="map-module-map"></div>
 </div>
-<div id="map"></div>
 
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -82,13 +81,7 @@ author_profile: true
       name: 'The Hong Kong Polytechnic University',
       description: 'The Hong Kong Polytechnic University is a public university located in Hung Hom, Hong Kong.',
       imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Hkpolyu.jpg'
-    },
-    {
-    coords: [22.302711, 114.177216],
-    name: 'Hung Hom Station',
-    description: 'Hung Hom Station is a major railway terminus in Kowloon, Hong Kong.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Hung_Hom_station_2021_10.jpg'
-  }
+    }
   ];
 
   const map = L.map('map').setView(locations[0].coords, 13);
@@ -126,6 +119,7 @@ author_profile: true
 
 </body>
 </html>
+
 
 
 
