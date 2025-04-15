@@ -17,7 +17,7 @@ author_profile: true
       height: 500px;
     }
     .popup-image {
-      width: 200px;
+      width: 400px;
       height: auto;
     }
   </style>
