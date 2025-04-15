@@ -4,57 +4,52 @@ title: "Others"
 excerpt: ""
 author_profile: true
 ---
+
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Leaflet Map with Image Popups</title>
+  <title>Map Centered Marker with Image Popup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map {
-      width: 400px;
-      height: 300px;
+      height: 500px;
     }
     .popup-image {
-      width: 500px;
+      width: 250px;
       height: auto;
+      display: block;
     }
   </style>
 </head>
 <body>
 
-<h2>Interactive Map with Images</h2>
+<h2>Map with Centered Pin and Image Popup</h2>
 <div id="map"></div>
 
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-  const map = L.map('map').setView([22.304361, 114.180621], 13);
+  const centerCoords = [22.304361, 114.180621]; // Example: The HK PolyU
 
-  // OpenStreetMap tile layer
+  const map = L.map('map').setView(centerCoords, 13);
+
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: ''
+    attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  // Sample marker data: [latitude, longitude, image URL]
-  const locations = [
-    [51.505, -0.09, 'https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl/view?usp=drive_link'],
-    [51.51, -0.1, 'https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl/view?usp=drive_link'],
-    [51.507, -0.08, 'https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl/view?usp=drive_link']
-  ];
+  const imageUrl = 'https://simple.wikipedia.org/wiki/Hong_Kong_Polytechnic_University#/media/File:Hkpolyu.jpg'; // Replace with your own image URL
 
-  // Add each marker with image popup
-  locations.forEach(([lat, lon, img]) => {
-    L.marker([lat, lon])
-      .addTo(map)
-      .bindPopup(`<img class="popup-image" src="${img}" alt="Location Image" />`);
-  });
+  L.marker(centerCoords)
+    .addTo(map)
+    .bindPopup(`<img class="popup-image" src="${imageUrl}" alt="Location Image" />`);
 </script>
 
 </body>
 </html>
+
 
 
 ## My Mountain Hiking Adventures
