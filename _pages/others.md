@@ -30,7 +30,7 @@ author_profile: true
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-  const map = L.map('map').setView([51.505, -0.09], 13);
+  const map = L.map('map').setView([22.304361, 114.180621], 13);
 
   // OpenStreetMap tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
