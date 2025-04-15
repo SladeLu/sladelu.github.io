@@ -39,7 +39,7 @@ author_profile: true
 
   // Sample marker data: [latitude, longitude, image URL]
   const locations = [
-    [51.505, -0.09, '[https://placekitten.com/300/200](https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl/view?usp=drive_link)'],
+    [51.505, -0.09, 'https://drive.google.com/file/d/1Hnd-6puf5CC6ky2qej_VPhJwkSOiSPgl/view?usp=drive_link'],
     [51.51, -0.1, 'https://placebear.com/300/200'],
     [51.507, -0.08, 'https://placebeard.it/300x200']
   ];
