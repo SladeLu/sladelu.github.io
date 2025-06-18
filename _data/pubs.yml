@@ -2,6 +2,19 @@
 fontpages:
 
 conferences:
+  - abbrv: "HotCarbon'25"
+    author: "<u> <b> Rui Lu </b> </u> and D. Wang"
+    paperurl: " "
+    title: "A Thermal-aware Workload Scheduler for High-performance LLM Inference in Cooling-regulated Datacenters"
+    conference: "Proceedings of the 4th Workshop on Sustainable Computer Systems"
+    address: "Cambridge, MA, US"
+    date: "July, 2025"
+    downloadurl: " "
+    papertype: "Workshop"
+    posterurl: " "
+    videourl: " "
+    slidesurl: " "
+
   - abbrv: "AAAI'25"
     author: "<u> <b> Rui Lu </b> </u>, B. Zhang, and D. Wang"
     paperurl: " "
