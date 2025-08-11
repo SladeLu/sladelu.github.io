@@ -92,7 +92,7 @@
             </div>
             <div class="gallery-content">
                 <h3>Mount Siguniang II Peak (5276m)</h3>
-                <p> Sichuan, China / 中国四川省四姑娘山-二峰 </p>
+                <p> Sichuan, China / 四川省四姑娘山-二峰 </p>
                 <div class="gallery-date">June 25, 2024</div>
             </div>
         </div>
@@ -102,8 +102,8 @@
                 <img src="/images/ABC.jpg" alt="Annapurna Base Camp">
             </div>
             <div class="gallery-content">
-                <h3>Annapurna Base Camp Trek(A.B.C) (4130m)</h3>
-                <p>Nepal / 尼泊尔 阿纳普尔纳大本营路线 </p>
+                <h3>Annapurna Base Camp Trek (4130m)</h3>
+                <p>Nepal / 尼泊尔 阿纳普尔纳大本营路线(ABC) </p>
                 <div class="gallery-date">Nov. 11, 2024</div>
             </div>
         </div>
@@ -121,11 +121,11 @@
         
         <div class="gallery-item">
             <div class="gallery-image">
-                🏕️
+                <img src="/images/mount_fuji.jpg" alt="Mount Fuji">
             </div>
             <div class="gallery-content">
-                <h3>Lantau Peak Sunrise</h3>
-                <p>Early morning ascent to Lantau Peak (934m) to catch the sunrise. Magical golden hour views over the South China Sea.</p>
+                <h3>Mount Fuji Kengamine (3776m)</h3>
+                <p> Mt. Fuji Yoshida Trail, Japan / 日本富士山-吉田线-剑锋</p>
                 <div class="gallery-date">1 month ago</div>
             </div>
         </div>
