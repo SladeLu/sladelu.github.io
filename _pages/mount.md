@@ -92,7 +92,7 @@
             </div>
             <div class="gallery-content">
                 <h3>Mount Siguniang II Peak (5276m)</h3>
-                <p> 四川省阿坝藏族羌族自治州小金县四姑娘山-二峰 </p>
+                <p> 四川阿坝藏族羌族自治州小金县四姑娘山-二峰 </p>
                 <div class="gallery-date">June 25, 2024 @Sichuan, China</div>
             </div>
         </div>
@@ -108,16 +108,6 @@
             </div>
         </div>
         
-        <div class="gallery-item">
-            <div class="gallery-image">
-                🗻
-            </div>
-            <div class="gallery-content">
-                <h3>Tai Mo Shan Adventure</h3>
-                <p>Hong Kong's highest mountain at 957m. Trekked through misty trails and reached the summit for incredible cloud-covered vistas.</p>
-                <div class="gallery-date">3 weeks ago</div>
-            </div>
-        </div>
         
         <div class="gallery-item">
             <div class="gallery-image">
