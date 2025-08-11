@@ -52,7 +52,7 @@
             {{paper.author}}
             <br>
         {% if {{paper.badgeurl}} %}
-            <img src=paper.badgeurl>
+            <img src="{{paper.badgeurl}}">
         {% endif %}
             <u><i>Proceedings of {{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
     </div>
@@ -81,7 +81,7 @@
             {{paper.author}} 
         <br>
         {% if {{paper.badgeurl}} %}
-            <img src=paper.badgeurl>
+            <img src="{{paper.badgeurl}}">
         {% endif %}
         <u><i>{{paper.conference}}</i></u>, {{paper.page}}, {{paper.date}} 
     </div>
