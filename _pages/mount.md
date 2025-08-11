@@ -1,5 +1,6 @@
 <span class='anchor' id='mount'></span>
-<!-- Sports Highlights Gallery -->
+
+
 <style>
 .sports-gallery {
     margin: 20px 0;
