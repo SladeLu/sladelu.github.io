@@ -54,7 +54,7 @@
 .gallery-content h3 {
     color: #224b8d;
     margin: 0 0 10px 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 .gallery-content p {
