@@ -14,5 +14,5 @@ redirect_from:
 
 {% include_relative includes/edu.md %}
 
-{% include_relative includes/mount.md %}
+{% include_relative mount.md %}
 
