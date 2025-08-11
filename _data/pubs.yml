@@ -11,9 +11,6 @@ conferences:
     date: "July 2025"
     downloadurl: "https://dl.acm.org/doi/pdf/10.1145/3757892.3757906"
     papertype: "Workshop"
-    posterurl: " "
-    videourl: " "
-    slidesurl: " "
 
   - abbrv: "AAAI'25"
     author: "<u> <b> Rui Lu </b> </u>, B. Zhang, and D. Wang"
