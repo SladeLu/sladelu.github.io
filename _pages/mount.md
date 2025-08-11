@@ -92,8 +92,8 @@
             </div>
             <div class="gallery-content">
                 <h3>Mount Siguniang II Peak (5276m)</h3>
-                <p> Sichuan, China / 四川省四姑娘山-二峰 </p>
-                <div class="gallery-date">June 25, 2024</div>
+                <p> 四川省阿坝藏族羌族自治州小金县四姑娘山-二峰 </p>
+                <div class="gallery-date">June 25, 2024 @Sichuan, China</div>
             </div>
         </div>
         
@@ -103,8 +103,8 @@
             </div>
             <div class="gallery-content">
                 <h3>Annapurna Base Camp Trek (4130m)</h3>
-                <p>Nepal / 尼泊尔 阿纳普尔纳大本营路线(ABC) </p>
-                <div class="gallery-date">Nov. 11, 2024</div>
+                <p>尼泊尔阿纳普尔纳大本营路线(ABC) </p>
+                <div class="gallery-date">Nov. 11, 2024 @Nepal</div>
             </div>
         </div>
         
@@ -125,32 +125,12 @@
             </div>
             <div class="gallery-content">
                 <h3>Mount Fuji Kengamine (3776m)</h3>
-                <p> Mt. Fuji Yoshida Trail, Japan / 日本富士山-吉田线-剑锋</p>
-                <div class="gallery-date">1 month ago</div>
+                <p>日本山梨县富士山吉田线-剑锋</p>
+                <div class="gallery-date">July 5, 2025 @Mt. Fuji Yoshida Trail, Japan</div>
             </div>
         </div>
         
-        <div class="gallery-item">
-            <div class="gallery-image">
-                🧗‍♂️
-            </div>
-            <div class="gallery-content">
-                <h3>Dragon's Back Trail</h3>
-                <p>Ridge hiking along the famous Dragon's Back trail. Stunning coastal views and challenging terrain with rewarding summit views.</p>
-                <div class="gallery-date">1 month ago</div>
-            </div>
-        </div>
-        
-        <div class="gallery-item">
-            <div class="gallery-image">
-                🏞️
-            </div>
-            <div class="gallery-content">
-                <h3>Ma On Shan Peak</h3>
-                <p>Technical climb to Ma On Shan (702m). Rocky terrain and steep ascents rewarded with spectacular views of the New Territories.</p>
-                <div class="gallery-date">2 months ago</div>
-            </div>
-        </div>
+
     </div>
 </div>
 
