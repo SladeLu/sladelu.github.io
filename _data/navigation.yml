@@ -10,7 +10,7 @@ main:
     url: "/#-educations"
 
   - title: "Others"
-    url: "/#-mount"
+    url: "/#mount"
 
   - title: "中文"
     url: "/chinese/"
