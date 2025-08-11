@@ -80,9 +80,11 @@
 }
 </style>
 
+***
+# 🏔️ Mountain Climbing and Trailing
+***
+
 <div class="sports-gallery">
-    <h2>🏔️ Mountain Climbing & Peak Hiking</h2>
-    
     <div class="gallery-grid">
         <div class="gallery-item">
             <div class="gallery-image">
