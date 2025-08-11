@@ -1,8 +1,8 @@
 <!-- Sports Highlights Gallery -->
 <style>
 .sports-gallery {
-    margin: 40px 0;
-    padding: 20px 0;
+    margin: 20px 0;
+    padding: 10px 0;
 }
 
 .sports-gallery h2 {
@@ -47,6 +47,7 @@
 
 .gallery-content {
     padding: 15px;
+    margin-top: 12px;
 }
 
 .gallery-content h3 {
