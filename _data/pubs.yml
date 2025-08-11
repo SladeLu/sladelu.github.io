@@ -4,12 +4,12 @@ fontpages:
 conferences:
   - abbrv: "HotCarbon'25"
     author: "<u> <b> Rui Lu </b> </u> and D. Wang"
-    paperurl: " "
+    paperurl: "https://dl.acm.org/doi/10.1145/3757892.3757906"
     title: "A Thermal-aware Workload Scheduler for High-performance LLM Inference in Cooling-regulated Datacenters"
     conference: "the 4th Workshop on Sustainable Computer Systems"
     address: "Cambridge, MA, US"
     date: "July 2025"
-    downloadurl: " "
+    downloadurl: "https://dl.acm.org/doi/pdf/10.1145/3757892.3757906"
     papertype: "Workshop"
     posterurl: " "
     videourl: " "
@@ -62,7 +62,7 @@ conferences:
     slidesurl: "https://drive.google.com/file/d/1SCLs7FIyUu4bCHBan2Dj612yAlilmBsn/view?usp=sharing"
 
 journals:
-  - abbrv: "TMC"
+  - abbrv: "TMC'25"
     author: "Y. Liu, <u> <b> Rui Lu *</b> </u>, D. Wang"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/10923690"
     title: "LVMScissor: Split and Schedule Large Vision Model Inference on Mobile Edges via Salp Swarm Algorithm"
@@ -72,7 +72,7 @@ journals:
     downloadurl: "https://ieeexplore.ieee.org/iel8/7755/4358975/10923690.pdf"
     badgeurl: "https://img.shields.io/badge/CCF-A-red"
     
-  - abbrv: "TC"
+  - abbrv: "TC'23"
     author: "C. Hu, <u> <b> Rui Lu </b> </u>, Q. Sang, H. Liang, D. Wang, D. Cheng, J. Zhang, Q. Li, and J. Peng"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
     title: "An Edge-side Real-time Video Analytics System with Dual Computing Resource Control"
