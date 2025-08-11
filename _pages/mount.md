@@ -1,3 +1,4 @@
+<span class='anchor' id='mount'></span>
 <!-- Sports Highlights Gallery -->
 <style>
 .sports-gallery {
@@ -81,7 +82,8 @@
 }
 </style>
 
-<span class='anchor' id='mount'></span>
+
+
 ***
 # 🏔️ Mountains Climbing and Trailing
 
