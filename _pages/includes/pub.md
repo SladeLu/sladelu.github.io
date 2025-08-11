@@ -20,7 +20,7 @@
             </div>
             <div style="font-size: 15px;"> 
             {{paper.author}} <br>
-            <u><i>Proceedings of {{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
+            <u><i>Proc. of {{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
             </div>
         </div>
         <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>        
@@ -54,7 +54,7 @@
         {% if {{paper.badgeurl}} %}
             <img src="{{paper.badgeurl}}">
         {% endif %}
-            <u><i>Proceedings of {{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
+            <u><i>Proc. of {{paper.conference}}</i></u>, {{paper.address}}, {{paper.date}}
     </div>
     <div style="width: 10%; text-align: right;"><a href="{{paper.downloadurl}}">[Paper]</a>
         {% if {{paper.slidesurl}} %}
