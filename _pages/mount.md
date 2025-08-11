@@ -81,19 +81,18 @@
 </style>
 
 ***
-# 🏔️ Mountain Climbing and Trailing
+# 🏔️ Mountains Climbing and Trailing
 ***
 
 <div class="sports-gallery">
     <div class="gallery-grid">
         <div class="gallery-item">
             <div class="gallery-image">
-                🏔️
+                <img src="/images/Mount_SGN_II.jpg" alt="Mount Siguniang II Peak">
             </div>
             <div class="gallery-content">
-                <h3>Victoria Peak Hike</h3>
-                <p>Conquered Hong Kong's highest peak at 552m. Breathtaking panoramic views of the city skyline and Victoria Harbour from the summit.</p>
-                <div class="gallery-date">Last Weekend</div>
+                <h3>Mount Siguniang II Peak, Sichuan, China /中国四川省四姑娘山-二峰 (5276m)</h3>
+                <div class="gallery-date">June 25, 2024</div>
             </div>
         </div>
         
