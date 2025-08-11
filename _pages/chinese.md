@@ -9,7 +9,8 @@ author_profile: true
 
 {% include_relative cn/edu.md %}
 
-***
+{% include_relative includes/pub.md %}
+
 # 🏔️ 登山徒步冒险
 
 {% include_relative mount.md %}
