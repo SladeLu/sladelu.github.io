@@ -98,12 +98,12 @@
         
         <div class="gallery-item">
             <div class="gallery-image">
-                ⛰️
+                <img src="/images/ABC.jpg" alt="Annapurna Base Camp">
             </div>
             <div class="gallery-content">
-                <h3>Lion Rock Summit</h3>
-                <p>Challenging climb to the iconic Lion Rock at 495m. Spectacular 360-degree views of Kowloon and Hong Kong Island from the rocky peak.</p>
-                <div class="gallery-date">2 weeks ago</div>
+                <h3>Annapurna Base Camp (A.B.C) (4130m)</h3>
+                <p>Nepal / 尼泊尔 阿纳普尔纳大本营路线 </p>
+                <div class="gallery-date">Nov. 11, 2024</div>
             </div>
         </div>
         
