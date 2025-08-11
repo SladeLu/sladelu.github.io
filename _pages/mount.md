@@ -1,6 +1,3 @@
-<span class='anchor' id='mount'></span>
-
-
 <style>
 .sports-gallery {
     margin: 20px 0;
@@ -82,11 +79,6 @@
     }
 }
 </style>
-
-
-
-***
-# 🏔️ Mountains Climbing and Trailing
 
 <div class="sports-gallery">
     <div class="gallery-grid">
