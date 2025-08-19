@@ -64,8 +64,8 @@ journals:
     paperurl: "https://ieeexplore.ieee.org/abstract/document/10923690"
     title: "LVMScissor: Split and Schedule Large Vision Model Inference on Mobile Edges via Salp Swarm Algorithm"
     conference: "IEEE Transactions on Mobile Computing"
-    page: "to be appeared"
-    date: "May. 2025"
+    page: "vol. 24, no. 8, pp. 7538-7553"
+    date: "May 2025"
     downloadurl: "https://ieeexplore.ieee.org/iel8/7755/4358975/10923690.pdf"
     badgeurl: "https://img.shields.io/badge/CCF-A-red"
     
