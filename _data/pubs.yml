@@ -3,7 +3,7 @@ fontpages:
 
 conferences:
   - abbrv: "HotCarbon'25"
-    author: "<u> <b> Rui Lu </b> </u> and D. Wang"
+    author: "<u> <b> Rui Lu</b></u> and D. Wang"
     paperurl: "https://dl.acm.org/doi/10.1145/3757892.3757906"
     title: "A Thermal-aware Workload Scheduler for High-performance LLM Inference in Cooling-regulated Datacenters"
     conference: "the 4th Workshop on Sustainable Computer Systems"
@@ -13,7 +13,7 @@ conferences:
     papertype: "Workshop"
 
   - abbrv: "AAAI'25"
-    author: "<u> <b> Rui Lu </b> </u>, B. Zhang, and D. Wang"
+    author: "<u> <b> Rui Lu</b></u>, B. Zhang, and D. Wang"
     paperurl: "https://dl.acm.org/doi/10.1609/aaai.v39i18.34106"
     title: "VVRec: Reconstruction Attacks on DL-based Volumetric Video Upstreaming via Latent Diffusion Model with Gamma Distribution"
     conference: "the 39th Annual AAAI Conference on Artificial Intelligence"
@@ -27,7 +27,7 @@ conferences:
     badgeurl: "https://img.shields.io/badge/CCF-A-red"
     
   - abbrv: "MM'23"
-    author: "<u> <b> Rui Lu </b> </u>, L. Wei, S. Zhu, C. Hu, D. Wang"
+    author: "<u> <b> Rui Lu</b></u>, L. Wei, S. Zhu, C. Hu, D. Wang"
     paperurl: "https://dl.acm.org/doi/abs/10.1145/3581783.3611946"
     title: "Pagoda: Privacy Protection for Volumetric Video Streaming through Poisson Diffusion Model"
     conference: "the 31st ACM International Conference on Multimedia"
@@ -39,7 +39,7 @@ conferences:
     badgeurl: "https://img.shields.io/badge/CCF-A-red"
     
   - abbrv: "SEC'22"
-    author: "<u> <b> Rui Lu </b> </u>, S. Shi, D. Wang, C. Hu, and B. Zhang"
+    author: "<u> <b> Rui Lu</b></u>, S. Shi, D. Wang, C. Hu, and B. Zhang"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/9996786"
     title: "Preva: Protecting Inference Privacy through Policy-based Video-frame Transformation"
     conference: "the 7th IEEE/ACM Symposium on Edge Computing"
@@ -49,7 +49,7 @@ conferences:
     slidesurl: "https://drive.google.com/file/d/1cc9L_HDjrKOcb5fCx6EWqXlL_SEE-ML3/view?usp=drive_link"
     
   - abbrv: "SEC'22"
-    author: "<u> <b> Rui Lu </b> </u>, C. Hu, D. Wang, and J. Zhang"
+    author: "<u> <b> Rui Lu</b></u>, C. Hu, D. Wang, and J. Zhang"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/9996757"
     title: "Gemini: a Real-time Video Analytics System with Dual Computing Resource Control"
     conference: "the 7th IEEE/ACM Symposium on Edge Computing"
@@ -70,7 +70,7 @@ journals:
     badgeurl: "https://img.shields.io/badge/CCF-A-red"
     
   - abbrv: "TC'23"
-    author: "C. Hu, <u><b> Rui Lu </b></u>, Q. Sang, H. Liang, D. Wang, D. Cheng, J. Zhang, Q. Li, and J. Peng"
+    author: "C. Hu, <u><b> Rui Lu</b></u>, Q. Sang, H. Liang, D. Wang, D. Cheng, J. Zhang, Q. Li, and J. Peng"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
     title: "An Edge-side Real-time Video Analytics System with Dual Computing Resource Control"
     conference: "IEEE Transactions on Computers"
@@ -80,7 +80,7 @@ journals:
     badgeurl: "https://img.shields.io/badge/CCF-A-red"
     
   - abbrv: "IEEE Network"
-    author: "C. Hu, <u><b> Rui Lu </b></u>, and D. Wang"
+    author: "C. Hu, <u><b> Rui Lu</b></u>, and D. Wang"
     paperurl: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9687522"
     title: "FEVA: A FEderated Video Analytics Architecture for Networked Smart Cameras"
     conference: "IEEE Network, special issue on Interplay Between Machine Learning and Networking Systems"
