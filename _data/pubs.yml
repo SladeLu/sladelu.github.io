@@ -14,7 +14,7 @@ conferences:
 
   - abbrv: "AAAI'25"
     author: "<u> <b> Rui Lu </b> </u>, B. Zhang, and D. Wang"
-    paperurl: " "
+    paperurl: "https://dl.acm.org/doi/10.1609/aaai.v39i18.34106"
     title: "VVRec: Reconstruction Attacks on DL-based Volumetric Video Upstreaming via Latent Diffusion Model with Gamma Distribution"
     conference: "the 39th Annual AAAI Conference on Artificial Intelligence"
     address: "PHL, PA, US"
