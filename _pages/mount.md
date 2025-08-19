@@ -91,7 +91,7 @@
             <div class="gallery-content">
                 <h3>Mount Siguniang II Peak (5276m)</h3>
                 <p> 四川阿坝藏族羌族自治州小金县四姑娘山-二峰 </p>
-                <div class="gallery-date">June 25, 2024 @Sichuan, China</div>
+                <div class="gallery-date">June 2024 @Sichuan, China</div>
             </div>
         </div>
         
@@ -102,7 +102,7 @@
             <div class="gallery-content">
                 <h3>Annapurna Base Camp Trek (4130m)</h3>
                 <p>尼泊尔阿纳普尔纳大本营路线(ABC) </p>
-                <div class="gallery-date">Nov. 11, 2024 @Nepal</div>
+                <div class="gallery-date">Nov. 2024 @Nepal</div>
             </div>
         </div>
         
@@ -114,7 +114,7 @@
             <div class="gallery-content">
                 <h3>Mount Fuji Kengamine (3776m)</h3>
                 <p>日本山梨县富士山吉田线-剑锋</p>
-                <div class="gallery-date">July 5, 2025 @Mt. Fuji Yoshida Trail, Japan</div>
+                <div class="gallery-date">July 2025 @Mt. Fuji Yoshida Trail, Japan</div>
             </div>
         </div>
         
