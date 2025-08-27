@@ -15,7 +15,7 @@ redirect_from:
 {% include_relative includes/edu.md %}
 
 ***
-# 🏔️ Mountains Climbing and Trailing
+# 🏔️ Mountaineering and Trekking
 
 {% include_relative mount.md %}
 
