@@ -38,7 +38,7 @@
           {{ paper.author }}<br>
           <u><i>Proc. of {{ paper.conference }}</i></u>, {{ paper.address }}, {{ paper.date }}
         </div>
-      </div>
+
 
       <!-- Right column: links -->
       <div style="width:10%; text-align:right; white-space:nowrap;">
@@ -55,8 +55,7 @@
           <a href="{{ paper.posterurl }}">[Poster]</a>
         {% endif %}
       </div>
-
-    </div>
+  </div>
   </div>
 </div>
 {% endfor %}
