@@ -38,10 +38,10 @@
           {{ paper.author }}<br>
           <u><i>Proc. of {{ paper.conference }}</i></u>, {{ paper.address }}, {{ paper.date }}
         </div>
-
+      </div>
 
       <!-- Right column: links -->
-      <div style="width:10%; text-align:right; white-space:nowrap;">
+      <div style="width:110px; text-align:right; white-space:nowrap;">
         {% if paper.downloadurl %}
           <a href="{{ paper.downloadurl }}">[Paper]</a>
         {% endif %}
@@ -55,7 +55,8 @@
           <a href="{{ paper.posterurl }}">[Poster]</a>
         {% endif %}
       </div>
-  </div>
+
+    </div>
   </div>
 </div>
 {% endfor %}
@@ -97,20 +98,20 @@
     </div>
 
     <!-- Right column: links -->
-<div style="width:110px; text-align:right; display:flex; flex-direction:column; gap:2px;">
-  {% if paper.downloadurl %}
-    <a href="{{ paper.downloadurl }}">[Paper]</a>
-  {% endif %}
-  {% if paper.slidesurl %}
-    <a href="{{ paper.slidesurl }}">[Slides]</a>
-  {% endif %}
-  {% if paper.videourl %}
-    <a href="{{ paper.videourl }}">[Video]</a>
-  {% endif %}
-  {% if paper.posterurl %}
-    <a href="{{ paper.posterurl }}">[Poster]</a>
-  {% endif %}
-</div>
+    <div style="width:110px; text-align:right; white-space:nowrap;">
+      {% if paper.downloadurl %}
+        <a href="{{ paper.downloadurl }}">[Paper]</a>
+      {% endif %}
+      {% if paper.slidesurl %}
+        <a href="{{ paper.slidesurl }}">[Slides]</a>
+      {% endif %}
+      {% if paper.videourl %}
+        <a href="{{ paper.videourl }}">[Video]</a>
+      {% endif %}
+      {% if paper.posterurl %}
+        <a href="{{ paper.posterurl }}">[Poster]</a>
+      {% endif %}
+    </div>
 
   </div>
 {% endfor %}
@@ -124,6 +125,55 @@
 {% for paper in site.data.pubs.journals %}
 - <div style="display:flex; width:100%; align-items:flex-start; gap:0.75em;">
 
+    <div style="flex:1; min-width:0;">
+      <!-- LINE 1: tag + optional badge -->
+      <div style="margin-bottom:2px;">
+        <span class="badge2">{{ paper.abbrv }}</span>
+        {% if paper.badgeurl %}
+          <span style="margin-left:4px;">
+            <img src="{{ paper.badgeurl }}" alt="ranking badge">
+          </span>
+        {% endif %}
+      </div>
+
+      <!-- LINE 2: title -->
+      <div style="font-size:16px; font-weight:600; margin-bottom:2px;">
+        <a href="{{ paper.paperurl }}">{{ paper.title }}</a>
+      </div>
+
+      <!-- Authors + journal info -->
+      <div style="margin-top:2px;">
+        {{ paper.author }}<br>
+        <u><i>{{ paper.conference }}</i></u>, {{ paper.page }}, {{ paper.date }}
+      </div>
+    </div>
+
+    <!-- Right column: links -->
+    <div style="width:110px; text-align:right; white-space:nowrap;">
+      {% if paper.downloadurl %}
+        <a href="{{ paper.downloadurl }}">[Paper]</a>
+      {% endif %}
+    </div>
+
+  </div>
+{% endfor %}
+
+***
+
+## Patents
+
+{% for paper in site.data.pubs.patents %}
+- <div style="display:flex; width:100%;">
+    <div style="width:15%;">
+      <div class="patentid">{{ paper.pid }}</div>
+    </div>
+    <div style="width:85%;">
+      {{ paper.title }}
+    </div>
+  </div>
+{% endfor %}
+
+***
     <div style="flex:1; min-width:0;">
       <!-- LINE 1: tag + optional badge -->
       <div style="margin-bottom:2px;">
