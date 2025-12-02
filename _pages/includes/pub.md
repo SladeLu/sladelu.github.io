@@ -49,7 +49,7 @@
         {% endif %}
         {% if {{paper.bestpaper}} %}
             <span style="background:#fbbf24; color:#111827; border-radius:999px; padding:2px 8px; margin-left:6px; font-size:0.8em; font-weight:600;">
-                  🏆 {paper.bestpaper}
+                  🏆 {{paper.bestpaper}}
             </span>
         {% endif %}
             <a href="{{paper.paperurl}}"> {{paper.title}} </a>
