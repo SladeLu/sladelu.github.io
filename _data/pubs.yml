@@ -6,11 +6,12 @@ conferences:
     author: "<u> <b> Rui Lu</b></u>, S. Shi, and D. Wang"
     paperurl: " "
     title: "ECSAM: An Edge-cloud Video Analytics Architecture for the Segment Anything Model"
-    conference: "ACM ECCAI Workshop of the 21th CoNEXT 2025"
+    conference: "ACM ECCAI Workshop of the 21st CoNEXT 2025"
     address: "Hong Kong"
     date: "Dec. 2025"
     downloadurl: " "
     papertype: "Workshop"
+    bestpaper: "yes"
 
   - abbrv: "HotCarbon'25"
     author: "<u> <b> Rui Lu</b></u> and D. Wang"
