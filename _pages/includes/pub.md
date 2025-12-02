@@ -92,20 +92,21 @@ Standard conference list (tags on their own line so long titles wrap cleanly)
     </div>
 
     <!-- Right-hand links -->
-    <div style="width:110px; text-align:right; white-space:nowrap;">
-      {% if paper.downloadurl %}
-        <a href="{{ paper.downloadurl }}">[Paper]</a>
-      {% endif %}
-      {% if paper.slidesurl %}
-        <a href="{{ paper.slidesurl }}">[Slides]</a>
-      {% endif %}
-      {% if paper.videourl %}
-        <a href="{{ paper.videourl }}">[Video]</a>
-      {% endif %}
-      {% if paper.posterurl %}
-        <a href="{{ paper.posterurl }}">[Poster]</a>
-      {% endif %}
-    </div>
+  <div style="width:110px; text-align:right; display:flex; flex-direction:column; gap:2px;">
+    {% if paper.downloadurl %}
+      <a href="{{ paper.downloadurl }}">[Paper]</a>
+    {% endif %}
+    {% if paper.slidesurl %}
+      <a href="{{ paper.slidesurl }}">[Slides]</a>
+    {% endif %}
+    {% if paper.videourl %}
+      <a href="{{ paper.videourl }}">[Video]</a>
+    {% endif %}
+    {% if paper.posterurl %}
+      <a href="{{ paper.posterurl }}">[Poster]</a>
+    {% endif %}
+  </div>
+
   </div>
 {% endfor %}
 
