@@ -56,26 +56,7 @@ Standard conference list (tags on their own line so long titles wrap cleanly)
 
     <div style="flex:1; min-width:0;">
       <!-- Tag line: venue / type / best paper -->
-      <div style="margin-bottom:2px; display:flex; align-items:center; gap:4px; flex-wrap:wrap;">
-  <span class="badge2">{{ paper.abbrv }}</span>
-
-  {% if paper.papertype %}
-    <span class="typemark">{{ paper.papertype }}</span>
-  {% endif %}
-
-  {% if paper.badgeurl %}
-    <span>
-      <img src="{{ paper.badgeurl }}" alt="ranking badge">
-    </span>
-  {% endif %}
-
-  {% if paper.bestpaper %}
-    <span style="background:#fbbf24; color:#111827; border-radius:999px; padding:2px 8px; font-size:0.8em; font-weight:600; white-space:nowrap;">
-      {{ paper.bestpaper }}
-    </span>
-  {% endif %}
-</div>
-      <!-- <div style="margin-bottom:2px;">
+      <div style="margin-bottom:2px;">
         <span class="badge2">{{ paper.abbrv }}</span>
         {% if paper.papertype %}
           <span class="typemark">{{ paper.papertype }}</span>
@@ -90,7 +71,7 @@ Standard conference list (tags on their own line so long titles wrap cleanly)
             {{ paper.bestpaper }}
           </span>
         {% endif %}
-      </div> -->
+      </div>
 
       <!-- Title line (wraps freely across multiple lines) -->
       <div style="font-size:16px; font-weight:600; margin-bottom:2px;">
