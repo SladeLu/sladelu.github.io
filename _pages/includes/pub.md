@@ -47,12 +47,12 @@
         {% if {{paper.papertype}} %}
             <div class="typemark">{{paper.papertype}}</div>
         {% endif %}
+            <a href="{{paper.paperurl}}"> {{paper.title}} </a>
         {% if {{paper.bestpaper}} %}
             <span style="background:#fbbf24; color:#111827; border-radius:999px; padding:2px 8px; margin-left:6px; font-size:0.8em; font-weight:600;">
-                  🏆 Best Paper Award
+                  🏆 paper.bestpaper
             </span>
         {% endif %}
-            <a href="{{paper.paperurl}}"> {{paper.title}} </a>
             <br>
             {{paper.author}}
             <br>
