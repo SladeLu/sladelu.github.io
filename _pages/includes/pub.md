@@ -60,7 +60,12 @@ Standard conference list (tags on their own line so long titles wrap cleanly)
         <span class="badge2">{{ paper.abbrv }}</span>
         {% if paper.papertype %}
           <span class="typemark">{{ paper.papertype }}</span>
-        {% endif %}
+        {% endif %}              
+      {% if paper.badgeurl %}
+        <div style="margin-bottom:2px;">
+          <img src="{{ paper.badgeurl }}" alt="ranking badge">
+        </div>
+      {% endif %}
         {% if paper.bestpaper %}
           <span style="background:#fbbf24; color:#111827; border-radius:999px; padding:2px 8px; margin-left:6px; font-size:0.8em; font-weight:600; white-space:nowrap;">
             🏆 {{ paper.bestpaper }}
@@ -77,13 +82,6 @@ Standard conference list (tags on their own line so long titles wrap cleanly)
       <div style="margin-bottom:2px;">
         {{ paper.author }}
       </div>
-
-      <!-- Optional extra badge (e.g., CCF-A) -->
-      {% if paper.badgeurl %}
-        <div style="margin-bottom:2px;">
-          <img src="{{ paper.badgeurl }}" alt="ranking badge">
-        </div>
-      {% endif %}
 
       <!-- Venue line -->
       <div>
