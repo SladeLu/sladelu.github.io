@@ -237,7 +237,7 @@
     </label>
     <label class="pub-tick">
       <input type="checkbox" id="pub-filter-bestpaper" checked>
-      Best Paper
+      🏆 Best Paper
     </label>
   </div>
 
