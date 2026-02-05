@@ -6,11 +6,11 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
-  margin: 0.5rem 0 1rem 0;
-  padding: 0.8rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  margin: 0.2rem 0 0.35rem 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .pub-control {
