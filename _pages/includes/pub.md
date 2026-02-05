@@ -243,7 +243,11 @@
     </label>
     <label class="pub-tick">
       <input type="checkbox" id="pub-filter-bestpaper" checked>
-      🏆 Best Paper
+      Best Paper
+    </label>
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-oral" checked>
+      ORAL
     </label>
   </div>
 
@@ -339,6 +343,7 @@
   const workshopTick = document.getElementById("pub-filter-workshop");
   const ccfaTick = document.getElementById("pub-filter-ccfa");
   const bestPaperTick = document.getElementById("pub-filter-bestpaper");
+  const oralTick = document.getElementById("pub-filter-oral");
   const sortYearBtn = document.getElementById("pub-sort-year");
   const listEl = document.getElementById("pub-list");
   let sortOrder = "new";
@@ -360,7 +365,7 @@
 
     const workshopTag = p.isWorkshop ? `<span class="typemark" data-type="workshop">Workshop</span>` : "";
     const oralTag = p.isOral ? `<span class="typemark" data-type="oral">ORAL</span>` : "";
-    const bestPaperTag = p.isBestPaper ? `<span class="bestpaper-award">Best Paper</span>` : "";
+    const bestPaperTag = p.isBestPaper ? `<span class="bestpaper-award">🏆 Best Paper</span>` : "";
     const ccfBadge = p.isCCFA ? `<span class="ccfa-chip">CCF-A</span>` : "";
 
     const venueLine = p.type === "conference"
@@ -392,6 +397,7 @@
     const showWorkshop = workshopTick.checked;
     const showCCFA = ccfaTick.checked;
     const showBestPaper = bestPaperTick.checked;
+    const showOral = oralTick.checked;
     const sortVal = sortOrder;
 
     let filtered = publications.filter((p) => {
@@ -401,6 +407,7 @@
       if (!showWorkshop && p.isWorkshop) return false;
       if (!showCCFA && p.isCCFA) return false;
       if (!showBestPaper && p.isBestPaper) return false;
+      if (!showOral && p.isOral) return false;
 
       return true;
     });
@@ -425,12 +432,13 @@
     workshopTick.checked = checked;
     ccfaTick.checked = checked;
     bestPaperTick.checked = checked;
+    oralTick.checked = checked;
     applyFiltersAndRender();
   });
 
-  [conferenceTick, journalTick, workshopTick, ccfaTick, bestPaperTick].forEach((el) => {
+  [conferenceTick, journalTick, workshopTick, ccfaTick, bestPaperTick, oralTick].forEach((el) => {
     el.addEventListener("change", () => {
-      const allChecked = conferenceTick.checked && journalTick.checked && workshopTick.checked && ccfaTick.checked && bestPaperTick.checked;
+      const allChecked = conferenceTick.checked && journalTick.checked && workshopTick.checked && ccfaTick.checked && bestPaperTick.checked && oralTick.checked;
       allTick.checked = allChecked;
       applyFiltersAndRender();
     });
