@@ -37,14 +37,19 @@
 
 .pub-filter-ticks {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.45rem 0.55rem;
   align-items: center;
   min-width: 420px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 2px;
 }
 
 .pub-tick {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: 0.35rem;
   padding: 0.22rem 0.56rem;
@@ -140,6 +145,42 @@
   color: #64748b;
   background: #f8fafc;
 }
+
+.patent-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.patent-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.65rem 0.8rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.patent-code {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid rgba(30, 64, 175, 0.25);
+  color: #1e3a8a;
+  font-size: 0.8em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.patent-title {
+  color: #1f2937;
+}
 </style>
 
 <div class="pub-controls" id="pub-controls">
@@ -181,18 +222,14 @@
 
 ## Patents
 
+<ul class="patent-list">
 {% for paper in site.data.pubs.patents %}
-- <div style="display:flex; width:100%;">
-
-    <div style="width:15%;">
-      <div class="patentid">{{ paper.pid }}</div>
-    </div>
-
-    <div style="width:85%;">
-      {{ paper.title }}
-    </div>
-  </div>
+  <li class="patent-item">
+    <span class="patent-code">{{ paper.pid }}</span>
+    <span class="patent-title">{{ paper.title }}</span>
+  </li>
 {% endfor %}
+</ul>
 
 ***
 
