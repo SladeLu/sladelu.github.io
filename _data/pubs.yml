@@ -1,103 +1,118 @@
-# papers links links
-fontpages:
-
-conferences:
-  - abbrv: "ECCAI'25"
-    author: "<u> <b> Rui Lu</b></u>, S. Shi, and D. Wang"
-    paperurl: "https://dl.acm.org/doi/10.1145/3769696.3771216"
+publications:
+  - type: "conference"
+    abbrv: "ECCAI'25"
+    author: "<u><b>Rui Lu</b></u>, S. Shi, and D. Wang"
     title: "ECSAM: An Edge-cloud Video Analytics Architecture for the Segment Anything Model"
-    conference: "ACM ECCAI Workshop of the 21st CoNEXT 2025"
+    venue: "ACM ECCAI Workshop of the 21st CoNEXT 2025"
     address: "Hong Kong"
     date: "Dec. 2025"
-    downloadurl: "https://dl.acm.org/doi/epdf/10.1145/3769696.3771216"
-    papertype: "Workshop"
-    bestpaper: "🏆 Best Workshop Paper Award"
+    tags: ["Workshop", "Best Paper"]
+    links:
+      paper: "https://dl.acm.org/doi/10.1145/3769696.3771216"
+      download: "https://dl.acm.org/doi/epdf/10.1145/3769696.3771216"
 
-  - abbrv: "HotCarbon'25"
-    author: "<u> <b> Rui Lu</b></u> and D. Wang"
-    paperurl: "https://dl.acm.org/doi/10.1145/3757892.3757906"
+  - type: "conference"
+    abbrv: "HotCarbon'25"
+    author: "<u><b>Rui Lu</b></u> and D. Wang"
     title: "A Thermal-aware Workload Scheduler for High-performance LLM Inference in Cooling-regulated Datacenters"
-    conference: "the 4th Workshop on Sustainable Computer Systems"
+    venue: "the 4th Workshop on Sustainable Computer Systems"
     address: "Cambridge, MA, US"
     date: "July 2025"
-    downloadurl: "https://dl.acm.org/doi/pdf/10.1145/3757892.3757906"
-    papertype: "Workshop"
+    tags: ["Workshop"]
+    links:
+      paper: "https://dl.acm.org/doi/10.1145/3757892.3757906"
+      download: "https://dl.acm.org/doi/pdf/10.1145/3757892.3757906"
 
-  - abbrv: "AAAI'25"
-    author: "<u> <b> Rui Lu</b></u>, B. Zhang, and D. Wang"
-    paperurl: "https://dl.acm.org/doi/10.1609/aaai.v39i18.34106"
+  - type: "conference"
+    abbrv: "AAAI'25"
+    author: "<u><b>Rui Lu</b></u>, B. Zhang, and D. Wang"
     title: "VVRec: Reconstruction Attacks on DL-based Volumetric Video Upstreaming via Latent Diffusion Model with Gamma Distribution"
-    conference: "the 39th Annual AAAI Conference on Artificial Intelligence"
+    venue: "the 39th Annual AAAI Conference on Artificial Intelligence"
     address: "PHL, PA, US"
     date: "Feb. 2025"
-    downloadurl: "https://arxiv.org/pdf/2502.17880"
-    papertype: "ORAL"
-    posterurl: "https://drive.google.com/file/d/1POVJvg0p_Hqkx9E5QTddXz3T21kuBTVc/view?usp=sharing"
-    videourl: "https://drive.google.com/file/d/1AWvHsK1A17c0QxYu0FxYc0KDEASBj06q/view?usp=sharing"
-    slidesurl: "https://arxiv.org/pdf/2502.17880"
-    badgeurl: "https://img.shields.io/badge/CCF-A-red"
-    
-  - abbrv: "MM'23"
-    author: "<u> <b> Rui Lu</b></u>, L. Wei, S. Zhu, C. Hu, D. Wang"
-    paperurl: "https://dl.acm.org/doi/abs/10.1145/3581783.3611946"
+    tags: ["ORAL", "CCF-A"]
+    links:
+      paper: "https://dl.acm.org/doi/10.1609/aaai.v39i18.34106"
+      download: "https://arxiv.org/pdf/2502.17880"
+      slides: "https://arxiv.org/pdf/2502.17880"
+      video: "https://drive.google.com/file/d/1AWvHsK1A17c0QxYu0FxYc0KDEASBj06q/view?usp=sharing"
+      poster: "https://drive.google.com/file/d/1POVJvg0p_Hqkx9E5QTddXz3T21kuBTVc/view?usp=sharing"
+
+  - type: "conference"
+    abbrv: "MM'23"
+    author: "<u><b>Rui Lu</b></u>, L. Wei, S. Zhu, C. Hu, D. Wang"
     title: "Pagoda: Privacy Protection for Volumetric Video Streaming through Poisson Diffusion Model"
-    conference: "the 31st ACM International Conference on Multimedia"
+    venue: "the 31st ACM International Conference on Multimedia"
     address: "Ottawa, Canada"
     date: "Oct. 2023"
-    downloadurl: "http://www4.comp.polyu.edu.hk/~csdwang/Publication/MM23.pdf"
-    imgurl: "/images/pagoda_frontpage.jpg"
-    slidesurl: "https://drive.google.com/file/d/1N_RNSNz2FPIIxApDU-Xrlj0x4brcC-QC/view?usp=drive_link"
-    badgeurl: "https://img.shields.io/badge/CCF-A-red"
-    
-  - abbrv: "SEC'22"
-    author: "<u> <b> Rui Lu</b></u>, S. Shi, D. Wang, C. Hu, and B. Zhang"
-    paperurl: "https://ieeexplore.ieee.org/abstract/document/9996786"
-    title: "Preva: Protecting Inference Privacy through Policy-based Video-frame Transformation"
-    conference: "the 7th IEEE/ACM Symposium on Edge Computing"
-    address: "Seattle, WA, US"
-    date: "Dec. 2022"
-    downloadurl: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
-    slidesurl: "https://drive.google.com/file/d/1cc9L_HDjrKOcb5fCx6EWqXlL_SEE-ML3/view?usp=drive_link"
-    
-  - abbrv: "SEC'22"
-    author: "<u> <b> Rui Lu</b></u>, C. Hu, D. Wang, and J. Zhang"
-    paperurl: "https://ieeexplore.ieee.org/abstract/document/9996757"
-    title: "Gemini: a Real-time Video Analytics System with Dual Computing Resource Control"
-    conference: "the 7th IEEE/ACM Symposium on Edge Computing"
-    address: "Seattle, WA, US"
-    date: "Dec. 2022"
-    downloadurl: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Gemini.pdf"
-    slidesurl: "https://drive.google.com/file/d/1SCLs7FIyUu4bCHBan2Dj612yAlilmBsn/view?usp=sharing"
+    tags: ["CCF-A"]
+    links:
+      paper: "https://dl.acm.org/doi/abs/10.1145/3581783.3611946"
+      download: "http://www4.comp.polyu.edu.hk/~csdwang/Publication/MM23.pdf"
+      slides: "https://drive.google.com/file/d/1N_RNSNz2FPIIxApDU-Xrlj0x4brcC-QC/view?usp=drive_link"
 
-journals:
-  - abbrv: "TMC'25"
-    author: "Y. Liu *, <u><b> Rui Lu *</b></u>, D. Wang"
-    paperurl: "https://ieeexplore.ieee.org/abstract/document/10923690"
+  - type: "conference"
+    abbrv: "SEC'22"
+    author: "<u><b>Rui Lu</b></u>, S. Shi, D. Wang, C. Hu, and B. Zhang"
+    title: "Preva: Protecting Inference Privacy through Policy-based Video-frame Transformation"
+    venue: "the 7th IEEE/ACM Symposium on Edge Computing"
+    address: "Seattle, WA, US"
+    date: "Dec. 2022"
+    tags: []
+    links:
+      paper: "https://ieeexplore.ieee.org/abstract/document/9996786"
+      download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
+      slides: "https://drive.google.com/file/d/1cc9L_HDjrKOcb5fCx6EWqXlL_SEE-ML3/view?usp=drive_link"
+
+  - type: "conference"
+    abbrv: "SEC'22"
+    author: "<u><b>Rui Lu</b></u>, C. Hu, D. Wang, and J. Zhang"
+    title: "Gemini: a Real-time Video Analytics System with Dual Computing Resource Control"
+    venue: "the 7th IEEE/ACM Symposium on Edge Computing"
+    address: "Seattle, WA, US"
+    date: "Dec. 2022"
+    tags: []
+    links:
+      paper: "https://ieeexplore.ieee.org/abstract/document/9996757"
+      download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Gemini.pdf"
+      slides: "https://drive.google.com/file/d/1SCLs7FIyUu4bCHBan2Dj612yAlilmBsn/view?usp=sharing"
+
+  - type: "journal"
+    abbrv: "TMC'25"
+    author: "Y. Liu, <u><b>Rui Lu *</b></u>, D. Wang"
     title: "LVMScissor: Split and Schedule Large Vision Model Inference on Mobile Edges via Salp Swarm Algorithm"
-    conference: "IEEE Transactions on Mobile Computing"
+    venue: "IEEE Transactions on Mobile Computing"
     page: "vol. 24, no. 8, pp. 7538-7553"
     date: "May 2025"
-    downloadurl: "https://ieeexplore.ieee.org/iel8/7755/4358975/10923690.pdf"
-    badgeurl: "https://img.shields.io/badge/CCF-A-red"
-    
-  - abbrv: "TC'23"
-    author: "C. Hu, <u><b> Rui Lu</b></u>, Q. Sang, H. Liang, D. Wang, D. Cheng, J. Zhang, Q. Li, and J. Peng"
-    paperurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
+    tags: ["CCF-A"]
+    links:
+      paper: "https://ieeexplore.ieee.org/abstract/document/10923690"
+      download: "https://ieeexplore.ieee.org/iel8/7755/4358975/10923690.pdf"
+
+  - type: "journal"
+    abbrv: "TC'23"
+    author: "C. Hu, <u><b>Rui Lu</b></u>, Q. Sang, H. Liang, D. Wang, D. Cheng, J. Zhang, Q. Li, and J. Peng"
     title: "An Edge-side Real-time Video Analytics System with Dual Computing Resource Control"
-    conference: "IEEE Transactions on Computers"
+    venue: "IEEE Transactions on Computers"
     page: "vol. 72, no. 12, pp. 3399-3415"
     date: "Dec. 2023"
-    downloadurl: "https://ieeexplore.ieee.org/abstract/document/10202178"
-    badgeurl: "https://img.shields.io/badge/CCF-A-red"
-    
-  - abbrv: "IEEE Network"
-    author: "C. Hu, <u><b> Rui Lu</b></u>, and D. Wang"
-    paperurl: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9687522"
+    tags: ["CCF-A"]
+    links:
+      paper: "https://ieeexplore.ieee.org/abstract/document/10202178"
+      download: "https://ieeexplore.ieee.org/abstract/document/10202178"
+
+  - type: "journal"
+    abbrv: "IEEE Network"
+    author: "C. Hu, <u><b>Rui Lu</b></u>, and D. Wang"
     title: "FEVA: A FEderated Video Analytics Architecture for Networked Smart Cameras"
-    conference: "IEEE Network, special issue on Interplay Between Machine Learning and Networking Systems"
+    venue: "IEEE Network, special issue on Interplay Between Machine Learning and Networking Systems"
     page: "vol. 35, no. 6, pp. 163-170"
     date: "Nov./Dec. 2021"
-    downloadurl: "http://icslab.whu.edu.cn/src/paper/FEVA_A_Federated_Video_Analytics_Architecture_for_Networked_Smart_Cameras.pdf"
+    tags: []
+    links:
+      paper: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9687522"
+      download: "http://icslab.whu.edu.cn/src/paper/FEVA_A_Federated_Video_Analytics_Architecture_for_Networked_Smart_Cameras.pdf"
+
 patents:
   - title: "An accelerator based on multi-image FPGAs, an acceleration implement method, a terminal device and a computer-readable storage medium"
     pid: "ZL202210087349.8"
