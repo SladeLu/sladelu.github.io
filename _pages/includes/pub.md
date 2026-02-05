@@ -41,7 +41,7 @@
   justify-content: center;
   padding: 0.42rem 0.8rem;
   border-radius: 999px;
-  border: 1px solid rgba(37, 99, 235, 0.32);a
+  border: 1px solid rgba(37, 99, 235, 0.32);
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   color: #1e3a8a;
   font-size: 0.88em;
@@ -162,6 +162,20 @@
   background: #f8fafc;
 }
 
+.ccfa-chip {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.25rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(185, 28, 28, 0.32);
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .patent-list {
   list-style: none;
   margin: 0;
@@ -249,37 +263,18 @@
 <script>
 (function () {
   const publications = [
-    {% for paper in site.data.pubs.conferences %}
+    {% for paper in site.data.pubs.publications %}
     {
-      type: "conference",
+      type: {{ paper.type | jsonify }},
       abbrv: {{ paper.abbrv | jsonify }},
       title: {{ paper.title | jsonify }},
       author: {{ paper.author | jsonify }},
-      venue: {{ paper.conference | jsonify }},
+      venue: {{ paper.venue | jsonify }},
       address: {{ paper.address | jsonify }},
-      date: {{ paper.date | jsonify }},
-      paperurl: {{ paper.paperurl | jsonify }},
-      downloadurl: {{ paper.downloadurl | jsonify }},
-      slidesurl: {{ paper.slidesurl | jsonify }},
-      videourl: {{ paper.videourl | jsonify }},
-      posterurl: {{ paper.posterurl | jsonify }},
-      papertype: {{ paper.papertype | jsonify }},
-      badgeurl: {{ paper.badgeurl | jsonify }},
-      bestpaper: {{ paper.bestpaper | jsonify }}
-    },
-    {% endfor %}
-    {% for paper in site.data.pubs.journals %}
-    {
-      type: "journal",
-      abbrv: {{ paper.abbrv | jsonify }},
-      title: {{ paper.title | jsonify }},
-      author: {{ paper.author | jsonify }},
-      venue: {{ paper.conference | jsonify }},
       page: {{ paper.page | jsonify }},
       date: {{ paper.date | jsonify }},
-      paperurl: {{ paper.paperurl | jsonify }},
-      downloadurl: {{ paper.downloadurl | jsonify }},
-      badgeurl: {{ paper.badgeurl | jsonify }}
+      tags: {{ paper.tags | jsonify }},
+      links: {{ paper.links | jsonify }}
     },
     {% endfor %}
   ];
@@ -322,10 +317,14 @@
   }
 
   publications.forEach((p) => {
+    const tags = Array.isArray(p.tags) ? p.tags : [];
+    const normalizedTags = tags.map((t) => String(t).toLowerCase());
+    p.normalizedTags = normalizedTags;
     p.dateValue = parseDateValue(p.date);
-    p.isCCFA = hasValue(p.badgeurl) && String(p.badgeurl).toUpperCase().includes("CCF-A");
-    p.isWorkshop = p.type === "conference" && hasValue(p.papertype) && String(p.papertype).toLowerCase().includes("workshop");
-    p.isBestPaper = p.type === "conference" && hasValue(p.bestpaper);
+    p.isCCFA = normalizedTags.includes("ccf-a");
+    p.isWorkshop = normalizedTags.includes("workshop");
+    p.isBestPaper = normalizedTags.includes("best paper");
+    p.isOral = normalizedTags.includes("oral");
   });
 
   const conferenceTick = document.getElementById("pub-filter-conference");
@@ -338,22 +337,24 @@
   let sortOrder = "new";
 
   function renderItem(p) {
-    const titleHtml = hasValue(p.paperurl)
-      ? `<a href="${p.paperurl}">${p.title || "Untitled"}</a>`
+    const paperUrl = p.links && p.links.paper ? p.links.paper : "";
+    const titleHtml = hasValue(paperUrl)
+      ? `<a href="${paperUrl}">${p.title || "Untitled"}</a>`
       : `${p.title || "Untitled"}`;
 
     const typeBadgeClass = p.type === "conference" ? "badge2 badge2--conference" : "badge2 badge2--journal";
     const kindLabel = p.type === "conference" ? "Conference" : "Journal";
 
     const links = [];
-    if (hasValue(p.downloadurl)) links.push(`<a href="${p.downloadurl}">[Paper]</a>`);
-    if (hasValue(p.slidesurl)) links.push(`<a href="${p.slidesurl}">[Slides]</a>`);
-    if (hasValue(p.videourl)) links.push(`<a href="${p.videourl}">[Video]</a>`);
-    if (hasValue(p.posterurl)) links.push(`<a href="${p.posterurl}">[Poster]</a>`);
+    if (p.links && hasValue(p.links.download)) links.push(`<a href="${p.links.download}">[Paper]</a>`);
+    if (p.links && hasValue(p.links.slides)) links.push(`<a href="${p.links.slides}">[Slides]</a>`);
+    if (p.links && hasValue(p.links.video)) links.push(`<a href="${p.links.video}">[Video]</a>`);
+    if (p.links && hasValue(p.links.poster)) links.push(`<a href="${p.links.poster}">[Poster]</a>`);
 
     const workshopTag = p.isWorkshop ? `<span class="typemark" data-type="workshop">Workshop</span>` : "";
-    const bestPaperTag = hasValue(p.bestpaper) ? `<span class="bestpaper-award">${p.bestpaper}</span>` : "";
-    const ccfBadge = hasValue(p.badgeurl) ? `<img src="${p.badgeurl}" alt="ranking badge">` : "";
+    const oralTag = p.isOral ? `<span class="typemark" data-type="oral">ORAL</span>` : "";
+    const bestPaperTag = p.isBestPaper ? `<span class="bestpaper-award">Best Paper</span>` : "";
+    const ccfBadge = p.isCCFA ? `<span class="ccfa-chip">CCF-A</span>` : "";
 
     const venueLine = p.type === "conference"
       ? `<u><i>Proc. of ${p.venue || ""}</i></u>, ${p.address || ""}, ${p.date || ""}`
@@ -364,7 +365,7 @@
         <div class="pub-main">
           <div class="pub-head">
             <span class="${typeBadgeClass}">${p.abbrv || kindLabel}</span>
-            ${p.type === "conference" && hasValue(p.papertype) && !p.isWorkshop ? `<span class="typemark" data-type="${String(p.papertype).toLowerCase()}">${p.papertype}</span>` : ""}
+            ${oralTag}
             ${workshopTag}
             ${ccfBadge}
             ${bestPaperTag}
