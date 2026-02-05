@@ -15,10 +15,11 @@
 
 .pub-control {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
   min-width: auto;
-  gap: 0.25rem;
+  gap: 0;
 }
 
 .pub-control label {
@@ -50,6 +51,7 @@
   color: #1e3a8a;
   font-size: 0.86em;
   font-weight: 600;
+  line-height: 1;
   cursor: pointer;
   white-space: nowrap;
 }
@@ -64,7 +66,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  padding-bottom: 2px;
+  padding-bottom: 0;
 }
 
 .pub-tick {
@@ -81,12 +83,16 @@
   color: #334155;
   font-size: 0.86em;
   font-weight: 600;
+  line-height: 1;
   cursor: pointer;
   user-select: none;
 }
 
 .pub-tick input[type="checkbox"] {
   margin: 0;
+  width: 14px;
+  height: 14px;
+  display: block;
 }
 
 .pub-list {
@@ -177,7 +183,7 @@
   border: 1px solid rgba(185, 28, 28, 0.32);
   background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
   color: #991b1b;
-  font-size: 0.75em;
+  font-size: 0.8em;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
