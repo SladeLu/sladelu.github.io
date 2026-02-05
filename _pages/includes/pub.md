@@ -42,6 +42,8 @@
   align-items: center;
   justify-content: center;
   padding: 0.22rem 0.56rem;
+  height: 30px;
+  box-sizing: border-box;
   border-radius: 999px;
   border: 1px solid rgba(37, 99, 235, 0.32);
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
@@ -71,6 +73,8 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.22rem 0.56rem;
+  height: 30px;
+  box-sizing: border-box;
   border: 1px solid #cbd5e1;
   border-radius: 999px;
   background: #fff;
