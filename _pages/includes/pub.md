@@ -41,7 +41,7 @@
   justify-content: center;
   padding: 0.42rem 0.8rem;
   border-radius: 999px;
-  border: 1px solid rgba(37, 99, 235, 0.32);
+  border: 1px solid rgba(37, 99, 235, 0.32);a
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   color: #1e3a8a;
   font-size: 0.88em;
@@ -201,8 +201,7 @@
 
 <div class="pub-controls" id="pub-controls">
   <div class="pub-control">
-    <label for="pub-sort-year">Year</label>
-    <button id="pub-sort-year" class="pub-sort-btn" type="button">Latest → Oldest</button>
+    <button id="pub-sort-year" class="pub-sort-btn" type="button" aria-label="Toggle year sort order">Year</button>
   </div>
 
   <div class="pub-control pub-filter-ticks">
@@ -419,7 +418,6 @@
 
   sortYearBtn.addEventListener("click", () => {
     sortOrder = sortOrder === "new" ? "old" : "new";
-    sortYearBtn.textContent = sortOrder === "new" ? "Latest → Oldest" : "Oldest → Latest";
     applyFiltersAndRender();
   });
 
