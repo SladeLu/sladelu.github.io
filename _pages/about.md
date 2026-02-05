@@ -16,6 +16,5 @@ redirect_from:
 
 ***
 # 🏔️ Mountaineering and Trekking
-
 {% include_relative mount.md %}
 
