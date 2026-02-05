@@ -37,6 +37,7 @@
 
 .pub-filter-ticks {
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   gap: 0.45rem 0.55rem;
   align-items: center;
