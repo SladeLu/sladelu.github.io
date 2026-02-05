@@ -109,14 +109,21 @@ h1:before, .anchor:before {
 }
 
 .badge2 {    
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    position: relative;
-    margin-right: 0.25rem;
-    color: white;
-    background-color: #00369f;
-    font-size: 0.9em;
-    display: inline;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 9px;
+    margin-right: 0.38rem;
+    border-radius: 999px;
+    border: 1px solid rgba(30, 64, 175, 0.28);
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 48%, #bfdbfe 100%);
+    color: #1e3a8a;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    vertical-align: middle;
+    box-shadow: 0 6px 14px -12px rgba(30, 64, 175, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.75);
 }
 
 .typemark {    
