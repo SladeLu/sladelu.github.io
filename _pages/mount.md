@@ -19,7 +19,7 @@
     display: flex;
     flex-wrap: nowrap;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: 10px;
