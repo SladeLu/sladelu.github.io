@@ -57,7 +57,7 @@ Standard conference list (tags on their own line so long titles wrap cleanly)
     <div style="flex:1; min-width:0;">
       <!-- Tag line: venue / type / best paper -->
       <div style="margin-bottom:2px;">
-        <span class="badge2">{{ paper.abbrv }}</span>
+        <span class="badge2 badge2--conference">{{ paper.abbrv }}</span>
         {% if paper.papertype %}
           <span class="typemark" data-type="{{ paper.papertype | downcase }}">{{ paper.papertype }}</span>
         {% endif %}              
@@ -118,7 +118,7 @@ Standard conference list (tags on their own line so long titles wrap cleanly)
     <div style="flex:1; min-width:0;">
       <!-- Tag line: journal short name + optional badge -->
       <div style="margin-bottom:2px;">
-        <span class="badge2">{{ paper.abbrv }}</span>
+        <span class="badge2 badge2--journal">{{ paper.abbrv }}</span>
         {% if paper.badgeurl %}
           <span style="margin-left:6px;">
             <img src="{{ paper.badgeurl }}" alt="ranking badge">
