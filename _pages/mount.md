@@ -2,7 +2,7 @@
 
 <style>
 .sports-gallery {
-    margin: 20px 0;
+    margin: 8px 0 20px 0;
     padding: 10px 0;
 }
 
