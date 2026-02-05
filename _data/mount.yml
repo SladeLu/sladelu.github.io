@@ -1,24 +1,28 @@
 items:
   - image_src: "/images/Mount_SGN_II.jpg"
     image_alt: "Mount Siguniang II Peak"
+    flag_emoji: "🇨🇳"
     caption_en: "Mount Siguniang II Peak (5276m)"
     caption_zh: "四川阿坝藏族羌族自治州小金县四姑娘山二峰"
     date: "June 2024 @Sichuan, China"
 
   - image_src: "/images/ABC.jpg"
     image_alt: "Annapurna Base Camp"
+    flag_emoji: "🇳🇵"
     caption_en: "Annapurna Base Camp Trek (4130m)"
     caption_zh: "尼泊尔安纳普尔纳大本营路线 (ABC)"
     date: "Nov. 2024 @Kaski District, Gandaki Province, Nepal"
 
   - image_src: "/images/mount_fuji.jpg"
     image_alt: "Mount Fuji"
+    flag_emoji: "🇯🇵"
     caption_en: "Mount Fuji Kengamine (3776m)"
     caption_zh: "日本山梨县富士山吉田线剑峰"
     date: "July 2025 @Mt. Fuji Yoshida Trail, Japan"
 
   - image_src: "/images/hana_mount.jpeg"
     image_alt: "Hallasan Mountain"
+    flag_emoji: "🇰🇷"
     caption_en: "Baengnokdam, Mt. Hallasan (1950m)"
     caption_zh: "韩国济州岛白鹿潭"
     date: "Feb. 2026 @Mt. Hallasan, Jeju Island, South Korea"
