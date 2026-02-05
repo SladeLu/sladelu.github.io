@@ -35,6 +35,33 @@
   font-size: 0.95em;
 }
 
+.pub-filter-ticks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.55rem;
+  align-items: center;
+  min-width: 420px;
+}
+
+.pub-tick {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.22rem 0.56rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #fff;
+  color: #334155;
+  font-size: 0.86em;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pub-tick input[type="checkbox"] {
+  margin: 0;
+}
+
 .pub-list {
   list-style: none;
   margin: 0;
@@ -45,10 +72,29 @@
 }
 
 .pub-item {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: space-between;
+  align-items: flex-start;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 0.75rem 0.9rem;
   background: #fff;
+}
+
+.pub-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.pub-right {
+  width: 110px;
+  min-width: 110px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
 }
 
 .pub-head {
@@ -71,6 +117,22 @@
   flex-wrap: wrap;
 }
 
+@media (max-width: 760px) {
+  .pub-item {
+    flex-direction: column;
+  }
+
+  .pub-right {
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+}
+
 .pub-empty {
   border: 1px dashed #cbd5e1;
   border-radius: 12px;
@@ -81,31 +143,27 @@
 </style>
 
 <div class="pub-controls" id="pub-controls">
-  <div class="pub-control">
-    <label for="pub-filter-type">Type</label>
-    <select id="pub-filter-type">
-      <option value="all">All</option>
-      <option value="conference">Conference</option>
-      <option value="journal">Journal</option>
-    </select>
-  </div>
-
-  <div class="pub-control">
-    <label for="pub-filter-ccfa">CCF-A</label>
-    <select id="pub-filter-ccfa">
-      <option value="all">All</option>
-      <option value="yes">CCF-A</option>
-      <option value="no">Not CCF-A</option>
-    </select>
-  </div>
-
-  <div class="pub-control">
-    <label for="pub-filter-workshop">Workshop</label>
-    <select id="pub-filter-workshop">
-      <option value="all">All</option>
-      <option value="yes">Workshop</option>
-      <option value="no">Not Workshop</option>
-    </select>
+  <div class="pub-control pub-filter-ticks">
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-conference" checked>
+      Conference
+    </label>
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-journal" checked>
+      Journal
+    </label>
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-workshop" checked>
+      Workshop
+    </label>
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-ccfa" checked>
+      CCF-A
+    </label>
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-bestpaper" checked>
+      Best Paper
+    </label>
   </div>
 
   <div class="pub-control">
@@ -217,11 +275,14 @@
     p.dateValue = parseDateValue(p.date);
     p.isCCFA = hasValue(p.badgeurl) && String(p.badgeurl).toUpperCase().includes("CCF-A");
     p.isWorkshop = p.type === "conference" && hasValue(p.papertype) && String(p.papertype).toLowerCase().includes("workshop");
+    p.isBestPaper = p.type === "conference" && hasValue(p.bestpaper);
   });
 
-  const typeSelect = document.getElementById("pub-filter-type");
-  const ccfaSelect = document.getElementById("pub-filter-ccfa");
-  const workshopSelect = document.getElementById("pub-filter-workshop");
+  const conferenceTick = document.getElementById("pub-filter-conference");
+  const journalTick = document.getElementById("pub-filter-journal");
+  const workshopTick = document.getElementById("pub-filter-workshop");
+  const ccfaTick = document.getElementById("pub-filter-ccfa");
+  const bestPaperTick = document.getElementById("pub-filter-bestpaper");
   const sortSelect = document.getElementById("pub-sort-time");
   const listEl = document.getElementById("pub-list");
 
@@ -249,35 +310,40 @@
 
     return `
       <li class="pub-item">
-        <div class="pub-head">
-          <span class="${typeBadgeClass}">${p.abbrv || kindLabel}</span>
-          ${p.type === "conference" && hasValue(p.papertype) && !p.isWorkshop ? `<span class="typemark" data-type="${String(p.papertype).toLowerCase()}">${p.papertype}</span>` : ""}
-          ${workshopTag}
-          ${ccfBadge}
-          ${bestPaperTag}
+        <div class="pub-main">
+          <div class="pub-head">
+            <span class="${typeBadgeClass}">${p.abbrv || kindLabel}</span>
+            ${p.type === "conference" && hasValue(p.papertype) && !p.isWorkshop ? `<span class="typemark" data-type="${String(p.papertype).toLowerCase()}">${p.papertype}</span>` : ""}
+            ${workshopTag}
+            ${ccfBadge}
+            ${bestPaperTag}
+          </div>
+          <div class="pub-title">${titleHtml}</div>
+          <div class="pub-meta">${p.author || ""}</div>
+          <div class="pub-meta">${venueLine}</div>
         </div>
-        <div class="pub-title">${titleHtml}</div>
-        <div class="pub-meta">${p.author || ""}</div>
-        <div class="pub-meta">${venueLine}</div>
-        ${links.length ? `<div class="pub-links">${links.join(" ")}</div>` : ""}
+        ${links.length ? `<div class="pub-right">${links.join(" ")}</div>` : `<div class="pub-right"></div>`}
       </li>
     `;
   }
 
   function applyFiltersAndRender() {
-    const typeVal = typeSelect.value;
-    const ccfaVal = ccfaSelect.value;
-    const workshopVal = workshopSelect.value;
+    const showConference = conferenceTick.checked;
+    const showJournal = journalTick.checked;
+    const showWorkshop = workshopTick.checked;
+    const showCCFA = ccfaTick.checked;
+    const showBestPaper = bestPaperTick.checked;
     const sortVal = sortSelect.value;
 
     let filtered = publications.filter((p) => {
-      if (typeVal !== "all" && p.type !== typeVal) return false;
+      if (p.type === "conference" && !showConference) return false;
+      if (p.type === "journal" && !showJournal) return false;
 
-      if (ccfaVal === "yes" && !p.isCCFA) return false;
-      if (ccfaVal === "no" && p.isCCFA) return false;
+      if (!showWorkshop && p.isWorkshop) return false;
+      if (!showCCFA && p.isCCFA) return false;
+      if (!showBestPaper && p.isBestPaper) return false;
 
-      if (workshopVal === "yes" && !p.isWorkshop) return false;
-      if (workshopVal === "no" && p.isWorkshop) return false;
+      if (!showConference && !showJournal) return false;
 
       return true;
     });
@@ -295,7 +361,7 @@
     listEl.innerHTML = filtered.map(renderItem).join("");
   }
 
-  [typeSelect, ccfaSelect, workshopSelect, sortSelect].forEach((el) => {
+  [conferenceTick, journalTick, workshopTick, ccfaTick, bestPaperTick, sortSelect].forEach((el) => {
     el.addEventListener("change", applyFiltersAndRender);
   });
 
