@@ -35,6 +35,21 @@
   font-size: 0.95em;
 }
 
+.pub-sort-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.42rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(37, 99, 235, 0.32);
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: #1e3a8a;
+  font-size: 0.88em;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 .pub-filter-ticks {
   display: flex;
   flex-direction: row;
@@ -185,6 +200,11 @@
 </style>
 
 <div class="pub-controls" id="pub-controls">
+  <div class="pub-control">
+    <label for="pub-sort-year">Year</label>
+    <button id="pub-sort-year" class="pub-sort-btn" type="button">Latest → Oldest</button>
+  </div>
+
   <div class="pub-control pub-filter-ticks">
     <label class="pub-tick">
       <input type="checkbox" id="pub-filter-conference" checked>
@@ -208,13 +228,6 @@
     </label>
   </div>
 
-  <div class="pub-control">
-    <label for="pub-sort-time">Time</label>
-    <select id="pub-sort-time">
-      <option value="new">New to old</option>
-      <option value="old">Old to new</option>
-    </select>
-  </div>
 </div>
 
 <ul id="pub-list" class="pub-list"></ul>
@@ -321,8 +334,9 @@
   const workshopTick = document.getElementById("pub-filter-workshop");
   const ccfaTick = document.getElementById("pub-filter-ccfa");
   const bestPaperTick = document.getElementById("pub-filter-bestpaper");
-  const sortSelect = document.getElementById("pub-sort-time");
+  const sortYearBtn = document.getElementById("pub-sort-year");
   const listEl = document.getElementById("pub-list");
+  let sortOrder = "new";
 
   function renderItem(p) {
     const titleHtml = hasValue(p.paperurl)
@@ -371,7 +385,7 @@
     const showWorkshop = workshopTick.checked;
     const showCCFA = ccfaTick.checked;
     const showBestPaper = bestPaperTick.checked;
-    const sortVal = sortSelect.value;
+    const sortVal = sortOrder;
 
     let filtered = publications.filter((p) => {
       if (p.type === "conference" && !showConference) return false;
@@ -399,8 +413,14 @@
     listEl.innerHTML = filtered.map(renderItem).join("");
   }
 
-  [conferenceTick, journalTick, workshopTick, ccfaTick, bestPaperTick, sortSelect].forEach((el) => {
+  [conferenceTick, journalTick, workshopTick, ccfaTick, bestPaperTick].forEach((el) => {
     el.addEventListener("change", applyFiltersAndRender);
+  });
+
+  sortYearBtn.addEventListener("click", () => {
+    sortOrder = sortOrder === "new" ? "old" : "new";
+    sortYearBtn.textContent = sortOrder === "new" ? "Latest → Oldest" : "Oldest → Latest";
+    applyFiltersAndRender();
   });
 
   applyFiltersAndRender();
