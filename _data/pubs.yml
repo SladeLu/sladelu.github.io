@@ -71,7 +71,7 @@ conferences:
 
 journals:
   - abbrv: "TMC'25"
-    author: "Y. Liu, <u><b> Rui Lu *</b></u>, D. Wang"
+    author: "Y. Liu *, <u><b> Rui Lu *</b></u>, D. Wang"
     paperurl: "https://ieeexplore.ieee.org/abstract/document/10923690"
     title: "LVMScissor: Split and Schedule Large Vision Model Inference on Mobile Edges via Salp Swarm Algorithm"
     conference: "IEEE Transactions on Mobile Computing"
