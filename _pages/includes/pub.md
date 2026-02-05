@@ -134,6 +134,19 @@
   margin-bottom: 0.3rem;
 }
 
+.pub-head .badge2,
+.pub-head .typemark,
+.pub-head .bestpaper-award,
+.pub-head .ccfa-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  box-sizing: border-box;
+  font-size: 0.8em;
+  line-height: 1;
+  vertical-align: middle;
+}
+
 .pub-title {
   font-size: 1.02em;
   font-weight: 700;
