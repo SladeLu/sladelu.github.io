@@ -67,7 +67,7 @@ Standard conference list (tags on their own line so long titles wrap cleanly)
         </span>
       {% endif %}
         {% if paper.bestpaper %}
-          <span style="background:#fbbf24; color:#111827; border-radius:999px; padding:2px 8px; margin-left:6px; font-size:0.8em; font-weight:600; white-space:nowrap;">
+          <span class="bestpaper-award">
             {{ paper.bestpaper }}
           </span>
         {% endif %}
