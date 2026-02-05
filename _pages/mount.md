@@ -43,6 +43,7 @@
 .gallery-image {
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .gallery-image img {
@@ -50,6 +51,17 @@
     height: 240px;
     object-fit: cover;
     display: block;
+}
+
+.gallery-flag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.6em;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    padding: 2px 6px;
 }
 
 .gallery-content {
@@ -90,6 +102,9 @@
         <div class="gallery-item">
             <div class="gallery-image">
                 <img src="{{ item.image_src }}" alt="{{ item.image_alt }}">
+                {% if item.flag_emoji %}
+                <span class="gallery-flag">{{ item.flag_emoji }}</span>
+                {% endif %}
             </div>
             <div class="gallery-content">
                 <h3>{{ item.caption_en }}</h3>
