@@ -122,8 +122,8 @@ h1:before, .anchor:before {
 .typemark {    
     display: inline-flex;
     align-items: center;
-    gap: 0.42rem;
-    padding: 0.24rem 0.82rem 0.28rem 0.56rem;
+    gap: 0.38rem;
+    padding: 2px 8px;
     margin-right: 0.42rem;
     border-radius: 999px;
     border: 1px solid rgba(99, 102, 241, 0.26);
@@ -131,7 +131,7 @@ h1:before, .anchor:before {
       radial-gradient(140% 180% at 20% -20%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 42%),
       linear-gradient(120deg, #ffffff 0%, #f8fafc 52%, #eef2ff 100%);
     color: #0f172a;
-    font-size: 0.73em;
+    font-size: 0.8em;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -146,9 +146,9 @@ h1:before, .anchor:before {
 
 .typemark::before {
     content: "";
-    width: 0.72rem;
-    height: 0.72rem;
-    border-radius: 999px;
+    width: 0.64rem;
+    height: 0.64rem;
+    border-radius: 2px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -197,7 +197,8 @@ h1:before, .anchor:before {
 }
 
 .typemark[data-type*="oral"]::before {
-    background: radial-gradient(circle at 32% 28%, #ffffff 0 18%, #fb7185 36%, #be123c 100%);
+    background: linear-gradient(135deg, #fb7185 0%, #e11d48 50%, #9f1239 100%);
+    border-radius: 2px;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55), 0 0 0 1px rgba(244, 114, 182, 0.3);
 }
 
