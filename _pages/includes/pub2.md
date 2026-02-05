@@ -13,7 +13,7 @@
     <div style="display: flex; width: 100%;">
         <div style="width: 90%">
         {% if {{paper.papertype}} %}
-            <div class="typemark">{{paper.papertype}}</div>
+            <div class="typemark" data-type="{{ paper.papertype | downcase }}">{{paper.papertype}}</div>
         {% endif %}
             <div style="font-size: 17px;"> 
                 <a href= "{{paper.paperurl}}"> {{paper.title}} </a> <br>
@@ -45,7 +45,7 @@
     <div style="width: 90%;">
             <div class="badge2">{{paper.abbrv}}</div>
         {% if {{paper.papertype}} %}
-            <div class="typemark">{{paper.papertype}}</div>
+            <div class="typemark" data-type="{{ paper.papertype | downcase }}">{{paper.papertype}}</div>
         {% endif %}
         {% if {{paper.bestpaper}} %}
             <span style="background:#fbbf24; color:#111827; border-radius:999px; padding:2px 8px; margin-left:6px; font-size:0.8em; font-weight:600;">

@@ -17,7 +17,7 @@ Front-page featured papers (card style)
     <div style="display:flex; width:100%;">
       <div style="width:90%;">
         {% if paper.papertype %}
-          <div class="typemark">{{ paper.papertype }}</div>
+          <div class="typemark" data-type="{{ paper.papertype | downcase }}">{{ paper.papertype }}</div>
         {% endif %}
         <div style="font-size:17px; margin-top:2px;">
           <a href="{{ paper.paperurl }}">{{ paper.title }}</a><br>
@@ -59,7 +59,7 @@ Standard conference list (tags on their own line so long titles wrap cleanly)
       <div style="margin-bottom:2px;">
         <span class="badge2">{{ paper.abbrv }}</span>
         {% if paper.papertype %}
-          <span class="typemark">{{ paper.papertype }}</span>
+          <span class="typemark" data-type="{{ paper.papertype | downcase }}">{{ paper.papertype }}</span>
         {% endif %}              
       {% if paper.badgeurl %}
         <span style="margin-bottom:2px;">
