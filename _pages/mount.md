@@ -37,13 +37,14 @@
 
 .gallery-image {
     width: 100%;
-    height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 3em;
+    overflow: hidden;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
 }
 
 .gallery-content {
@@ -84,41 +85,17 @@
 
 <div class="sports-gallery">
     <div class="gallery-grid">
+        {% for item in site.data.mount.items %}
         <div class="gallery-item">
             <div class="gallery-image">
-                <img src="/images/Mount_SGN_II.jpg" alt="Mount Siguniang II Peak">
+                <img src="{{ item.image_src }}" alt="{{ item.image_alt }}">
             </div>
             <div class="gallery-content">
-                <h3>Mount Siguniang II Peak (5276m)</h3>
-                <p> 四川阿坝藏族羌族自治州小金县四姑娘山-二峰 </p>
-                <div class="gallery-date">June 2024 @Sichuan, China</div>
+                <h3>{{ item.caption_en }}</h3>
+                <p>{{ item.caption_zh }}</p>
+                <div class="gallery-date">{{ item.date }}</div>
             </div>
         </div>
-        
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="/images/ABC.jpg" alt="Annapurna Base Camp">
-            </div>
-            <div class="gallery-content">
-                <h3>Annapurna Base Camp Trek (4130m)</h3>
-                <p>尼泊尔阿纳普尔纳大本营路线(ABC) </p>
-                <div class="gallery-date">Nov. 2024 @Nepal</div>
-            </div>
-        </div>
-        
-        
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="/images/mount_fuji.jpg" alt="Mount Fuji">
-            </div>
-            <div class="gallery-content">
-                <h3>Mount Fuji Kengamine (3776m)</h3>
-                <p>日本山梨县富士山吉田线-剑锋</p>
-                <div class="gallery-date">July 2025 @Mt. Fuji Yoshida Trail, Japan</div>
-            </div>
-        </div>
-        
-
+        {% endfor %}
     </div>
 </div>
-
