@@ -131,6 +131,10 @@
 }
 
 .pub-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
   margin-bottom: 0.3rem;
 }
 
@@ -145,6 +149,7 @@
   font-size: 0.8em;
   line-height: 1;
   vertical-align: middle;
+  margin: 0 !important;
 }
 
 .pub-title {
