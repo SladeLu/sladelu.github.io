@@ -2,8 +2,8 @@
 
 <style>
 .sports-gallery {
-    margin: 8px 0 20px 0;
-    padding: 10px 0;
+    margin: 5px 0 20px 0;
+    padding: 0px 0;
 }
 
 .sports-gallery h2 {
