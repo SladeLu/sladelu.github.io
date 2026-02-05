@@ -144,21 +144,6 @@ h1:before, .anchor:before {
     transform: translateY(-1px);
 }
 
-.typemark::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      115deg,
-      rgba(255, 255, 255, 0) 35%,
-      rgba(255, 255, 255, 0.48) 50%,
-      rgba(255, 255, 255, 0) 65%
-    );
-    transform: translateX(-125%);
-    transition: transform 0.9s ease;
-    pointer-events: none;
-}
-
 .typemark[data-type*="workshop"] {
     border-color: rgba(245, 158, 11, 0.38);
     background:
@@ -177,8 +162,63 @@ h1:before, .anchor:before {
     box-shadow: 0 10px 20px -14px rgba(190, 24, 93, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
-.typemark:hover::after {
+.typemark[data-type*="oral"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 0) 35%,
+      rgba(255, 255, 255, 0.48) 50%,
+      rgba(255, 255, 255, 0) 65%
+    );
+    transform: translateX(-125%);
+    transition: transform 0.9s ease;
+    pointer-events: none;
+}
+
+.typemark[data-type*="oral"]:hover::after {
     transform: translateX(125%);
+}
+
+.bestpaper-award {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-left: 6px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(217, 119, 6, 0.35);
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 48%, #f59e0b 100%);
+    color: #111827;
+    font-size: 0.8em;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.bestpaper-award::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 0) 35%,
+      rgba(255, 255, 255, 0.55) 50%,
+      rgba(255, 255, 255, 0) 65%
+    );
+    transform: translateX(-125%);
+    animation: awardShine 2.8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes awardShine {
+    0%, 58% {
+        transform: translateX(-125%);
+    }
+    100% {
+        transform: translateX(125%);
+    }
 }
 
 .patentid {    
