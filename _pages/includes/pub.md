@@ -220,11 +220,15 @@
 
   <div class="pub-control pub-filter-ticks">
     <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-conference" checked>
+      <input type="checkbox" id="pub-filter-all" checked>
+      All
+    </label>
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-conference">
       Conference
     </label>
     <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-journal" checked>
+      <input type="checkbox" id="pub-filter-journal">
       Journal
     </label>
     <label class="pub-tick">
@@ -237,7 +241,7 @@
     </label>
     <label class="pub-tick">
       <input type="checkbox" id="pub-filter-bestpaper" checked>
-      🏆 Best Paper
+      Best Paper
     </label>
   </div>
 
@@ -327,6 +331,7 @@
     p.isOral = normalizedTags.includes("oral");
   });
 
+  const allTick = document.getElementById("pub-filter-all");
   const conferenceTick = document.getElementById("pub-filter-conference");
   const journalTick = document.getElementById("pub-filter-journal");
   const workshopTick = document.getElementById("pub-filter-workshop");
@@ -380,6 +385,7 @@
   }
 
   function applyFiltersAndRender() {
+    const showAllTypes = allTick.checked || (!conferenceTick.checked && !journalTick.checked);
     const showConference = conferenceTick.checked;
     const showJournal = journalTick.checked;
     const showWorkshop = workshopTick.checked;
@@ -388,14 +394,14 @@
     const sortVal = sortOrder;
 
     let filtered = publications.filter((p) => {
-      if (p.type === "conference" && !showConference) return false;
-      if (p.type === "journal" && !showJournal) return false;
+      if (!showAllTypes) {
+        if (showConference && p.type !== "conference") return false;
+        if (showJournal && p.type !== "journal") return false;
+      }
 
       if (!showWorkshop && p.isWorkshop) return false;
       if (!showCCFA && p.isCCFA) return false;
       if (!showBestPaper && p.isBestPaper) return false;
-
-      if (!showConference && !showJournal) return false;
 
       return true;
     });
@@ -413,7 +419,37 @@
     listEl.innerHTML = filtered.map(renderItem).join("");
   }
 
-  [conferenceTick, journalTick, workshopTick, ccfaTick, bestPaperTick].forEach((el) => {
+  allTick.addEventListener("change", () => {
+    if (allTick.checked) {
+      conferenceTick.checked = false;
+      journalTick.checked = false;
+    } else if (!conferenceTick.checked && !journalTick.checked) {
+      allTick.checked = true;
+    }
+    applyFiltersAndRender();
+  });
+
+  conferenceTick.addEventListener("change", () => {
+    if (conferenceTick.checked) {
+      journalTick.checked = false;
+      allTick.checked = false;
+    } else if (!journalTick.checked) {
+      allTick.checked = true;
+    }
+    applyFiltersAndRender();
+  });
+
+  journalTick.addEventListener("change", () => {
+    if (journalTick.checked) {
+      conferenceTick.checked = false;
+      allTick.checked = false;
+    } else if (!conferenceTick.checked) {
+      allTick.checked = true;
+    }
+    applyFiltersAndRender();
+  });
+
+  [workshopTick, ccfaTick, bestPaperTick].forEach((el) => {
     el.addEventListener("change", applyFiltersAndRender);
   });
 
