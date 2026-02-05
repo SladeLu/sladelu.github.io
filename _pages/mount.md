@@ -16,13 +16,18 @@
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
     gap: 20px;
     margin-top: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
 }
 
 .gallery-item {
+    flex: 0 0 320px;
     background: #f8f9fa;
     border-radius: 10px;
     overflow: hidden;
@@ -73,12 +78,8 @@
 }
 
 @media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .gallery-item {
-        margin-bottom: 15px;
+        flex-basis: 85%;
     }
 }
 </style>
