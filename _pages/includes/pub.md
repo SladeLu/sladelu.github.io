@@ -4,6 +4,7 @@
 .pub-controls {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.75rem;
   margin: 0.5rem 0 1rem 0;
   padding: 0.8rem;
@@ -15,7 +16,8 @@
 .pub-control {
   display: flex;
   flex-direction: column;
-  min-width: 140px;
+  justify-content: center;
+  min-width: auto;
   gap: 0.25rem;
 }
 
@@ -39,13 +41,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.42rem 0.8rem;
+  padding: 0.22rem 0.56rem;
   border-radius: 999px;
   border: 1px solid rgba(37, 99, 235, 0.32);
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   color: #1e3a8a;
-  font-size: 0.88em;
-  font-weight: 700;
+  font-size: 0.86em;
+  font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
 }
@@ -224,11 +226,11 @@
       All
     </label>
     <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-conference">
+      <input type="checkbox" id="pub-filter-conference" checked>
       Conference
     </label>
     <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-journal">
+      <input type="checkbox" id="pub-filter-journal" checked>
       Journal
     </label>
     <label class="pub-tick">
@@ -385,7 +387,6 @@
   }
 
   function applyFiltersAndRender() {
-    const showAllTypes = allTick.checked || (!conferenceTick.checked && !journalTick.checked);
     const showConference = conferenceTick.checked;
     const showJournal = journalTick.checked;
     const showWorkshop = workshopTick.checked;
@@ -394,10 +395,8 @@
     const sortVal = sortOrder;
 
     let filtered = publications.filter((p) => {
-      if (!showAllTypes) {
-        if (showConference && p.type !== "conference") return false;
-        if (showJournal && p.type !== "journal") return false;
-      }
+      if (p.type === "conference" && !showConference) return false;
+      if (p.type === "journal" && !showJournal) return false;
 
       if (!showWorkshop && p.isWorkshop) return false;
       if (!showCCFA && p.isCCFA) return false;
@@ -420,37 +419,21 @@
   }
 
   allTick.addEventListener("change", () => {
-    if (allTick.checked) {
-      conferenceTick.checked = false;
-      journalTick.checked = false;
-    } else if (!conferenceTick.checked && !journalTick.checked) {
-      allTick.checked = true;
-    }
+    const checked = allTick.checked;
+    conferenceTick.checked = checked;
+    journalTick.checked = checked;
+    workshopTick.checked = checked;
+    ccfaTick.checked = checked;
+    bestPaperTick.checked = checked;
     applyFiltersAndRender();
   });
 
-  conferenceTick.addEventListener("change", () => {
-    if (conferenceTick.checked) {
-      journalTick.checked = false;
-      allTick.checked = false;
-    } else if (!journalTick.checked) {
-      allTick.checked = true;
-    }
-    applyFiltersAndRender();
-  });
-
-  journalTick.addEventListener("change", () => {
-    if (journalTick.checked) {
-      conferenceTick.checked = false;
-      allTick.checked = false;
-    } else if (!conferenceTick.checked) {
-      allTick.checked = true;
-    }
-    applyFiltersAndRender();
-  });
-
-  [workshopTick, ccfaTick, bestPaperTick].forEach((el) => {
-    el.addEventListener("change", applyFiltersAndRender);
+  [conferenceTick, journalTick, workshopTick, ccfaTick, bestPaperTick].forEach((el) => {
+    el.addEventListener("change", () => {
+      const allChecked = conferenceTick.checked && journalTick.checked && workshopTick.checked && ccfaTick.checked && bestPaperTick.checked;
+      allTick.checked = allChecked;
+      applyFiltersAndRender();
+    });
   });
 
   sortYearBtn.addEventListener("click", () => {
