@@ -23,7 +23,7 @@
   {% assign label_github = "Github" %}
   {% assign label_scholar = "Google Scholar" %}
 {% endif %}
-  {% assign label_orcid = "ORCID" %}
+{% assign orcid_url = author.orcid | default: site.author.orcid %}
 
 <div itemscope itemtype="http://schema.org/Person" class="profile_box">
 
@@ -134,8 +134,8 @@
       {% if author.pubmed %}
         <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i> PubMed</a></li>
       {% endif %}
-      {% if author.orcid %}
-        <li><a href="{{ author.orcid }}"><i class="ai ai-orcid-square ai-fw"></i> ORCID </a></li>
+      {% if orcid_url %}
+        <li><a href="{{ orcid_url }}"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i> ORCID</a></li>
       {% endif %}
       {% if author.impactstory %}
         <li><a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw"></i> Impactstory</a></li>
@@ -229,8 +229,8 @@
       {% if author.pubmed %}
         <a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i></a>
       {% endif %}
-      {% if author.orcid %}
-        <a href="{{ author.orcid }}"><i class="ai ai-orcid-square ai-fw"></i> ORCID </a>
+      {% if orcid_url %}
+        <a href="{{ orcid_url }}"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i></a>
       {% endif %}
       {% if author.impactstory %}
         <a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw"></i></a>
