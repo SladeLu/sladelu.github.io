@@ -8,7 +8,6 @@
         <span class="edu-chip edu-chip--degree">Ph.D.</span>
         <span class="edu-chip edu-chip--year">2020-2024</span>
       </span>
-      <span class="edu-toggle" aria-hidden="true"></span>
     </summary>
     <div class="edu-body">
       <div class="edu-school">The Hong Kong Polytechnic University</div>
@@ -24,7 +23,6 @@
         <span class="edu-chip edu-chip--degree">B.Eng.</span>
         <span class="edu-chip edu-chip--year">2015-2019</span>
       </span>
-      <span class="edu-toggle" aria-hidden="true"></span>
     </summary>
     <div class="edu-body">
       <div class="edu-school">Southern University of Science and Technology</div>

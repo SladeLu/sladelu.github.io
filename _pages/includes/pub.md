@@ -217,18 +217,19 @@
 
 .patent-item {
   display: flex;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.4rem;
   align-items: flex-start;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 0.65rem 0.8rem;
+  padding: 0.7rem 0.8rem;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
 }
 
 .patent-code {
   display: inline-flex;
   align-items: center;
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 999px;
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   border: 1px solid rgba(30, 64, 175, 0.25);
