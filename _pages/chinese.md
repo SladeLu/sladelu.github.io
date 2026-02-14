@@ -3,6 +3,8 @@ permalink: /chinese/
 title: ""
 excerpt: ""
 author_profile: true
+author: zh
+lang: zh
 ---
 
 {% include_relative cn/intro.md %}

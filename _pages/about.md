@@ -3,6 +3,8 @@ permalink: /
 title: ""
 excerpt: ""
 author_profile: true
+author: en
+lang: en
 redirect_from: 
   - /about/
   - /about.html
@@ -16,5 +18,5 @@ redirect_from:
 
 ***
 # 🏔️ Mountaineering and Trekking
-{% include_relative mount.md %}
 
+{% include_relative mount.md %}
