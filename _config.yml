@@ -8,6 +8,7 @@
 # Site Settings
 title                    : "Rui LU"
 description              : "Hong Kong Polytechnic Univ."
+description_zh           : "香港理工大学"
 repository               : "SladeLu/sladelu.github.io"
 google_scholar_stats_use_cdn : true
 
