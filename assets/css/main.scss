@@ -270,7 +270,7 @@ h1:before, .anchor:before {
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 0.55rem;
     padding: 0.56rem 0.72rem;
     cursor: pointer;
@@ -310,30 +310,6 @@ h1:before, .anchor:before {
     color: #065f46;
     border: 1px solid rgba(5, 150, 105, 0.24);
     background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-}
-
-.edu-toggle {
-    flex: 0 0 auto;
-    width: 24px;
-    height: 24px;
-    border-radius: 999px;
-    border: 1px solid #cbd5e1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #334155;
-    background: #ffffff;
-}
-
-.edu-toggle::before {
-    content: "\25BE";
-    font-size: 11px;
-    line-height: 1;
-    transition: transform 0.2s ease;
-}
-
-.edu-item[open] .edu-toggle::before {
-    transform: rotate(180deg);
 }
 
 .edu-body {
