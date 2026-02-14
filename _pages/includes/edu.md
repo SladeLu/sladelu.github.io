@@ -1,3 +1,9 @@
+---
+permalink: /educations/
+title: "Education"
+excerpt: ""
+author_profile: true
+---
 # 📖 Education
 
 <div class="edu-accordion">
