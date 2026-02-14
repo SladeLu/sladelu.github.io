@@ -7,7 +7,6 @@
         <span class="edu-chip edu-chip--degree">博士</span>
         <span class="edu-chip edu-chip--year">2020-2024</span>
       </span>
-      <span class="edu-toggle" aria-hidden="true"></span>
     </summary>
     <div class="edu-body">
       <div class="edu-school">香港理工大学</div>
@@ -23,7 +22,6 @@
         <span class="edu-chip edu-chip--degree">工程学学士</span>
         <span class="edu-chip edu-chip--year">2015-2019</span>
       </span>
-      <span class="edu-toggle" aria-hidden="true"></span>
     </summary>
     <div class="edu-body">
       <div class="edu-school">南方科技大学</div>
