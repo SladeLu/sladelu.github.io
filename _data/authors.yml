@@ -1,0 +1,17 @@
+en:
+  name: "Rui LU"
+  avatar: "/images/android-chrome-512x512.png"
+  bio: "Postdoctoral Fellow"
+  location: "Hong Kong"
+  googlescholar: "https://scholar.google.com/citations?user=n4rWRCYAAAAJ"
+  email: "wilsonlu0410@gmail.com"
+  orcid: "http://orcid.org/0000-0002-2022-3872"
+
+zh:
+  name: "陆瑞"
+  avatar: "/images/android-chrome-512x512.png"
+  bio: "博士后研究员"
+  location: "中国香港"
+  googlescholar: "https://scholar.google.com/citations?user=n4rWRCYAAAAJ"
+  email: "wilsonlu0410@gmail.com"
+  orcid: "http://orcid.org/0000-0002-2022-3872"
