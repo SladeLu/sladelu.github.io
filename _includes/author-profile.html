@@ -1,7 +1,17 @@
-{% if page.author and site.data.authors[page.author] %}
-  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% assign is_zh = false %}
+{% if page.url contains "/chinese/" or page.lang == "zh" or page.author == "zh" %}
+  {% assign is_zh = true %}
 {% endif %}
-{% assign is_zh = page.lang == "zh" %}
+
+{% if is_zh and site.data.authors.zh %}
+  {% assign author = site.data.authors.zh %}
+{% elsif site.data.authors.en %}
+  {% assign author = site.data.authors.en %}
+{% elsif page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}
+{% else %}
+  {% assign author = site.author %}
+{% endif %}
 {% if is_zh %}
   {% assign label_website = "个人网站" %}
   {% assign label_email = "邮箱" %}
