@@ -328,3 +328,19 @@ h1:before, .anchor:before {
     color: #475569;
     font-size: 0.95em;
 }
+
+.orcid-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.18em;
+    height: 1.18em;
+    border-radius: 999px;
+    margin-right: 0.22em;
+    background: #a6ce39;
+    color: #ffffff;
+    font-size: 0.72em;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: middle;
+}
