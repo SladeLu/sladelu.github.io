@@ -1,9 +1,5 @@
----
-permalink: /educations/
-title: "Education"
-excerpt: ""
-author_profile: true
----
+<span class='anchor' id='educations'></span>
+
 # 📖 Education
 
 <div class="edu-accordion">
