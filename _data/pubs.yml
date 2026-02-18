@@ -80,7 +80,7 @@ publications:
   - type: "journal"
     abbrv: "TMC'26"
     author: "<u><b>Rui Lu *</b></u>, Y. Liu, D. Wang"
-    title: "P4LLM: Protecting Embedding Privacy against Model Inversion Attacks for EaaS LLM Serving "
+    title: "P4LLM: Protecting Embedding Privacy against Model Inversion Attacks for EaaS LLM Serving via Token-wise Partition and Perturbation"
     venue: "to be published on IEEE Transactions on Mobile Computing"
     page: "xxx"
     date: "Apr. 2026"
