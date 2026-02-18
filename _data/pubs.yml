@@ -78,6 +78,17 @@ publications:
       slides: "https://drive.google.com/file/d/1SCLs7FIyUu4bCHBan2Dj612yAlilmBsn/view?usp=sharing"
 
   - type: "journal"
+    abbrv: "TMC'26"
+    author: "<u><b>Rui Lu *</b></u>, Y. Liu, D. Wang"
+    title: "P4LLM: Protecting Embedding Privacy against Model Inversion Attacks for EaaS LLM Serving "
+    venue: "to be published on IEEE Transactions on Mobile Computing"
+    page: "xxx"
+    date: "Apr. 2026"
+    tags: ["CCF-A"]
+    links:
+      paper: "https://ieeexplore.ieee.org/abstract/document/10923690"
+      
+  - type: "journal"
     abbrv: "TMC'25"
     author: "Y. Liu, <u><b>Rui Lu *</b></u>, D. Wang"
     title: "LVMScissor: Split and Schedule Large Vision Model Inference on Mobile Edges via Salp Swarm Algorithm"
