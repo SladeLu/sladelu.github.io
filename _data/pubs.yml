@@ -6,7 +6,7 @@ publications:
     venue: "ACM ECCAI Workshop of the 21st CoNEXT 2025"
     address: "Hong Kong"
     date: "Dec. 2025"
-    tags: ["Workshop", "Best Paper"]
+    tags: ["Workshop", "Best Paper", "CCF-0"]
     links:
       paper: "https://dl.acm.org/doi/10.1145/3769696.3771216"
       download: "https://dl.acm.org/doi/epdf/10.1145/3769696.3771216"
@@ -18,7 +18,7 @@ publications:
     venue: "the 4th Workshop on Sustainable Computer Systems"
     address: "Cambridge, MA, US"
     date: "July 2025"
-    tags: ["Workshop"]
+    tags: ["Workshop", "CCF-0"]
     links:
       paper: "https://dl.acm.org/doi/10.1145/3757892.3757906"
       download: "https://dl.acm.org/doi/pdf/10.1145/3757892.3757906"
@@ -58,7 +58,7 @@ publications:
     venue: "the 7th IEEE/ACM Symposium on Edge Computing"
     address: "Seattle, WA, US"
     date: "Dec. 2022"
-    tags: []
+    tags: ["CCF-0"]
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/9996786"
       download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
@@ -71,7 +71,7 @@ publications:
     venue: "the 7th IEEE/ACM Symposium on Edge Computing"
     address: "Seattle, WA, US"
     date: "Dec. 2022"
-    tags: []
+    tags: ["CCF-0"]
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/9996757"
       download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Gemini.pdf"
@@ -86,7 +86,8 @@ publications:
     date: "Apr. 2026"
     tags: ["CCF-A"]
     links:
-      paper: "https://ieeexplore.ieee.org/abstract/document/10923690"
+      paper: "https://ieeexplore.ieee.org/abstract/document/11408927"
+      download: "https://ieeexplore.ieee.org/iel8/7755/4358975/11408927.pdf"
       
   - type: "journal"
     abbrv: "TMC'25"
@@ -119,7 +120,7 @@ publications:
     venue: "IEEE Network, special issue on Interplay Between Machine Learning and Networking Systems"
     page: "vol. 35, no. 6, pp. 163-170"
     date: "Nov./Dec. 2021"
-    tags: []
+    tags: ["CCF-0"]
     links:
       paper: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9687522"
       download: "http://icslab.whu.edu.cn/src/paper/FEVA_A_Federated_Video_Analytics_Architecture_for_Networked_Smart_Cameras.pdf"
