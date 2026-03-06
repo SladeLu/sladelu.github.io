@@ -6,7 +6,8 @@ publications:
     venue: "ACM ECCAI Workshop of the 21st CoNEXT 2025"
     address: "Hong Kong"
     date: "Dec. 2025"
-    tags: ["Workshop", "Best Paper", "CCF-0"]
+    ccf: "CCF-0"
+    tags: ["Workshop", "Best Paper"]
     links:
       paper: "https://dl.acm.org/doi/10.1145/3769696.3771216"
       download: "https://dl.acm.org/doi/epdf/10.1145/3769696.3771216"
@@ -18,7 +19,8 @@ publications:
     venue: "the 4th Workshop on Sustainable Computer Systems"
     address: "Cambridge, MA, US"
     date: "July 2025"
-    tags: ["Workshop", "CCF-0"]
+    ccf: "CCF-0"
+    tags: ["Workshop"]
     links:
       paper: "https://dl.acm.org/doi/10.1145/3757892.3757906"
       download: "https://dl.acm.org/doi/pdf/10.1145/3757892.3757906"
@@ -30,7 +32,8 @@ publications:
     venue: "the 39th Annual AAAI Conference on Artificial Intelligence"
     address: "PHL, PA, US"
     date: "Feb. 2025"
-    tags: ["ORAL", "CCF-A"]
+    ccf: "CCF-A"
+    tags: ["ORAL"]
     links:
       paper: "https://dl.acm.org/doi/10.1609/aaai.v39i18.34106"
       download: "https://arxiv.org/pdf/2502.17880"
@@ -45,7 +48,8 @@ publications:
     venue: "the 31st ACM International Conference on Multimedia"
     address: "Ottawa, Canada"
     date: "Oct. 2023"
-    tags: ["CCF-A"]
+    ccf: "CCF-A"
+    tags: []
     links:
       paper: "https://dl.acm.org/doi/abs/10.1145/3581783.3611946"
       download: "http://www4.comp.polyu.edu.hk/~csdwang/Publication/MM23.pdf"
@@ -58,7 +62,8 @@ publications:
     venue: "the 7th IEEE/ACM Symposium on Edge Computing"
     address: "Seattle, WA, US"
     date: "Dec. 2022"
-    tags: ["CCF-C"]
+    ccf: "CCF-C"
+    tags: []
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/9996786"
       download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
@@ -71,7 +76,8 @@ publications:
     venue: "the 7th IEEE/ACM Symposium on Edge Computing"
     address: "Seattle, WA, US"
     date: "Dec. 2022"
-    tags: ["CCF-C"]
+    ccf: "CCF-C"
+    tags: []
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/9996757"
       download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Gemini.pdf"
@@ -84,7 +90,8 @@ publications:
     venue: "to be published on IEEE Transactions on Mobile Computing"
     page: "xxx"
     date: "Apr. 2026"
-    tags: ["CCF-A"]
+    ccf: "CCF-A"
+    tags: []
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/11408927"
       download: "https://ieeexplore.ieee.org/iel8/7755/4358975/11408927.pdf"
@@ -96,7 +103,8 @@ publications:
     venue: "IEEE Transactions on Mobile Computing"
     page: "vol. 24, no. 8, pp. 7538-7553"
     date: "May 2025"
-    tags: ["CCF-A"]
+    ccf: "CCF-A"
+    tags: []
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/10923690"
       download: "https://ieeexplore.ieee.org/iel8/7755/4358975/10923690.pdf"
@@ -108,7 +116,8 @@ publications:
     venue: "IEEE Transactions on Computers"
     page: "vol. 72, no. 12, pp. 3399-3415"
     date: "Dec. 2023"
-    tags: ["CCF-A"]
+    ccf: "CCF-A"
+    tags: []
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/10202178"
       download: "https://ieeexplore.ieee.org/abstract/document/10202178"
@@ -120,7 +129,8 @@ publications:
     venue: "IEEE Network, special issue on Interplay Between Machine Learning and Networking Systems"
     page: "vol. 35, no. 6, pp. 163-170"
     date: "Nov./Dec. 2021"
-    tags: ["CCF-0"]
+    ccf: "CCF-0"
+    tags: []
     links:
       paper: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9687522"
       download: "http://icslab.whu.edu.cn/src/paper/FEVA_A_Federated_Video_Analytics_Architecture_for_Networked_Smart_Cameras.pdf"
