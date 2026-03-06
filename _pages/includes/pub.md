@@ -294,16 +294,22 @@
       <input type="checkbox" id="pub-filter-oral">
       ORAL
     </label>
-  </div>
-
-  <div class="pub-control">
-    <select id="pub-filter-ccf" aria-label="Filter by CCF level">
-      <option value="ALL">CCF: ALL</option>
-      <option value="CCF-A">CCF-A</option>
-      <option value="CCF-B">CCF-B</option>
-      <option value="CCF-C">CCF-C</option>
-      <option value="CCF-0">CCF-0</option>
-    </select>
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-ccf-a">
+      CCF-A
+    </label>
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-ccf-b">
+      CCF-B
+    </label>
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-ccf-c">
+      CCF-C
+    </label>
+    <label class="pub-tick">
+      <input type="checkbox" id="pub-filter-ccf-none">
+      CCF-None
+    </label>
   </div>
 
 </div>
@@ -399,7 +405,10 @@
   const workshopTick = document.getElementById("pub-filter-workshop");
   const bestPaperTick = document.getElementById("pub-filter-bestpaper");
   const oralTick = document.getElementById("pub-filter-oral");
-  const ccfSelect = document.getElementById("pub-filter-ccf");
+  const ccfATick = document.getElementById("pub-filter-ccf-a");
+  const ccfBTick = document.getElementById("pub-filter-ccf-b");
+  const ccfCTick = document.getElementById("pub-filter-ccf-c");
+  const ccfNoneTick = document.getElementById("pub-filter-ccf-none");
   const sortYearBtn = document.getElementById("pub-sort-year");
   const listEl = document.getElementById("pub-list");
   let sortOrder = "new";
@@ -422,7 +431,7 @@
     const workshopTag = p.isWorkshop ? `<span class="typemark" data-type="workshop">Workshop</span>` : "";
     const oralTag = p.isOral ? `<span class="typemark" data-type="oral">ORAL</span>` : "";
     const bestPaperTag = p.isBestPaper ? `<span class="bestpaper-award">🏆 Best Paper</span>` : "";
-    const ccfBadge = `<span class="ccf-chip" data-ccf="${p.ccf}">${p.ccf}</span>`;
+    const ccfBadge = p.ccf === "CCF-0" ? "" : `<span class="ccf-chip" data-ccf="${p.ccf}">${p.ccf}</span>`;
 
     const venueLine = p.type === "conference"
       ? `<u><i>Proc. of ${p.venue || ""}</i></u>, ${p.address || ""}, ${p.date || ""}`
@@ -454,7 +463,11 @@
     const showWorkshop = workshopTick.checked;
     const showBestPaper = bestPaperTick.checked;
     const showOral = oralTick.checked;
-    const selectedCCF = ccfSelect.value;
+    const selectedCCF = [];
+    if (ccfATick.checked) selectedCCF.push("CCF-A");
+    if (ccfBTick.checked) selectedCCF.push("CCF-B");
+    if (ccfCTick.checked) selectedCCF.push("CCF-C");
+    if (ccfNoneTick.checked) selectedCCF.push("CCF-0");
     const sortVal = sortOrder;
 
     let filtered = publications.filter((p) => {
@@ -471,7 +484,7 @@
         if (tagFilters.length > 0 && !tagFilters.some(Boolean)) return false;
       }
 
-      if (selectedCCF !== "ALL" && p.ccf !== selectedCCF) return false;
+      if (!showAll && selectedCCF.length > 0 && !selectedCCF.includes(p.ccf)) return false;
 
       return true;
     });
@@ -497,19 +510,30 @@
       workshopTick.checked = false;
       bestPaperTick.checked = false;
       oralTick.checked = false;
+      ccfATick.checked = false;
+      ccfBTick.checked = false;
+      ccfCTick.checked = false;
+      ccfNoneTick.checked = false;
     }
     applyFiltersAndRender();
   });
 
-  [conferenceTick, journalTick, workshopTick, bestPaperTick, oralTick].forEach((el) => {
+  [conferenceTick, journalTick, workshopTick, bestPaperTick, oralTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick].forEach((el) => {
     el.addEventListener("change", () => {
-      const anySelected = conferenceTick.checked || journalTick.checked || workshopTick.checked || bestPaperTick.checked || oralTick.checked;
+      const anySelected =
+        conferenceTick.checked ||
+        journalTick.checked ||
+        workshopTick.checked ||
+        bestPaperTick.checked ||
+        oralTick.checked ||
+        ccfATick.checked ||
+        ccfBTick.checked ||
+        ccfCTick.checked ||
+        ccfNoneTick.checked;
       allTick.checked = !anySelected;
       applyFiltersAndRender();
     });
   });
-
-  ccfSelect.addEventListener("change", applyFiltersAndRender);
 
   sortYearBtn.addEventListener("click", () => {
     sortOrder = sortOrder === "new" ? "old" : "new";
