@@ -41,6 +41,67 @@
   color: #334155;
 }
 
+.pub-ccf-menu {
+  position: relative;
+}
+
+.pub-ccf-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.22rem 0.56rem;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #fff;
+  color: #334155;
+  font-size: 0.86em;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pub-ccf-trigger::-webkit-details-marker {
+  display: none;
+}
+
+.pub-ccf-menu[open] .pub-ccf-trigger {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.pub-ccf-panel {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  z-index: 20;
+  min-width: 160px;
+  padding: 0.45rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 22px -14px rgba(15, 23, 42, 0.45);
+}
+
+.pub-ccf-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.25rem;
+  color: #334155;
+  font-size: 0.84em;
+  line-height: 1.2;
+}
+
+.pub-ccf-option input[type="checkbox"] {
+  margin: 0;
+  width: 14px;
+  height: 14px;
+}
+
 .pub-sort-btn {
   display: inline-flex;
   align-items: center;
@@ -294,23 +355,29 @@
       <input type="checkbox" id="pub-filter-oral">
       ORAL
     </label>
-    <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-ccf-a">
-      CCF-A
-    </label>
-    <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-ccf-b">
-      CCF-B
-    </label>
-    <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-ccf-c">
-      CCF-C
-    </label>
-    <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-ccf-none">
-      CCF-None
-    </label>
   </div>
+
+  <details class="pub-control pub-ccf-menu">
+    <summary class="pub-ccf-trigger">CCF</summary>
+    <div class="pub-ccf-panel">
+      <label class="pub-ccf-option">
+        <input type="checkbox" id="pub-filter-ccf-a">
+        CCF-A
+      </label>
+      <label class="pub-ccf-option">
+        <input type="checkbox" id="pub-filter-ccf-b">
+        CCF-B
+      </label>
+      <label class="pub-ccf-option">
+        <input type="checkbox" id="pub-filter-ccf-c">
+        CCF-C
+      </label>
+      <label class="pub-ccf-option">
+        <input type="checkbox" id="pub-filter-ccf-none">
+        CCF-None
+      </label>
+    </div>
+  </details>
 
 </div>
 
