@@ -58,7 +58,7 @@ publications:
     venue: "the 7th IEEE/ACM Symposium on Edge Computing"
     address: "Seattle, WA, US"
     date: "Dec. 2022"
-    tags: ["CCF-0"]
+    tags: ["CCF-C"]
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/9996786"
       download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
@@ -71,7 +71,7 @@ publications:
     venue: "the 7th IEEE/ACM Symposium on Edge Computing"
     address: "Seattle, WA, US"
     date: "Dec. 2022"
-    tags: ["CCF-0"]
+    tags: ["CCF-C"]
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/9996757"
       download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Gemini.pdf"
