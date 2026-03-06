@@ -32,10 +32,13 @@
 
 .pub-control select {
   border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  padding: 0.35rem 0.45rem;
+  border-radius: 999px;
+  padding: 0.24rem 0.6rem;
+  height: 30px;
+  box-sizing: border-box;
   background: #fff;
-  font-size: 0.95em;
+  font-size: 0.86em;
+  color: #334155;
 }
 
 .pub-sort-btn {
@@ -141,7 +144,7 @@
 .pub-head .badge2,
 .pub-head .typemark,
 .pub-head .bestpaper-award,
-.pub-head .ccfa-chip {
+.pub-head .ccf-chip {
   display: inline-flex;
   align-items: center;
   height: 24px;
@@ -192,18 +195,35 @@
   background: #f8fafc;
 }
 
-.ccfa-chip {
+.ccf-chip {
   display: inline-flex;
   align-items: center;
-  margin-left: 0.25rem;
   padding: 2px 8px;
   border-radius: 999px;
-  border: 1px solid rgba(185, 28, 28, 0.32);
-  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-  color: #991b1b;
+  border: 1px solid rgba(100, 116, 139, 0.35);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #334155;
   font-size: 0.8em;
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.ccf-chip[data-ccf="CCF-A"] {
+  border-color: rgba(185, 28, 28, 0.32);
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+}
+
+.ccf-chip[data-ccf="CCF-B"] {
+  border-color: rgba(202, 138, 4, 0.34);
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+}
+
+.ccf-chip[data-ccf="CCF-C"] {
+  border-color: rgba(5, 150, 105, 0.3);
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #166534;
 }
 
 .patent-list {
@@ -255,29 +275,35 @@
       All
     </label>
     <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-conference" checked>
+      <input type="checkbox" id="pub-filter-conference">
       Conference
     </label>
     <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-journal" checked>
+      <input type="checkbox" id="pub-filter-journal">
       Journal
     </label>
     <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-workshop" checked>
+      <input type="checkbox" id="pub-filter-workshop">
       Workshop
     </label>
     <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-ccfa" checked>
-      CCF-A
-    </label>
-    <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-bestpaper" checked>
+      <input type="checkbox" id="pub-filter-bestpaper">
       Best Paper
     </label>
     <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-oral" checked>
+      <input type="checkbox" id="pub-filter-oral">
       ORAL
     </label>
+  </div>
+
+  <div class="pub-control">
+    <select id="pub-filter-ccf" aria-label="Filter by CCF level">
+      <option value="ALL">CCF: ALL</option>
+      <option value="CCF-A">CCF-A</option>
+      <option value="CCF-B">CCF-B</option>
+      <option value="CCF-C">CCF-C</option>
+      <option value="CCF-0">CCF-0</option>
+    </select>
   </div>
 
 </div>
@@ -312,6 +338,7 @@
       address: {{ paper.address | jsonify }},
       page: {{ paper.page | jsonify }},
       date: {{ paper.date | jsonify }},
+      ccf: {{ paper.ccf | default: "CCF-0" | jsonify }},
       tags: {{ paper.tags | jsonify }},
       links: {{ paper.links | jsonify }}
     },
@@ -359,8 +386,8 @@
     const tags = Array.isArray(p.tags) ? p.tags : [];
     const normalizedTags = tags.map((t) => String(t).toLowerCase());
     p.normalizedTags = normalizedTags;
+    p.ccf = hasValue(p.ccf) ? String(p.ccf).toUpperCase() : "CCF-0";
     p.dateValue = parseDateValue(p.date);
-    p.isCCFA = normalizedTags.includes("ccf-a");
     p.isWorkshop = normalizedTags.includes("workshop");
     p.isBestPaper = normalizedTags.includes("best paper");
     p.isOral = normalizedTags.includes("oral");
@@ -370,9 +397,9 @@
   const conferenceTick = document.getElementById("pub-filter-conference");
   const journalTick = document.getElementById("pub-filter-journal");
   const workshopTick = document.getElementById("pub-filter-workshop");
-  const ccfaTick = document.getElementById("pub-filter-ccfa");
   const bestPaperTick = document.getElementById("pub-filter-bestpaper");
   const oralTick = document.getElementById("pub-filter-oral");
+  const ccfSelect = document.getElementById("pub-filter-ccf");
   const sortYearBtn = document.getElementById("pub-sort-year");
   const listEl = document.getElementById("pub-list");
   let sortOrder = "new";
@@ -395,7 +422,7 @@
     const workshopTag = p.isWorkshop ? `<span class="typemark" data-type="workshop">Workshop</span>` : "";
     const oralTag = p.isOral ? `<span class="typemark" data-type="oral">ORAL</span>` : "";
     const bestPaperTag = p.isBestPaper ? `<span class="bestpaper-award">🏆 Best Paper</span>` : "";
-    const ccfBadge = p.isCCFA ? `<span class="ccfa-chip">CCF-A</span>` : "";
+    const ccfBadge = `<span class="ccf-chip" data-ccf="${p.ccf}">${p.ccf}</span>`;
 
     const venueLine = p.type === "conference"
       ? `<u><i>Proc. of ${p.venue || ""}</i></u>, ${p.address || ""}, ${p.date || ""}`
@@ -421,22 +448,30 @@
   }
 
   function applyFiltersAndRender() {
+    const showAll = allTick.checked;
     const showConference = conferenceTick.checked;
     const showJournal = journalTick.checked;
     const showWorkshop = workshopTick.checked;
-    const showCCFA = ccfaTick.checked;
     const showBestPaper = bestPaperTick.checked;
     const showOral = oralTick.checked;
+    const selectedCCF = ccfSelect.value;
     const sortVal = sortOrder;
 
     let filtered = publications.filter((p) => {
-      if (p.type === "conference" && !showConference) return false;
-      if (p.type === "journal" && !showJournal) return false;
+      if (!showAll) {
+        if (showConference || showJournal) {
+          if (p.type === "conference" && !showConference) return false;
+          if (p.type === "journal" && !showJournal) return false;
+        }
 
-      if (!showWorkshop && p.isWorkshop) return false;
-      if (!showCCFA && p.isCCFA) return false;
-      if (!showBestPaper && p.isBestPaper) return false;
-      if (!showOral && p.isOral) return false;
+        const tagFilters = [];
+        if (showWorkshop) tagFilters.push(p.isWorkshop);
+        if (showBestPaper) tagFilters.push(p.isBestPaper);
+        if (showOral) tagFilters.push(p.isOral);
+        if (tagFilters.length > 0 && !tagFilters.some(Boolean)) return false;
+      }
+
+      if (selectedCCF !== "ALL" && p.ccf !== selectedCCF) return false;
 
       return true;
     });
@@ -456,22 +491,25 @@
 
   allTick.addEventListener("change", () => {
     const checked = allTick.checked;
-    conferenceTick.checked = checked;
-    journalTick.checked = checked;
-    workshopTick.checked = checked;
-    ccfaTick.checked = checked;
-    bestPaperTick.checked = checked;
-    oralTick.checked = checked;
+    if (checked) {
+      conferenceTick.checked = false;
+      journalTick.checked = false;
+      workshopTick.checked = false;
+      bestPaperTick.checked = false;
+      oralTick.checked = false;
+    }
     applyFiltersAndRender();
   });
 
-  [conferenceTick, journalTick, workshopTick, ccfaTick, bestPaperTick, oralTick].forEach((el) => {
+  [conferenceTick, journalTick, workshopTick, bestPaperTick, oralTick].forEach((el) => {
     el.addEventListener("change", () => {
-      const allChecked = conferenceTick.checked && journalTick.checked && workshopTick.checked && ccfaTick.checked && bestPaperTick.checked && oralTick.checked;
-      allTick.checked = allChecked;
+      const anySelected = conferenceTick.checked || journalTick.checked || workshopTick.checked || bestPaperTick.checked || oralTick.checked;
+      allTick.checked = !anySelected;
       applyFiltersAndRender();
     });
   });
+
+  ccfSelect.addEventListener("change", applyFiltersAndRender);
 
   sortYearBtn.addEventListener("click", () => {
     sortOrder = sortOrder === "new" ? "old" : "new";
