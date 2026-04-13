@@ -46,6 +46,16 @@
     position: relative;
 }
 
+.gallery-image a {
+    display: block;
+    cursor: zoom-in;
+}
+
+.gallery-image a:focus {
+    outline: 3px solid #93c5fd;
+    outline-offset: -3px;
+}
+
 .gallery-image img {
     width: 100%;
     height: 240px;
@@ -101,7 +111,9 @@
         {% for item in site.data.mount.items %}
         <div class="gallery-item">
             <div class="gallery-image">
-                <img src="{{ item.image_src }}" alt="{{ item.image_alt }}">
+                <a href="{{ item.image_src }}" aria-label="View larger photo of {{ item.image_alt }}">
+                    <img src="{{ item.image_src }}" alt="{{ item.image_alt }}">
+                </a>
                 {% if item.flag_emoji %}
                 <span class="gallery-flag">{{ item.flag_emoji }}</span>
                 {% endif %}
