@@ -26,3 +26,10 @@ items:
     caption_en: "Baengnokdam, Mt. Hallasan (1950m)"
     caption_zh: "韩国济州岛白鹿潭"
     date: "Feb. 2026 @Mt. Hallasan, Jeju Island, South Korea"
+
+  - image_src: "/images/mount_kinabalu.jpeg"
+    image_alt: "Mount Kinabalu"
+    flag_emoji: "🇲🇾"
+    caption_en: "Low's Peak, Mount Kinabalu (4095m)"
+    caption_zh: "马来西亚沙巴州京那巴鲁山罗氏峰"
+    date: "Apr. 2026 @Kinabalu Park, Sabah, Malaysia"
