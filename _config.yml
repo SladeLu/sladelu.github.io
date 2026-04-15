@@ -1,20 +1,13 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
-
 # Site Settings
 title                    : "Rui LU"
 title_zh                 : "卢睿"
 description              : "Hong Kong Polytechnic Univ."
 description_zh           : "香港理工大学"
 repository               : "SladeLu/sladelu.github.io"
+google_scholar_stats_enabled : false
 google_scholar_stats_use_cdn : true
 
-# google analytics
-google_analytics_id      :  n4rWRCYAAAAJ # get google_analytics_id from https://analytics.google.com/analytics/
+google_analytics_id      :
 
 # SEO Related
 google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
@@ -27,38 +20,9 @@ author:
   avatar           : "/images/android-chrome-512x512.png"
   bio              : "Postdoctoral Fellow"
   location         : "Hong Kong"
-  employer         : #"The Hong Kong Polytechnic University (PolyU)"
-  pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=n4rWRCYAAAAJ"
   email            : "wilsonlu0410@gmail.com"
-  researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : # e.g., "github username"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         : # e.g., "linkedin username"
-  dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
   orcid            : "http://orcid.org/0000-0002-2022-3872"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : 
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
 
 
 # Reading Files
@@ -67,8 +31,7 @@ include:
   - _pages
   - files
 exclude:
-  - docs
-  - google_scholar_crawler
+  - README.md
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
@@ -79,12 +42,10 @@ exclude:
   - CHANGELOG
   - Capfile
   - Gemfile
+  - Gemfile.lock
   - Gruntfile.js
   - LICENSE
-  - README
   - Rakefile
-  - assets/js/_main.js
-  - assets/js/plugins
   - assets/js/vendor
   - config
   - gulpfile.js

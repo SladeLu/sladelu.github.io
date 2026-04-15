@@ -1,0 +1,100 @@
+.clickable-text {
+  color: #224b8d;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sports-gallery {
+  margin: 5px 0 20px;
+  padding: 0;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin-top: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.gallery-item {
+  flex: 0 0 320px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-image a {
+  display: block;
+  cursor: zoom-in;
+}
+
+.gallery-image a:focus {
+  outline: 3px solid #93c5fd;
+  outline-offset: -3px;
+}
+
+.gallery-image img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.gallery-flag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 1.6em;
+  line-height: 1;
+}
+
+.gallery-content {
+  margin-top: 12px;
+  padding: 15px;
+}
+
+.gallery-content h3 {
+  margin: 0 0 10px;
+  color: #224b8d;
+  font-size: 1.1em;
+}
+
+.gallery-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.gallery-date {
+  margin-top: 8px;
+  color: #999;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    flex-basis: 85%;
+  }
+}

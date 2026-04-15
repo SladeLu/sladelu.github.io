@@ -1,13 +1,5 @@
 <span class='anchor' id='about-me'></span>
 
-<style>
-        .clickable-text {
-            color: #224b8d;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-</style>
-
 <input type="hidden" id="sentenceToCopy" value="Rui Lu is a postdoctoral fellow at the Hong Kong Polytechnic University, where he completed his Ph.D. in 2024. Before that, he graduated with a B.Eng in Computer Science and Technology from the Southern University of Science and Technology in 2019. His research interests focus on the performance, enhancing privacy protection, and improving energy efficiency of Edge Computing Systems, on applications in Video Analytics Systems and Large Language Model Inference.">
 
 <script>

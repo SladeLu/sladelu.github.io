@@ -7,12 +7,12 @@ author: zh
 lang: zh
 ---
 
-{% include_relative cn/intro.md %}
+{% include_relative sections/zh/intro.md %}
 
-{% include_relative cn/edu.md %}
+{% include_relative sections/zh/education.md %}
 
-{% include_relative includes/pub.md %}
+{% include_relative sections/shared/publications.md %}
 
 # 🏔️ 登山徒步冒险
 
-{% include_relative mount.md %}
+{% include_relative sections/shared/mountaineering.md %}
