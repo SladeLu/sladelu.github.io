@@ -118,7 +118,12 @@
 }
 
 .gallery-like-icon {
+  color: rgba(190, 18, 60, 0.82);
   font-size: 1.15em;
+}
+
+.gallery-like.is-liked .gallery-like-icon {
+  color: #be123c;
 }
 
 .gallery-content {
