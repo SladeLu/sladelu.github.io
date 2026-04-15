@@ -1,0 +1,10 @@
+mount_likes:
+  enabled: true
+  collection: "mount_likes"
+  api_key: "AIzaSyAaxEO7SL20mskXcPvEqof-goc4yPaPso4"
+  auth_domain: "homepagelike.firebaseapp.com"
+  project_id: "homepagelike"
+  storage_bucket: "homepagelike.firebasestorage.app"
+  messaging_sender_id: "672564522139"
+  app_id: "1:672564522139:web:5f5f38a94d90ec0d1d2a3e"
+  measurement_id: "G-K81W7MF8H1"
