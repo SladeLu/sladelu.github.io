@@ -1,0 +1,219 @@
+---
+layout: null
+---
+
+(function () {
+  const listEl = document.getElementById("pub-list");
+  if (!listEl) return;
+
+  const publications = [
+    {% for paper in site.data.pubs.publications %}
+    {
+      type: {{ paper.type | jsonify }},
+      abbrv: {{ paper.abbrv | jsonify }},
+      title: {{ paper.title | jsonify }},
+      author: {{ paper.author | jsonify }},
+      venue: {{ paper.venue | jsonify }},
+      address: {{ paper.address | jsonify }},
+      page: {{ paper.page | jsonify }},
+      date: {{ paper.date | jsonify }},
+      ccf: {{ paper.ccf | default: "CCF-0" | jsonify }},
+      tags: {{ paper.tags | jsonify }},
+      links: {{ paper.links | jsonify }}
+    },
+    {% endfor %}
+  ];
+
+  const monthMap = {
+    jan: 1, january: 1,
+    feb: 2, february: 2,
+    mar: 3, march: 3,
+    apr: 4, april: 4,
+    may: 5,
+    jun: 6, june: 6,
+    jul: 7, july: 7,
+    aug: 8, august: 8,
+    sep: 9, sept: 9, september: 9,
+    oct: 10, october: 10,
+    nov: 11, november: 11,
+    dec: 12, december: 12
+  };
+
+  function hasValue(v) {
+    return !!v && String(v).trim() !== "" && String(v).trim() !== " ";
+  }
+
+  function parseDateValue(dateText) {
+    if (!dateText) return 0;
+    const text = String(dateText).toLowerCase();
+    const years = text.match(/(19|20)\d{2}/g);
+    const year = years ? parseInt(years[years.length - 1], 10) : 0;
+
+    let month = 1;
+    const tokens = text.replace(/\./g, "").split(/[^a-z]+/).filter(Boolean);
+    for (let i = 0; i < tokens.length; i++) {
+      if (monthMap[tokens[i]]) {
+        month = monthMap[tokens[i]];
+        break;
+      }
+    }
+
+    return year * 100 + month;
+  }
+
+  publications.forEach((p) => {
+    const tags = Array.isArray(p.tags) ? p.tags : [];
+    const normalizedTags = tags.map((t) => String(t).toLowerCase());
+    p.normalizedTags = normalizedTags;
+    p.ccf = hasValue(p.ccf) ? String(p.ccf).toUpperCase() : "CCF-0";
+    p.dateValue = parseDateValue(p.date);
+    p.isWorkshop = normalizedTags.includes("workshop");
+    p.isBestPaper = normalizedTags.includes("best paper");
+    p.isOral = normalizedTags.includes("oral");
+  });
+
+  const allTick = document.getElementById("pub-filter-all");
+  const conferenceTick = document.getElementById("pub-filter-conference");
+  const journalTick = document.getElementById("pub-filter-journal");
+  const workshopTick = document.getElementById("pub-filter-workshop");
+  const bestPaperTick = document.getElementById("pub-filter-bestpaper");
+  const oralTick = document.getElementById("pub-filter-oral");
+  const ccfATick = document.getElementById("pub-filter-ccf-a");
+  const ccfBTick = document.getElementById("pub-filter-ccf-b");
+  const ccfCTick = document.getElementById("pub-filter-ccf-c");
+  const ccfNoneTick = document.getElementById("pub-filter-ccf-none");
+  const sortYearBtn = document.getElementById("pub-sort-year");
+  const controls = [allTick, conferenceTick, journalTick, workshopTick, bestPaperTick, oralTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick, sortYearBtn];
+  if (controls.some((el) => !el)) return;
+
+  let sortOrder = "new";
+
+  function renderItem(p) {
+    const paperUrl = p.links && p.links.paper ? p.links.paper : "";
+    const titleHtml = hasValue(paperUrl)
+      ? `<a href="${paperUrl}">${p.title || "Untitled"}</a>`
+      : `${p.title || "Untitled"}`;
+
+    const typeBadgeClass = p.type === "conference" ? "badge2 badge2--conference" : "badge2 badge2--journal";
+    const kindLabel = p.type === "conference" ? "Conference" : "Journal";
+
+    const links = [];
+    if (p.links && hasValue(p.links.download)) links.push(`<a href="${p.links.download}">[Paper]</a>`);
+    if (p.links && hasValue(p.links.slides)) links.push(`<a href="${p.links.slides}">[Slides]</a>`);
+    if (p.links && hasValue(p.links.video)) links.push(`<a href="${p.links.video}">[Video]</a>`);
+    if (p.links && hasValue(p.links.poster)) links.push(`<a href="${p.links.poster}">[Poster]</a>`);
+
+    const workshopTag = p.isWorkshop ? `<span class="typemark" data-type="workshop">Workshop</span>` : "";
+    const oralTag = p.isOral ? `<span class="typemark" data-type="oral">ORAL</span>` : "";
+    const bestPaperTag = p.isBestPaper ? `<span class="bestpaper-award">🏆 Best Paper</span>` : "";
+    const ccfBadge = p.ccf === "CCF-0" ? "" : `<span class="ccf-chip" data-ccf="${p.ccf}">${p.ccf}</span>`;
+
+    const venueLine = p.type === "conference"
+      ? `<u><i>Proc. of ${p.venue || ""}</i></u>, ${p.address || ""}, ${p.date || ""}`
+      : `<u><i>${p.venue || ""}</i></u>${hasValue(p.page) ? `, ${p.page}` : ""}, ${p.date || ""}`;
+
+    return `
+      <li class="pub-item">
+        <div class="pub-main">
+          <div class="pub-head">
+            <span class="${typeBadgeClass}">${p.abbrv || kindLabel}</span>
+            ${oralTag}
+            ${workshopTag}
+            ${ccfBadge}
+            ${bestPaperTag}
+          </div>
+          <div class="pub-title">${titleHtml}</div>
+          <div class="pub-meta">${p.author || ""}</div>
+          <div class="pub-meta">${venueLine}</div>
+        </div>
+        ${links.length ? `<div class="pub-right">${links.join(" ")}</div>` : `<div class="pub-right"></div>`}
+      </li>
+    `;
+  }
+
+  function applyFiltersAndRender() {
+    const showAll = allTick.checked;
+    const showConference = conferenceTick.checked;
+    const showJournal = journalTick.checked;
+    const showWorkshop = workshopTick.checked;
+    const showBestPaper = bestPaperTick.checked;
+    const showOral = oralTick.checked;
+    const selectedCCF = [];
+    if (ccfATick.checked) selectedCCF.push("CCF-A");
+    if (ccfBTick.checked) selectedCCF.push("CCF-B");
+    if (ccfCTick.checked) selectedCCF.push("CCF-C");
+    if (ccfNoneTick.checked) selectedCCF.push("CCF-0");
+    const sortVal = sortOrder;
+
+    let filtered = publications.filter((p) => {
+      if (!showAll) {
+        if (showConference || showJournal) {
+          if (p.type === "conference" && !showConference) return false;
+          if (p.type === "journal" && !showJournal) return false;
+        }
+
+        const tagFilters = [];
+        if (showWorkshop) tagFilters.push(p.isWorkshop);
+        if (showBestPaper) tagFilters.push(p.isBestPaper);
+        if (showOral) tagFilters.push(p.isOral);
+        if (tagFilters.length > 0 && !tagFilters.some(Boolean)) return false;
+      }
+
+      if (!showAll && selectedCCF.length > 0 && !selectedCCF.includes(p.ccf)) return false;
+
+      return true;
+    });
+
+    filtered.sort((a, b) => {
+      const diff = a.dateValue - b.dateValue;
+      return sortVal === "old" ? diff : -diff;
+    });
+
+    if (!filtered.length) {
+      listEl.innerHTML = '<li class="pub-empty">No publications match current filters.</li>';
+      return;
+    }
+
+    listEl.innerHTML = filtered.map(renderItem).join("");
+  }
+
+  allTick.addEventListener("change", () => {
+    const checked = allTick.checked;
+    if (checked) {
+      conferenceTick.checked = false;
+      journalTick.checked = false;
+      workshopTick.checked = false;
+      bestPaperTick.checked = false;
+      oralTick.checked = false;
+      ccfATick.checked = false;
+      ccfBTick.checked = false;
+      ccfCTick.checked = false;
+      ccfNoneTick.checked = false;
+    }
+    applyFiltersAndRender();
+  });
+
+  [conferenceTick, journalTick, workshopTick, bestPaperTick, oralTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick].forEach((el) => {
+    el.addEventListener("change", () => {
+      const anySelected =
+        conferenceTick.checked ||
+        journalTick.checked ||
+        workshopTick.checked ||
+        bestPaperTick.checked ||
+        oralTick.checked ||
+        ccfATick.checked ||
+        ccfBTick.checked ||
+        ccfCTick.checked ||
+        ccfNoneTick.checked;
+      allTick.checked = !anySelected;
+      applyFiltersAndRender();
+    });
+  });
+
+  sortYearBtn.addEventListener("click", () => {
+    sortOrder = sortOrder === "new" ? "old" : "new";
+    applyFiltersAndRender();
+  });
+
+  applyFiltersAndRender();
+})();

@@ -1,3 +1,24 @@
 _site/
+
+# Local test server files
+.jekyll-server/
+.bundle/
+.tmp-gems/
+run_server.sh
+start_server.sh
+stop_server.sh
+restart_server.sh
+
+# Firebase / Firestore local config and rules
+_data/firebase.yml
+firestore.rules
+firebase.json
+.firebaserc
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+assets/js/mount-likes.js
+
 push.sh
 .DS_Store
