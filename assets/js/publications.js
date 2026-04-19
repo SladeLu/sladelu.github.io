@@ -83,10 +83,30 @@ layout: null
   const ccfCTick = document.getElementById("pub-filter-ccf-c");
   const ccfNoneTick = document.getElementById("pub-filter-ccf-none");
   const sortYearBtn = document.getElementById("pub-sort-year");
-  const controls = [allTick, conferenceTick, journalTick, workshopTick, bestPaperTick, oralTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick, sortYearBtn];
+  const sortYearIcon = document.getElementById("pub-sort-year-icon");
+  const controls = [allTick, conferenceTick, journalTick, workshopTick, bestPaperTick, oralTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick, sortYearBtn, sortYearIcon];
   if (controls.some((el) => !el)) return;
 
   let sortOrder = "new";
+
+  function getSelectedCCF() {
+    const selected = [];
+    if (ccfATick.checked) selected.push("CCF-A");
+    if (ccfBTick.checked) selected.push("CCF-B");
+    if (ccfCTick.checked) selected.push("CCF-C");
+    if (ccfNoneTick.checked) selected.push("CCF-0");
+    return selected;
+  }
+
+  function updateControlLabels() {
+    const isOldestFirst = sortOrder === "old";
+    sortYearIcon.textContent = "↓";
+    sortYearBtn.dataset.order = sortOrder;
+    sortYearBtn.setAttribute(
+      "aria-label",
+      isOldestFirst ? "Sort by year, oldest first. Click to show newest first." : "Sort by year, newest first. Click to show oldest first."
+    );
+  }
 
   function renderItem(p) {
     const paperUrl = p.links && p.links.paper ? p.links.paper : "";
@@ -138,12 +158,9 @@ layout: null
     const showWorkshop = workshopTick.checked;
     const showBestPaper = bestPaperTick.checked;
     const showOral = oralTick.checked;
-    const selectedCCF = [];
-    if (ccfATick.checked) selectedCCF.push("CCF-A");
-    if (ccfBTick.checked) selectedCCF.push("CCF-B");
-    if (ccfCTick.checked) selectedCCF.push("CCF-C");
-    if (ccfNoneTick.checked) selectedCCF.push("CCF-0");
+    const selectedCCF = getSelectedCCF();
     const sortVal = sortOrder;
+    updateControlLabels();
 
     let filtered = publications.filter((p) => {
       if (!showAll) {

@@ -7,6 +7,61 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="/assets/css/academicons.css"/>
 
+{% assign tag_colors = site.data.tag_colors %}
+{% if tag_colors %}
+<style>
+  :root {
+    --tag-publication-legacy-text: {{ tag_colors.publication.legacy_badge.text }};
+    --tag-publication-legacy-bg: {{ tag_colors.publication.legacy_badge.background }};
+    --tag-pub-type-default-text: {{ tag_colors.publication.type.default.text }};
+    --tag-pub-type-default-border: {{ tag_colors.publication.type.default.border }};
+    --tag-pub-type-default-bg: {{ tag_colors.publication.type.default.background }};
+    --tag-pub-type-default-shadow: {{ tag_colors.publication.type.default.shadow }};
+    --tag-pub-type-conference-text: {{ tag_colors.publication.type.conference.text }};
+    --tag-pub-type-conference-border: {{ tag_colors.publication.type.conference.border }};
+    --tag-pub-type-conference-bg: {{ tag_colors.publication.type.conference.background }};
+    --tag-pub-type-conference-shadow: {{ tag_colors.publication.type.conference.shadow }};
+    --tag-pub-type-journal-text: {{ tag_colors.publication.type.journal.text }};
+    --tag-pub-type-journal-border: {{ tag_colors.publication.type.journal.border }};
+    --tag-pub-type-journal-bg: {{ tag_colors.publication.type.journal.background }};
+    --tag-pub-type-journal-shadow: {{ tag_colors.publication.type.journal.shadow }};
+    --tag-pub-type-workshop-text: {{ tag_colors.publication.type.workshop.text }};
+    --tag-pub-type-workshop-border: {{ tag_colors.publication.type.workshop.border }};
+    --tag-pub-type-workshop-bg: {{ tag_colors.publication.type.workshop.background }};
+    --tag-pub-type-workshop-shadow: {{ tag_colors.publication.type.workshop.shadow }};
+    --tag-pub-feature-default-text: {{ tag_colors.publication.feature.default.text }};
+    --tag-pub-feature-default-border: {{ tag_colors.publication.feature.default.border }};
+    --tag-pub-feature-default-bg: {{ tag_colors.publication.feature.default.background }};
+    --tag-pub-feature-default-shadow: {{ tag_colors.publication.feature.default.shadow }};
+    --tag-pub-feature-oral-text: {{ tag_colors.publication.feature.oral.text }};
+    --tag-pub-feature-oral-border: {{ tag_colors.publication.feature.oral.border }};
+    --tag-pub-feature-oral-bg: {{ tag_colors.publication.feature.oral.background }};
+    --tag-pub-feature-oral-shadow: {{ tag_colors.publication.feature.oral.shadow }};
+    --tag-pub-feature-best-paper-text: {{ tag_colors.publication.feature.best_paper.text }};
+    --tag-pub-feature-best-paper-border: {{ tag_colors.publication.feature.best_paper.border }};
+    --tag-pub-feature-best-paper-bg: {{ tag_colors.publication.feature.best_paper.background }};
+    --tag-pub-ccf-default-text: {{ tag_colors.publication.ccf.default.text }};
+    --tag-pub-ccf-default-border: {{ tag_colors.publication.ccf.default.border }};
+    --tag-pub-ccf-default-bg: {{ tag_colors.publication.ccf.default.background }};
+    --tag-pub-ccf-a-text: {{ tag_colors.publication.ccf.a.text }};
+    --tag-pub-ccf-a-border: {{ tag_colors.publication.ccf.a.border }};
+    --tag-pub-ccf-a-bg: {{ tag_colors.publication.ccf.a.background }};
+    --tag-pub-ccf-b-text: {{ tag_colors.publication.ccf.b.text }};
+    --tag-pub-ccf-b-border: {{ tag_colors.publication.ccf.b.border }};
+    --tag-pub-ccf-b-bg: {{ tag_colors.publication.ccf.b.background }};
+    --tag-pub-ccf-c-text: {{ tag_colors.publication.ccf.c.text }};
+    --tag-pub-ccf-c-border: {{ tag_colors.publication.ccf.c.border }};
+    --tag-pub-ccf-c-bg: {{ tag_colors.publication.ccf.c.background }};
+    --tag-edu-degree-text: {{ tag_colors.education.degree.text }};
+    --tag-edu-degree-border: {{ tag_colors.education.degree.border }};
+    --tag-edu-degree-bg: {{ tag_colors.education.degree.background }};
+    --tag-edu-year-text: {{ tag_colors.education.year.text }};
+    --tag-edu-year-border: {{ tag_colors.education.year.border }};
+    --tag-edu-year-bg: {{ tag_colors.education.year.background }};
+  }
+</style>
+{% endif %}
+
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({

@@ -3,29 +3,55 @@
 # 📖 Education
 
 <div class="edu-accordion">
-  <div class="edu-item">
-    <div class="edu-body" style="padding-top:0.72rem;">
-      <div class="edu-head" style="margin-bottom:0.45rem;">
-        <span class="edu-chip edu-chip--degree">Ph.D.</span>
-        <span class="edu-chip edu-chip--year">2020-2024</span>
+  <details class="edu-item edu-item--collapsible" open>
+    <summary class="edu-summary">
+      <div class="edu-entry">
+        <div class="edu-content">
+          <div class="edu-head" style="margin-bottom:0.45rem;">
+            <span class="edu-chip edu-chip--degree">Ph.D.</span>
+            <span class="edu-chip edu-chip--year">2020-2024</span>
+          </div>
+          <div class="edu-school">The Hong Kong Polytechnic University</div>
+        </div>
+        <div class="edu-logo-wrap">
+          <img class="edu-logo" src="/images/education/polyu-logo.svg" alt="The Hong Kong Polytechnic University logo">
+        </div>
+        <span class="edu-toggle" aria-hidden="true">▾</span>
       </div>
-      <div class="edu-school">The Hong Kong Polytechnic University</div>
-      <div class="edu-dept">Department of Computing</div>
-      <div class="edu-loc">Hong Kong</div>
-      <div class="edu-date">Sept. 2020 - Nov. 2024</div>
+    </summary>
+    <div class="edu-body edu-body--details">
+      <div class="edu-entry">
+        <div class="edu-content">
+          <div class="edu-dept">Department of Computing</div>
+          <div class="edu-loc">Hong Kong</div>
+        </div>
+      </div>
     </div>
-  </div>
+  </details>
 
-  <div class="edu-item">
-    <div class="edu-body" style="padding-top:0.72rem;">
-      <div class="edu-head" style="margin-bottom:0.45rem;">
-        <span class="edu-chip edu-chip--degree">B.Eng.</span>
-        <span class="edu-chip edu-chip--year">2015-2019</span>
+  <details class="edu-item edu-item--collapsible">
+    <summary class="edu-summary">
+      <div class="edu-entry">
+        <div class="edu-content">
+          <div class="edu-head" style="margin-bottom:0.45rem;">
+            <span class="edu-chip edu-chip--degree">B.Eng.</span>
+            <span class="edu-chip edu-chip--year">2015-2019</span>
+          </div>
+          <div class="edu-school">Southern University of Science and Technology</div>
+        </div>
+        <div class="edu-logo-wrap">
+          <img class="edu-logo" src="/images/education/sustech-logo.png" alt="Southern University of Science and Technology logo">
+        </div>
+        <span class="edu-toggle" aria-hidden="true">▾</span>
       </div>
-      <div class="edu-school">Southern University of Science and Technology</div>
-      <div class="edu-dept">Department of Computer Science and Technology</div>
-      <div class="edu-loc">Shenzhen, China</div>
-      <div class="edu-date">Sept. 2015 - Jun. 2019</div>
+    </summary>
+    <div class="edu-body edu-body--details">
+      <div class="edu-entry">
+        <div class="edu-content">
+          <div class="edu-dept">Department of Computer Science and Technology</div>
+          <div class="edu-loc">Shenzhen, China</div>
+        </div>
+      </div>
     </div>
-  </div>
+  </details>
 </div>

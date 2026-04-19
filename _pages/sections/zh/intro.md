@@ -1,8 +1,32 @@
+{% assign intro = site.data.intro.zh %}
+
 <span class='anchor' id='about-me'></span>
 
-# 个人简介
+<input type="hidden" id="sentenceToCopy" value="{{ intro.copy_text | escape }}">
 
-我目前是一名博士后研究员，从 2024 年 12 月开始。我于 2024 年在香港理工大学计算机系获得博士学位([HK PolyU](https://www.polyu.edu.hk/))。在此之前，我于2019年毕业于南方科技大学([SUSTech](https://www.sustech.edu.cn/en/))，获得计算机科学与技术学士学位。
-我的研究兴趣集中在边缘计算、视频分析、隐私保护和大型语言模型推理。
+<script>
+    // Function to copy the sentence
+    function copySentence() {
+        const sentence = document.getElementById('sentenceToCopy').value;
+        navigator.clipboard.writeText(sentence)
+            .then(() => {
+                console.log('Sentence copied to clipboard!');
+            })
+            .catch(err => {
+                console.log('Failed to copy sentence.');
+            });
+    }
+</script>
+
+<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+        <div style="width: 90%">
+        <h1> {{ intro.title }} </h1>
+        </div>
+        <div style="width: 10% text-align: right;">
+            <span class="clickable-text" onclick="copySentence()">{{ intro.copy_label }}</span>
+        </div>
+</div>
+
+{{ intro.body | markdownify }}
 
 ***

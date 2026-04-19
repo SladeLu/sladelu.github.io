@@ -2,27 +2,51 @@
 
 
 <div class="pub-controls" id="pub-controls">
-  <div class="pub-control">
-    <button id="pub-sort-year" class="pub-sort-btn" type="button" aria-label="Toggle year sort order">Year</button>
+  <div class="pub-control pub-sort-control" aria-label="Publication sort controls">
+    <button id="pub-sort-year" class="pub-sort-btn" type="button" aria-label="Sort by year, newest first">
+      <span class="pub-sort-btn__label">Year</span>
+      <span id="pub-sort-year-icon" class="pub-sort-btn__icon" aria-hidden="true">↓</span>
+    </button>
   </div>
 
-  <div class="pub-control pub-filter-ticks">
+  <div class="pub-control pub-filter-ticks" aria-label="Publication filters">
     <label class="pub-tick">
       <input type="checkbox" id="pub-filter-all" checked>
       All
     </label>
-    <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-conference">
-      Conference
-    </label>
-    <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-journal">
-      Journal
-    </label>
-    <label class="pub-tick">
-      <input type="checkbox" id="pub-filter-workshop">
-      Workshop
-    </label>
+    <div class="pub-filter-group" role="group" aria-label="CCF rank filters">
+      <span class="pub-filter-group__label">CCF Rank</span>
+      <label class="pub-group-tick">
+        <input type="checkbox" id="pub-filter-ccf-a">
+        A
+      </label>
+      <label class="pub-group-tick">
+        <input type="checkbox" id="pub-filter-ccf-b">
+        B
+      </label>
+      <label class="pub-group-tick">
+        <input type="checkbox" id="pub-filter-ccf-c">
+        C
+      </label>
+      <label class="pub-group-tick">
+        <input type="checkbox" id="pub-filter-ccf-none">
+        N
+      </label>
+    </div>
+    <div class="pub-filter-group" role="group" aria-label="Publication type filters">
+      <label class="pub-group-tick">
+        <input type="checkbox" id="pub-filter-conference">
+        Conference
+      </label>
+      <label class="pub-group-tick">
+        <input type="checkbox" id="pub-filter-journal">
+        Journal
+      </label>
+      <label class="pub-group-tick">
+        <input type="checkbox" id="pub-filter-workshop">
+        Workshop
+      </label>
+    </div>
     <label class="pub-tick">
       <input type="checkbox" id="pub-filter-bestpaper">
       Best Paper
@@ -33,31 +57,11 @@
     </label>
   </div>
 
-  <details class="pub-control pub-ccf-menu">
-    <summary class="pub-ccf-trigger">CCF</summary>
-    <div class="pub-ccf-panel">
-      <label class="pub-ccf-option">
-        <input type="checkbox" id="pub-filter-ccf-a">
-        CCF-A
-      </label>
-      <label class="pub-ccf-option">
-        <input type="checkbox" id="pub-filter-ccf-b">
-        CCF-B
-      </label>
-      <label class="pub-ccf-option">
-        <input type="checkbox" id="pub-filter-ccf-c">
-        CCF-C
-      </label>
-      <label class="pub-ccf-option">
-        <input type="checkbox" id="pub-filter-ccf-none">
-        CCF-None
-      </label>
-    </div>
-  </details>
-
 </div>
 
 <ul id="pub-list" class="pub-list"></ul>
+
+<div class="patent-section" hidden>
 
 ***
 
@@ -73,3 +77,5 @@
 </ul>
 
 ***
+
+</div>

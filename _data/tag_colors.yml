@@ -1,0 +1,66 @@
+publication:
+  legacy_badge:
+    text: "#ffffff"
+    background: "#00369f"
+  type:
+    default:
+      text: "#1e3a8a"
+      border: "rgba(30, 64, 175, 0.28)"
+      background: "linear-gradient(135deg, #eff6ff 0%, #dbeafe 48%, #bfdbfe 100%)"
+      shadow: "0 6px 14px -12px rgba(30, 64, 175, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.75)"
+    conference:
+      text: "#1e3a8a"
+      border: "rgba(30, 64, 175, 0.28)"
+      background: "linear-gradient(135deg, #eff6ff 0%, #dbeafe 48%, #bfdbfe 100%)"
+      shadow: "0 6px 14px -12px rgba(30, 64, 175, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.75)"
+    journal:
+      text: "#065f46"
+      border: "rgba(5, 150, 105, 0.28)"
+      background: "linear-gradient(135deg, #ecfdf5 0%, #d1fae5 48%, #a7f3d0 100%)"
+      shadow: "0 6px 14px -12px rgba(5, 150, 105, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.75)"
+    workshop:
+      text: "#9a3412"
+      border: "rgba(245, 158, 11, 0.38)"
+      background: "radial-gradient(130% 160% at 18% -20%, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0) 45%), linear-gradient(135deg, #fff7ed 0%, #ffedd5 45%, #fde68a 100%)"
+      shadow: "0 10px 20px -14px rgba(217, 119, 6, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.7)"
+  feature:
+    default:
+      text: "#0f172a"
+      border: "rgba(99, 102, 241, 0.26)"
+      background: "radial-gradient(140% 180% at 20% -20%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 42%), linear-gradient(120deg, #ffffff 0%, #f8fafc 52%, #eef2ff 100%)"
+      shadow: "0 10px 20px -14px rgba(15, 23, 42, 0.58), inset 0 1px 0 rgba(255, 255, 255, 0.92)"
+    oral:
+      text: "#9d174d"
+      border: "rgba(244, 114, 182, 0.4)"
+      background: "radial-gradient(130% 160% at 18% -20%, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0) 45%), linear-gradient(135deg, #fdf4ff 0%, #fae8ff 42%, #ffe4e6 100%)"
+      shadow: "0 10px 20px -14px rgba(190, 24, 93, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.72)"
+    best_paper:
+      text: "#111827"
+      border: "rgba(217, 119, 6, 0.35)"
+      background: "linear-gradient(135deg, #fef3c7 0%, #fde68a 48%, #f59e0b 100%)"
+  ccf:
+    default:
+      text: "#334155"
+      border: "rgba(100, 116, 139, 0.35)"
+      background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)"
+    a:
+      text: "#991b1b"
+      border: "rgba(185, 28, 28, 0.32)"
+      background: "linear-gradient(135deg, #fee2e2 0%, #fecaca 100%)"
+    b:
+      text: "#92400e"
+      border: "rgba(202, 138, 4, 0.34)"
+      background: "linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)"
+    c:
+      text: "#166534"
+      border: "rgba(5, 150, 105, 0.3)"
+      background: "linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%)"
+education:
+  degree:
+    text: "#1e3a8a"
+    border: "rgba(30, 64, 175, 0.26)"
+    background: "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)"
+  year:
+    text: "#065f46"
+    border: "rgba(5, 150, 105, 0.24)"
+    background: "linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)"

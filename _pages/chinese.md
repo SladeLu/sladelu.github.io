@@ -13,6 +13,6 @@ lang: zh
 
 {% include_relative sections/shared/publications.md %}
 
-# 🏔️ 登山徒步冒险
+# 🏔️ 山野足迹
 
 {% include_relative sections/shared/mountaineering.md %}

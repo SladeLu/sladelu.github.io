@@ -17,6 +17,6 @@ redirect_from:
 {% include_relative sections/en/education.md %}
 
 ***
-# 🏔️ Mountaineering and Trekking
+# 🏔️ Peak Trails
 
 {% include_relative sections/shared/mountaineering.md %}

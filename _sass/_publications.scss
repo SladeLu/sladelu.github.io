@@ -1,13 +1,25 @@
 .pub-controls {
+  --pub-control-height: 36px;
+  --pub-control-radius: 999px;
+  --pub-control-font-size: 0.86em;
+  --pub-control-font-weight: 600;
+  --pub-control-gap: 0.42rem;
+  --pub-control-padding-x: 0.72rem;
+  --pub-control-border: 1px solid rgba(148, 163, 184, 0.58);
+  --pub-control-bg: rgba(255, 255, 255, 0.9);
+
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
-  margin: 0.2rem 0 0.35rem 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  justify-content: flex-start;
+  gap: 0.55rem;
+  margin: 0.35rem 0 0.8rem 0;
+  padding: 0.55rem;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(248, 250, 252, 0.94) 0%, rgba(239, 246, 255, 0.72) 100%);
+  box-shadow: 0 14px 34px -30px rgba(15, 23, 42, 0.8);
 }
 
 .pub-control {
@@ -16,15 +28,13 @@
   align-items: center;
   justify-content: center;
   min-width: auto;
-  gap: 0;
+  gap: 0.35rem;
 }
 
-.pub-control label {
-  font-size: 0.78em;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #334155;
+.pub-controls label,
+.pub-controls span,
+.pub-controls input {
+  margin: 0;
 }
 
 .pub-control select {
@@ -38,94 +48,78 @@
   color: #334155;
 }
 
-.pub-ccf-menu {
-  position: relative;
+.pub-sort-btn:hover,
+.pub-tick:hover,
+.pub-filter-group:hover {
+  border-color: rgba(37, 99, 235, 0.42);
+  box-shadow: 0 10px 22px -20px rgba(37, 99, 235, 0.72);
+  transform: translateY(-1px);
 }
 
-.pub-ccf-trigger {
+.pub-sort-btn__label {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  color: #0f172a;
+  font: inherit;
+  line-height: 1;
+}
+
+.pub-sort-btn__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.22rem 0.56rem;
-  height: 30px;
-  box-sizing: border-box;
-  border: 1px solid #cbd5e1;
+  width: 18px;
+  height: 18px;
   border-radius: 999px;
-  background: #fff;
-  color: #334155;
-  font-size: 0.86em;
-  font-weight: 600;
+  background: rgba(226, 232, 240, 0.78);
+  color: #475569;
+  font-size: 1em;
   line-height: 1;
-  cursor: pointer;
-  user-select: none;
-}
-
-.pub-ccf-trigger::-webkit-details-marker {
-  display: none;
-}
-
-.pub-ccf-menu[open] .pub-ccf-trigger {
-  border-color: #93c5fd;
-  background: #eff6ff;
-  color: #1e3a8a;
-}
-
-.pub-ccf-panel {
-  position: absolute;
-  top: 36px;
-  left: 0;
-  z-index: 20;
-  min-width: 160px;
-  padding: 0.45rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 10px 22px -14px rgba(15, 23, 42, 0.45);
-}
-
-.pub-ccf-option {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.2rem 0.25rem;
-  color: #334155;
-  font-size: 0.84em;
-  line-height: 1.2;
-}
-
-.pub-ccf-option input[type="checkbox"] {
-  margin: 0;
-  width: 14px;
-  height: 14px;
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease;
 }
 
 .pub-sort-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.22rem 0.56rem;
-  height: 30px;
+  gap: 0.18rem;
+  padding: 0 var(--pub-control-padding-x);
+  height: var(--pub-control-height);
   box-sizing: border-box;
-  border-radius: 999px;
-  border: 1px solid rgba(37, 99, 235, 0.32);
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: var(--pub-control-radius);
+  border: 1px solid rgba(37, 99, 235, 0.34);
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 72%, #bfdbfe 100%);
   color: #1e3a8a;
-  font-size: 0.86em;
-  font-weight: 600;
+  font-size: var(--pub-control-font-size);
+  font-weight: var(--pub-control-font-weight);
   line-height: 1;
   cursor: pointer;
   white-space: nowrap;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.pub-sort-btn[data-order="old"] .pub-sort-btn__icon {
+  transform: rotate(180deg);
+}
+
+.pub-sort-btn:focus-visible,
+.pub-tick:has(input[type="checkbox"]:focus-visible),
+.pub-group-tick:has(input[type="checkbox"]:focus-visible) {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 2px;
 }
 
 .pub-filter-ticks {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 0.45rem 0.55rem;
+  flex-wrap: wrap;
+  gap: 0.55rem;
   align-items: center;
-  min-width: 420px;
-  overflow-x: auto;
-  overflow-y: hidden;
+  justify-content: flex-start;
+  flex: 0 1 auto;
+  min-width: 0;
   white-space: nowrap;
   padding-bottom: 0;
 }
@@ -134,26 +128,119 @@
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
-  padding: 0.22rem 0.56rem;
-  height: 30px;
+  padding: 0 var(--pub-control-padding-x);
+  height: var(--pub-control-height);
   box-sizing: border-box;
-  border: 1px solid #cbd5e1;
-  border-radius: 999px;
-  background: #fff;
+  border: var(--pub-control-border);
+  border-radius: var(--pub-control-radius);
+  background: var(--pub-control-bg);
   color: #334155;
-  font-size: 0.86em;
-  font-weight: 600;
+  font-size: var(--pub-control-font-size);
+  font-weight: var(--pub-control-font-weight);
   line-height: 1;
+  vertical-align: middle;
   cursor: pointer;
   user-select: none;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
-.pub-tick input[type="checkbox"] {
+.pub-filter-group {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.56rem;
+  height: var(--pub-control-height);
+  padding: 0 var(--pub-control-padding-x);
+  box-sizing: border-box;
+  border: var(--pub-control-border);
+  border-radius: var(--pub-control-radius);
+  background: var(--pub-control-bg);
+  color: #334155;
+  font-size: var(--pub-control-font-size);
+  font-weight: var(--pub-control-font-weight);
+  line-height: 1;
+  vertical-align: middle;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.pub-filter-group__label {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
   margin: 0;
-  width: 14px;
-  height: 14px;
-  display: block;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.pub-group-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.32rem;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #475569;
+  font: inherit;
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.pub-tick input[type="checkbox"],
+.pub-group-tick input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0;
+  width: 15px;
+  height: 15px;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1.5px solid rgba(100, 116, 139, 0.74);
+  border-radius: 4px;
+  background: #fff;
+  transform: translateY(0);
+}
+
+.pub-tick input[type="checkbox"]:checked,
+.pub-group-tick input[type="checkbox"]:checked {
+  border-color: #2563eb;
+  background: #2563eb;
+}
+
+.pub-tick input[type="checkbox"]:checked::after,
+.pub-group-tick input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.pub-tick:has(input[type="checkbox"]:checked) {
+  border-color: rgba(37, 99, 235, 0.32);
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.pub-group-tick:has(input[type="checkbox"]:checked) {
+  color: #1e3a8a;
 }
 
 .pub-list {
@@ -194,7 +281,7 @@
 .pub-head {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.4rem;
   margin-bottom: 0.3rem;
 }
@@ -204,13 +291,24 @@
 .pub-head .bestpaper-award,
 .pub-head .ccf-chip {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
+  justify-content: center;
   height: 24px;
+  padding-top: 0;
+  padding-bottom: 0;
   box-sizing: border-box;
   font-size: 0.8em;
-  line-height: 1;
+  line-height: 24px;
   vertical-align: middle;
   margin: 0 !important;
+  transform: none !important;
+}
+
+.pub-head .badge2 *,
+.pub-head .typemark *,
+.pub-head .bestpaper-award *,
+.pub-head .ccf-chip * {
+  line-height: inherit;
 }
 
 .pub-title {
@@ -230,6 +328,23 @@
 }
 
 @media (max-width: 760px) {
+  .pub-controls {
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.48rem;
+  }
+
+  .pub-sort-control {
+    justify-content: flex-start;
+  }
+
+  .pub-filter-ticks {
+    flex-basis: 100%;
+    justify-content: flex-start;
+    order: 2;
+    min-width: 0;
+  }
+
   .pub-item {
     flex-direction: column;
   }
@@ -258,30 +373,30 @@
   align-items: center;
   padding: 2px 8px;
   border-radius: 999px;
-  border: 1px solid rgba(100, 116, 139, 0.35);
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  color: #334155;
+  border: 1px solid var(--tag-pub-ccf-default-border, rgba(100, 116, 139, 0.35));
+  background: var(--tag-pub-ccf-default-bg, linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%));
+  color: var(--tag-pub-ccf-default-text, #334155);
   font-size: 0.8em;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
 .ccf-chip[data-ccf="CCF-A"] {
-  border-color: rgba(185, 28, 28, 0.32);
-  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-  color: #991b1b;
+  border-color: var(--tag-pub-ccf-a-border, rgba(185, 28, 28, 0.32));
+  background: var(--tag-pub-ccf-a-bg, linear-gradient(135deg, #fee2e2 0%, #fecaca 100%));
+  color: var(--tag-pub-ccf-a-text, #991b1b);
 }
 
 .ccf-chip[data-ccf="CCF-B"] {
-  border-color: rgba(202, 138, 4, 0.34);
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  color: #92400e;
+  border-color: var(--tag-pub-ccf-b-border, rgba(202, 138, 4, 0.34));
+  background: var(--tag-pub-ccf-b-bg, linear-gradient(135deg, #fef3c7 0%, #fde68a 100%));
+  color: var(--tag-pub-ccf-b-text, #92400e);
 }
 
 .ccf-chip[data-ccf="CCF-C"] {
-  border-color: rgba(5, 150, 105, 0.3);
-  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-  color: #166534;
+  border-color: var(--tag-pub-ccf-c-border, rgba(5, 150, 105, 0.3));
+  background: var(--tag-pub-ccf-c-bg, linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%));
+  color: var(--tag-pub-ccf-c-text, #166534);
 }
 
 .patent-list {
