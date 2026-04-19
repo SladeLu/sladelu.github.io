@@ -137,9 +137,9 @@ layout: null
         <div class="pub-main">
           <div class="pub-head">
             <span class="${typeBadgeClass}">${p.abbrv || kindLabel}</span>
-            ${oralTag}
             ${workshopTag}
             ${ccfBadge}
+            ${oralTag}
             ${bestPaperTag}
           </div>
           <div class="pub-title">${titleHtml}</div>

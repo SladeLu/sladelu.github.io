@@ -1,4 +1,8 @@
+{% if page.lang == "zh" %}
+# 📝 论文发表
+{% else %}
 # 📝 Publications
+{% endif %}
 
 
 <div class="pub-controls" id="pub-controls">
