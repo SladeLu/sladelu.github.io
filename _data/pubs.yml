@@ -11,6 +11,15 @@ publications:
     links:
       paper: "https://dl.acm.org/doi/10.1145/3769696.3771216"
       download: "https://dl.acm.org/doi/epdf/10.1145/3769696.3771216"
+      bibtex: |-
+        @inproceedings{lu2025ecsam,
+          title={ECSAM: An Edge-cloud Video Analytics Architecture for the Segment Anything Model},
+          author={Lu, Rui and Shi, S. and Wang, D.},
+          booktitle={ACM ECCAI Workshop of the 21st CoNEXT 2025},
+          address={Hong Kong},
+          year={2025},
+          doi={10.1145/3769696.3771216}
+        }
 
   - type: "conference"
     abbrv: "HotCarbon'25"
@@ -24,6 +33,15 @@ publications:
     links:
       paper: "https://dl.acm.org/doi/10.1145/3757892.3757906"
       download: "https://dl.acm.org/doi/pdf/10.1145/3757892.3757906"
+      bibtex: |-
+        @inproceedings{lu2025thermal,
+          title={A Thermal-aware Workload Scheduler for High-performance LLM Inference in Cooling-regulated Datacenters},
+          author={Lu, Rui and Wang, D.},
+          booktitle={Proceedings of the 4th Workshop on Sustainable Computer Systems},
+          address={Cambridge, MA, US},
+          year={2025},
+          doi={10.1145/3757892.3757906}
+        }
 
   - type: "conference"
     abbrv: "AAAI'25"
@@ -40,6 +58,15 @@ publications:
       slides: "https://arxiv.org/pdf/2502.17880"
       video: "https://drive.google.com/file/d/1AWvHsK1A17c0QxYu0FxYc0KDEASBj06q/view?usp=sharing"
       poster: "https://drive.google.com/file/d/1POVJvg0p_Hqkx9E5QTddXz3T21kuBTVc/view?usp=sharing"
+      bibtex: |-
+        @inproceedings{lu2025vvrec,
+          title={VVRec: Reconstruction Attacks on DL-based Volumetric Video Upstreaming via Latent Diffusion Model with Gamma Distribution},
+          author={Lu, Rui and Zhang, B. and Wang, D.},
+          booktitle={Proceedings of the 39th Annual AAAI Conference on Artificial Intelligence},
+          address={PHL, PA, US},
+          year={2025},
+          doi={10.1609/aaai.v39i18.34106}
+        }
 
   - type: "conference"
     abbrv: "MM'23"
@@ -54,6 +81,15 @@ publications:
       paper: "https://dl.acm.org/doi/abs/10.1145/3581783.3611946"
       download: "http://www4.comp.polyu.edu.hk/~csdwang/Publication/MM23.pdf"
       slides: "https://drive.google.com/file/d/1N_RNSNz2FPIIxApDU-Xrlj0x4brcC-QC/view?usp=drive_link"
+      bibtex: |-
+        @inproceedings{lu2023pagoda,
+          title={Pagoda: Privacy Protection for Volumetric Video Streaming through Poisson Diffusion Model},
+          author={Lu, Rui and Wei, L. and Zhu, S. and Hu, C. and Wang, D.},
+          booktitle={Proceedings of the 31st ACM International Conference on Multimedia},
+          address={Ottawa, Canada},
+          year={2023},
+          doi={10.1145/3581783.3611946}
+        }
 
   - type: "conference"
     abbrv: "SEC'22"
@@ -68,6 +104,15 @@ publications:
       paper: "https://ieeexplore.ieee.org/abstract/document/9996786"
       download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Preva.pdf"
       slides: "https://drive.google.com/file/d/1cc9L_HDjrKOcb5fCx6EWqXlL_SEE-ML3/view?usp=drive_link"
+      bibtex: |-
+        @inproceedings{lu2022preva,
+          title={Preva: Protecting Inference Privacy through Policy-based Video-frame Transformation},
+          author={Lu, Rui and Shi, S. and Wang, D. and Hu, C. and Zhang, B.},
+          booktitle={Proceedings of the 7th IEEE/ACM Symposium on Edge Computing},
+          address={Seattle, WA, US},
+          year={2022},
+          url={https://ieeexplore.ieee.org/abstract/document/9996786}
+        }
 
   - type: "conference"
     abbrv: "SEC'22"
@@ -82,6 +127,15 @@ publications:
       paper: "https://ieeexplore.ieee.org/abstract/document/9996757"
       download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/SEC22-Gemini.pdf"
       slides: "https://drive.google.com/file/d/1SCLs7FIyUu4bCHBan2Dj612yAlilmBsn/view?usp=sharing"
+      bibtex: |-
+        @inproceedings{lu2022gemini,
+          title={Gemini: a Real-time Video Analytics System with Dual Computing Resource Control},
+          author={Lu, Rui and Hu, C. and Wang, D. and Zhang, J.},
+          booktitle={Proceedings of the 7th IEEE/ACM Symposium on Edge Computing},
+          address={Seattle, WA, US},
+          year={2022},
+          url={https://ieeexplore.ieee.org/abstract/document/9996757}
+        }
 
   - type: "journal"
     abbrv: "TMC'26"
@@ -95,6 +149,14 @@ publications:
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/11408927"
       download: "https://ieeexplore.ieee.org/iel8/7755/4358975/11408927.pdf"
+      bibtex: |-
+        @article{lu2026p4llm,
+          title={P4LLM: Protecting Embedding Privacy against Model Inversion Attacks for EaaS LLM Serving via Token-wise Partition and Perturbation},
+          author={Lu, Rui and Liu, Y. and Wang, D.},
+          journal={IEEE Transactions on Mobile Computing},
+          year={2026},
+          url={https://ieeexplore.ieee.org/abstract/document/11408927}
+        }
       
   - type: "journal"
     abbrv: "TMC'25"
@@ -108,6 +170,17 @@ publications:
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/10923690"
       download: "https://ieeexplore.ieee.org/iel8/7755/4358975/10923690.pdf"
+      bibtex: |-
+        @article{liu2025lvmscissor,
+          title={LVMScissor: Split and Schedule Large Vision Model Inference on Mobile Edges via Salp Swarm Algorithm},
+          author={Liu, Y. and Lu, Rui and Wang, D.},
+          journal={IEEE Transactions on Mobile Computing},
+          volume={24},
+          number={8},
+          pages={7538--7553},
+          year={2025},
+          url={https://ieeexplore.ieee.org/abstract/document/10923690}
+        }
 
   - type: "journal"
     abbrv: "TC'23"
@@ -121,6 +194,17 @@ publications:
     links:
       paper: "https://ieeexplore.ieee.org/abstract/document/10202178"
       download: "https://ieeexplore.ieee.org/abstract/document/10202178"
+      bibtex: |-
+        @article{hu2023edge,
+          title={An Edge-side Real-time Video Analytics System with Dual Computing Resource Control},
+          author={Hu, C. and Lu, Rui and Sang, Q. and Liang, H. and Wang, D. and Cheng, D. and Zhang, J. and Li, Q. and Peng, J.},
+          journal={IEEE Transactions on Computers},
+          volume={72},
+          number={12},
+          pages={3399--3415},
+          year={2023},
+          url={https://ieeexplore.ieee.org/abstract/document/10202178}
+        }
 
   - type: "journal"
     abbrv: "IEEE Network"
@@ -134,6 +218,17 @@ publications:
     links:
       paper: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9687522"
       download: "http://icslab.whu.edu.cn/src/paper/FEVA_A_Federated_Video_Analytics_Architecture_for_Networked_Smart_Cameras.pdf"
+      bibtex: |-
+        @article{hu2021feva,
+          title={FEVA: A FEderated Video Analytics Architecture for Networked Smart Cameras},
+          author={Hu, C. and Lu, Rui and Wang, D.},
+          journal={IEEE Network},
+          volume={35},
+          number={6},
+          pages={163--170},
+          year={2021},
+          doi={10.1109/MNET.101.2100176}
+        }
 
 patents:
   - title: "An accelerator based on multi-image FPGAs, an acceleration implement method, a terminal device and a computer-readable storage medium"

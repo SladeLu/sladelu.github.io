@@ -89,6 +89,24 @@ layout: null
 
   let sortOrder = "new";
 
+  function setFilterCount(key, count) {
+    const el = document.querySelector(`[data-pub-count="${key}"]`);
+    if (el) el.textContent = `(${count})`;
+  }
+
+  function updateFilterCounts() {
+    setFilterCount("all", publications.length);
+    setFilterCount("conference", publications.filter((p) => p.type === "conference").length);
+    setFilterCount("journal", publications.filter((p) => p.type === "journal").length);
+    setFilterCount("workshop", publications.filter((p) => p.isWorkshop).length);
+    setFilterCount("bestpaper", publications.filter((p) => p.isBestPaper).length);
+    setFilterCount("oral", publications.filter((p) => p.isOral).length);
+    setFilterCount("ccf-a", publications.filter((p) => p.ccf === "CCF-A").length);
+    setFilterCount("ccf-b", publications.filter((p) => p.ccf === "CCF-B").length);
+    setFilterCount("ccf-c", publications.filter((p) => p.ccf === "CCF-C").length);
+    setFilterCount("ccf-none", publications.filter((p) => p.ccf === "CCF-0").length);
+  }
+
   function getSelectedCCF() {
     const selected = [];
     if (ccfATick.checked) selected.push("CCF-A");
@@ -108,7 +126,24 @@ layout: null
     );
   }
 
+  function escapeHtml(text) {
+    return String(text || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function getCitationId(p, index) {
+    const seed = `${p.abbrv || "pub"}-${p.title || index}`;
+    return seed.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+
   function renderItem(p) {
+    const index = publications.indexOf(p);
+    const citationId = getCitationId(p, index);
+    const bibtex = p.links && hasValue(p.links.bibtex) ? String(p.links.bibtex).trim() : "";
     const paperUrl = p.links && p.links.paper ? p.links.paper : "";
     const titleHtml = hasValue(paperUrl)
       ? `<a href="${paperUrl}">${p.title || "Untitled"}</a>`
@@ -122,6 +157,12 @@ layout: null
     if (p.links && hasValue(p.links.slides)) links.push(`<a href="${p.links.slides}">[Slides]</a>`);
     if (p.links && hasValue(p.links.video)) links.push(`<a href="${p.links.video}">[Video]</a>`);
     if (p.links && hasValue(p.links.poster)) links.push(`<a href="${p.links.poster}">[Poster]</a>`);
+
+    const citeButton = bibtex
+      ? `<button class="pub-cite-toggle" type="button" data-cite-target="${citationId}" aria-label="Show BibTeX citation" aria-expanded="false" aria-controls="${citationId}" title="Show BibTeX citation">
+          <span aria-hidden="true">❞</span>
+        </button>`
+      : "";
 
     const workshopTag = p.isWorkshop ? `<span class="typemark" data-type="workshop">Workshop</span>` : "";
     const oralTag = p.isOral ? `<span class="typemark" data-type="oral">ORAL</span>` : "";
@@ -142,13 +183,49 @@ layout: null
             ${oralTag}
             ${bestPaperTag}
           </div>
-          <div class="pub-title">${titleHtml}</div>
+          <div class="pub-title">${titleHtml}${citeButton}</div>
           <div class="pub-meta">${p.author || ""}</div>
           <div class="pub-meta">${venueLine}</div>
+          ${bibtex ? `
+            <div class="pub-citation" id="${citationId}" hidden>
+              <div class="pub-citation-toolbar">
+                <span>BibTeX</span>
+                <button class="pub-cite-copy" type="button" data-cite-copy="${citationId}">Copy BibTeX</button>
+              </div>
+              <pre><code>${escapeHtml(bibtex)}</code></pre>
+            </div>
+          ` : ""}
         </div>
         ${links.length ? `<div class="pub-right">${links.join(" ")}</div>` : `<div class="pub-right"></div>`}
       </li>
     `;
+  }
+
+  function setUpCitationActions() {
+    listEl.querySelectorAll(".pub-cite-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const citation = document.getElementById(button.dataset.citeTarget);
+        if (!citation) return;
+        const willShow = citation.hidden;
+        citation.hidden = !willShow;
+        button.setAttribute("aria-expanded", String(willShow));
+      });
+    });
+
+    listEl.querySelectorAll(".pub-cite-copy").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const citation = document.getElementById(button.dataset.citeCopy);
+        const code = citation ? citation.querySelector("code") : null;
+        if (!code || !navigator.clipboard) return;
+
+        await navigator.clipboard.writeText(code.textContent);
+        const originalText = button.textContent;
+        button.textContent = "Copied!";
+        window.setTimeout(() => {
+          button.textContent = originalText;
+        }, 1400);
+      });
+    });
   }
 
   function applyFiltersAndRender() {
@@ -192,6 +269,7 @@ layout: null
     }
 
     listEl.innerHTML = filtered.map(renderItem).join("");
+    setUpCitationActions();
   }
 
   allTick.addEventListener("change", () => {
@@ -232,5 +310,6 @@ layout: null
     applyFiltersAndRender();
   });
 
+  updateFilterCounts();
   applyFiltersAndRender();
 })();
