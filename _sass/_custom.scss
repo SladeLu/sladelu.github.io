@@ -4,6 +4,24 @@
   text-decoration: underline;
 }
 
+.intro-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.intro-cv-button {
+  color: #224b8d;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.intro-cv-button:hover,
+.intro-cv-button:focus {
+  text-decoration: underline;
+}
+
 .sports-gallery {
   margin: 5px 0 20px;
   padding: 0;

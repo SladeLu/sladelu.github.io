@@ -29,4 +29,8 @@
 
 {{ intro.body | markdownify }}
 
+<div class="intro-actions">
+    <a class="intro-cv-button" href="{{ intro.cv_url }}" download>{{ intro.cv_label }}</a>
+</div>
+
 ***
