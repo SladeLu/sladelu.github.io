@@ -17,11 +17,13 @@
   {% assign label_email = "邮箱" %}
   {% assign label_github = "代码仓库" %}
   {% assign label_scholar = "谷歌学术" %}
+  {% assign intro = site.data.intro.zh %}
 {% else %}
   {% assign label_website = "Website" %}
   {% assign label_email = "Email" %}
   {% assign label_github = "Github" %}
   {% assign label_scholar = "Google Scholar" %}
+  {% assign intro = site.data.intro.en %}
 {% endif %}
 {% assign orcid_url = author.orcid | default: site.author.orcid %}
 
@@ -136,6 +138,13 @@
       {% endif %}
       {% if orcid_url %}
         <li><a href="{{ orcid_url }}"><span class="orcid-icon" aria-hidden="true">iD</span> ORCID</a></li>
+      {% endif %}
+      {% if intro.cv_url and intro.cv_label %}
+        <li class="author__cv-item">
+          <a class="author__cv-button" href="{{ intro.cv_url }}" download>
+            <span>{{ intro.cv_label | replace: "[", "" | replace: "]", "" }}</span>
+          </a>
+        </li>
       {% endif %}
       {% if author.impactstory %}
         <li><a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw"></i> Impactstory</a></li>

@@ -19,6 +19,7 @@ layout: null
       date: {{ paper.date | jsonify }},
       ccf: {{ paper.ccf | default: "CCF-0" | jsonify }},
       tags: {{ paper.tags | jsonify }},
+      hidden: {{ paper.hidden | default: false | jsonify }},
       links: {{ paper.links | jsonify }}
     },
     {% endfor %}
@@ -67,6 +68,7 @@ layout: null
     p.normalizedTags = normalizedTags;
     p.ccf = hasValue(p.ccf) ? String(p.ccf).toUpperCase() : "CCF-0";
     p.dateValue = parseDateValue(p.date);
+    p.isHidden = p.hidden === true;
     p.isWorkshop = normalizedTags.includes("workshop");
     p.isBestPaper = normalizedTags.includes("best paper");
     p.isOral = normalizedTags.includes("oral");
@@ -140,6 +142,23 @@ layout: null
     return seed.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   }
 
+  function renderDownloadMenu(links) {
+    if (!links.length) return '<div class="pub-right"></div>';
+
+    return `
+      <div class="pub-right">
+        <details class="pub-download">
+          <summary class="pub-download-button" aria-label="Download resources" title="Download resources">
+            <span>[Download]</span>
+          </summary>
+          <div class="pub-download-menu">
+            ${links.join("")}
+          </div>
+        </details>
+      </div>
+    `;
+  }
+
   function renderItem(p) {
     const index = publications.indexOf(p);
     const citationId = getCitationId(p, index);
@@ -153,10 +172,10 @@ layout: null
     const kindLabel = p.type === "conference" ? "Conference" : "Journal";
 
     const links = [];
-    if (p.links && hasValue(p.links.download)) links.push(`<a href="${p.links.download}">[Paper]</a>`);
-    if (p.links && hasValue(p.links.slides)) links.push(`<a href="${p.links.slides}">[Slides]</a>`);
-    if (p.links && hasValue(p.links.video)) links.push(`<a href="${p.links.video}">[Video]</a>`);
-    if (p.links && hasValue(p.links.poster)) links.push(`<a href="${p.links.poster}">[Poster]</a>`);
+    if (p.links && hasValue(p.links.download)) links.push(`<a href="${p.links.download}">Paper</a>`);
+    if (p.links && hasValue(p.links.slides)) links.push(`<a href="${p.links.slides}">Slides</a>`);
+    if (p.links && hasValue(p.links.video)) links.push(`<a href="${p.links.video}">Video</a>`);
+    if (p.links && hasValue(p.links.poster)) links.push(`<a href="${p.links.poster}">Poster</a>`);
 
     const citeButton = bibtex
       ? `<button class="pub-cite-toggle" type="button" data-cite-target="${citationId}" aria-label="Show BibTeX citation" aria-expanded="false" aria-controls="${citationId}" title="Show BibTeX citation">
@@ -175,40 +194,67 @@ layout: null
 
     return `
       <li class="pub-item">
-        <div class="pub-main">
-          <div class="pub-head">
-            <span class="${typeBadgeClass}">${p.abbrv || kindLabel}</span>
-            ${workshopTag}
-            ${ccfBadge}
-            ${oralTag}
-            ${bestPaperTag}
-          </div>
-          <div class="pub-title">${titleHtml}${citeButton}</div>
-          <div class="pub-meta">${p.author || ""}</div>
-          <div class="pub-meta">${venueLine}</div>
-          ${bibtex ? `
-            <div class="pub-citation" id="${citationId}" hidden>
-              <div class="pub-citation-toolbar">
-                <span>BibTeX</span>
-                <button class="pub-cite-copy" type="button" data-cite-copy="${citationId}">Copy BibTeX</button>
+        <details class="pub-details" ${p.isHidden ? "" : "open"}>
+          <summary class="pub-summary">
+            <div class="pub-summary-main">
+              <div class="pub-head">
+                <span class="${typeBadgeClass}">${p.abbrv || kindLabel}</span>
+                ${workshopTag}
+                ${ccfBadge}
+                ${oralTag}
+                ${bestPaperTag}
               </div>
-              <pre><code>${escapeHtml(bibtex)}</code></pre>
+              <div class="pub-title">${titleHtml}${citeButton}</div>
             </div>
-          ` : ""}
-        </div>
-        ${links.length ? `<div class="pub-right">${links.join(" ")}</div>` : `<div class="pub-right"></div>`}
+            <span class="pub-toggle" aria-hidden="true">▾</span>
+          </summary>
+          <div class="pub-body">
+            <div class="pub-body-row">
+              <div class="pub-main">
+                <div class="pub-meta">${p.author || ""}</div>
+                <div class="pub-meta">${venueLine}</div>
+              </div>
+              ${renderDownloadMenu(links)}
+            </div>
+            ${bibtex ? `
+              <div class="pub-citation" id="${citationId}" hidden>
+                <div class="pub-citation-toolbar">
+                  <span>BibTeX</span>
+                  <button class="pub-cite-copy" type="button" data-cite-copy="${citationId}">Copy BibTeX</button>
+                </div>
+                <pre><code>${escapeHtml(bibtex)}</code></pre>
+              </div>
+            ` : ""}
+          </div>
+        </details>
       </li>
     `;
   }
 
   function setUpCitationActions() {
     listEl.querySelectorAll(".pub-cite-toggle").forEach((button) => {
-      button.addEventListener("click", () => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         const citation = document.getElementById(button.dataset.citeTarget);
         if (!citation) return;
         const willShow = citation.hidden;
+        const details = button.closest(".pub-details");
+        if (willShow && details) details.open = true;
         citation.hidden = !willShow;
         button.setAttribute("aria-expanded", String(willShow));
+      });
+    });
+
+    listEl.querySelectorAll(".pub-title a").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
+    });
+
+    listEl.querySelectorAll(".pub-download").forEach((menu) => {
+      menu.addEventListener("click", (event) => {
+        event.stopPropagation();
       });
     });
 
