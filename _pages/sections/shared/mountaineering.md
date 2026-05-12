@@ -17,8 +17,12 @@
                 {% assign location_badge = item.country_code %}
                 {% if location_badge %}
                 {% assign flag_code = location_badge | downcase %}
-                <span class="gallery-flag" aria-label="{{ location_badge }} flag" title="{{ location_badge }}">
+                <span class="gallery-flag{% if item.badge_text %} gallery-flag-text{% endif %}" aria-label="{{ location_badge }} badge" title="{{ location_badge }}">
+                    {% if item.badge_text %}
+                    {{ item.badge_text }}
+                    {% else %}
                     <img src="/images/flags/{{ flag_code }}.svg" alt="">
+                    {% endif %}
                 </span>
                 {% endif %}
                 <button
