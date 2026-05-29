@@ -1,5 +1,3 @@
-<span class='anchor' id='mount'></span>
-
 <div class="sports-gallery">
     <div class="gallery-grid">
         {% for item in site.data.mount.items %}
@@ -38,7 +36,7 @@
             <div class="gallery-content">
                 <h3>{{ caption_en_html }}</h3>
                 <p>{{ item.caption_zh }}</p>
-                <div class="gallery-date">{{ item.date }}</div>
+                <div class="gallery-date">{{ item.year | default: item.date }}</div>
             </div>
         </div>
         {% endfor %}

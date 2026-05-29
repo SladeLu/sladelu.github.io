@@ -17,6 +17,13 @@ redirect_from:
 {% include_relative sections/en/education.md %}
 
 ***
-# 🏔️ Peak Trails
+<span class='anchor' id='mount'></span>
 
-{% include_relative sections/shared/mountaineering.md %}
+<details class="peak-trails">
+  <summary class="peak-trails-summary">
+    <span class="peak-trails-heading" role="heading" aria-level="1">🏔️ Peak Trails</span>
+    <span class="peak-trails-toggle" aria-hidden="true">▾</span>
+  </summary>
+
+  {% include_relative sections/shared/mountaineering.md %}
+</details>

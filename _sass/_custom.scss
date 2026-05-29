@@ -22,6 +22,58 @@
   text-decoration: underline;
 }
 
+.peak-trails {
+  margin: 1em 0 0.5em;
+}
+
+.peak-trails-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.peak-trails-summary::-webkit-details-marker {
+  display: none;
+}
+
+.peak-trails-heading {
+  color: #494e52;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.peak-trails-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 0.85em;
+  line-height: 1;
+  transform: rotate(-90deg);
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.peak-trails[open] .peak-trails-toggle {
+  background: #eff6ff;
+  color: #1d4ed8;
+  transform: rotate(0deg);
+}
+
+.peak-trails-summary:hover .peak-trails-toggle,
+.peak-trails-summary:focus .peak-trails-toggle {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
 .sports-gallery {
   margin: 5px 0 20px;
   padding: 0;
