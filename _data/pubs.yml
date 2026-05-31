@@ -1,6 +1,6 @@
 publications:
   - type: "conference"
-    abbrv: "USENIX SEC'26"
+    abbrv: "USENIX Security'26"
     author: "S. Shi, <u><b>Rui Lu</b></u>, D. Wang, and B. Zhang"
     title: "MEPS: Privacy-preserving Edge-cloud Video Foundation Model Inference with Privacy Protectability"
     venue: "the 35th USENIX Security Symposium"
