@@ -1,5 +1,30 @@
 publications:
   - type: "conference"
+    abbrv: "USENIX SEC'26"
+    author: "S. Shi, <u><b>Rui Lu</b></u>, D. Wang, and B. Zhang"
+    title: "MEPS: Privacy-preserving Edge-cloud Video Foundation Model Inference with Privacy Protectability"
+    venue: "the 35th USENIX Security Symposium"
+    status: "to be published"
+    address: "Baltimore, MD, US"
+    date: "Aug. 2026"
+    ccf: "CCF-A"
+    tags: []
+    hidden: false
+    links:
+      download: ""
+      slides: ""
+      video: ""
+      poster: ""
+      bibtex: |-
+        @inproceedings{shi2026meps,
+          title={MEPS: Privacy-preserving Edge-cloud Video Foundation Model Inference with Privacy Protectability},
+          author={Shi, S. and Lu, Rui and Wang, D. and Zhang, B.},
+          booktitle={Proceedings of the 35th USENIX Security Symposium},
+          address={Baltimore, MD, US},
+          year={2026}
+        }
+
+  - type: "conference"
     abbrv: "ECCAI'25"
     author: "<u><b>Rui Lu</b></u>, S. Shi, and D. Wang"
     title: "ECSAM: An Edge-cloud Video Analytics Architecture for the Segment Anything Model"

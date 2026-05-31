@@ -14,6 +14,7 @@ layout: null
       title: {{ paper.title | jsonify }},
       author: {{ paper.author | jsonify }},
       venue: {{ paper.venue | jsonify }},
+      status: {{ paper.status | jsonify }},
       address: {{ paper.address | jsonify }},
       page: {{ paper.page | jsonify }},
       date: {{ paper.date | jsonify }},
@@ -172,10 +173,18 @@ layout: null
     const kindLabel = p.type === "conference" ? "Conference" : "Journal";
 
     const links = [];
-    if (p.links && hasValue(p.links.download)) links.push(`<a href="${p.links.download}">Paper</a>`);
-    if (p.links && hasValue(p.links.slides)) links.push(`<a href="${p.links.slides}">Slides</a>`);
-    if (p.links && hasValue(p.links.video)) links.push(`<a href="${p.links.video}">Video</a>`);
-    if (p.links && hasValue(p.links.poster)) links.push(`<a href="${p.links.poster}">Poster</a>`);
+    function pushDownloadItem(key, label) {
+      if (!p.links || !(key in p.links)) return;
+      if (hasValue(p.links[key])) {
+        links.push(`<a href="${p.links[key]}">${label}</a>`);
+      } else {
+        links.push(`<button type="button" class="pub-download-placeholder" disabled title="To be published">${label}</button>`);
+      }
+    }
+    pushDownloadItem("download", "Paper");
+    pushDownloadItem("slides", "Slides");
+    pushDownloadItem("video", "Video");
+    pushDownloadItem("poster", "Poster");
 
     const citeButton = bibtex
       ? `<button class="pub-cite-toggle" type="button" data-cite-target="${citationId}" aria-label="Show BibTeX citation" aria-expanded="false" aria-controls="${citationId}" title="Show BibTeX citation">
@@ -188,8 +197,9 @@ layout: null
     const bestPaperTag = p.isBestPaper ? `<span class="bestpaper-award">🏆 Best Paper</span>` : "";
     const ccfBadge = p.ccf === "CCF-0" ? "" : `<span class="ccf-chip" data-ccf="${p.ccf}">${p.ccf}</span>`;
 
+    const proceedingsLabel = `${hasValue(p.status) ? `${p.status} in ` : ""}Proc. of ${p.venue || ""}`;
     const venueLine = p.type === "conference"
-      ? `<u><i>Proc. of ${p.venue || ""}</i></u>, ${p.address || ""}, ${p.date || ""}`
+      ? `<u><i>${proceedingsLabel}</i></u>, ${p.address || ""}, ${p.date || ""}`
       : `<u><i>${p.venue || ""}</i></u>${hasValue(p.page) ? `, ${p.page}` : ""}, ${p.date || ""}`;
 
     return `
