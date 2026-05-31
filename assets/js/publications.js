@@ -73,23 +73,22 @@ layout: null
     p.isWorkshop = normalizedTags.includes("workshop");
     p.hasBestPaperAward = normalizedTags.includes("best paper");
     p.isBestNotePaperCandidate = normalizedTags.includes("best note paper candidate award");
-    p.isBestPaper = p.hasBestPaperAward || p.isBestNotePaperCandidate;
     p.isOral = normalizedTags.includes("oral");
+    p.isAward = p.hasBestPaperAward || p.isBestNotePaperCandidate || p.isOral;
   });
 
   const allTick = document.getElementById("pub-filter-all");
   const conferenceTick = document.getElementById("pub-filter-conference");
   const journalTick = document.getElementById("pub-filter-journal");
   const workshopTick = document.getElementById("pub-filter-workshop");
-  const bestPaperTick = document.getElementById("pub-filter-bestpaper");
-  const oralTick = document.getElementById("pub-filter-oral");
+  const awardTick = document.getElementById("pub-filter-award");
   const ccfATick = document.getElementById("pub-filter-ccf-a");
   const ccfBTick = document.getElementById("pub-filter-ccf-b");
   const ccfCTick = document.getElementById("pub-filter-ccf-c");
   const ccfNoneTick = document.getElementById("pub-filter-ccf-none");
   const sortYearBtn = document.getElementById("pub-sort-year");
   const sortYearIcon = document.getElementById("pub-sort-year-icon");
-  const controls = [allTick, conferenceTick, journalTick, workshopTick, bestPaperTick, oralTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick, sortYearBtn, sortYearIcon];
+  const controls = [allTick, conferenceTick, journalTick, workshopTick, awardTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick, sortYearBtn, sortYearIcon];
   if (controls.some((el) => !el)) return;
 
   let sortOrder = "new";
@@ -104,8 +103,7 @@ layout: null
     setFilterCount("conference", publications.filter((p) => p.type === "conference").length);
     setFilterCount("journal", publications.filter((p) => p.type === "journal").length);
     setFilterCount("workshop", publications.filter((p) => p.isWorkshop).length);
-    setFilterCount("bestpaper", publications.filter((p) => p.isBestPaper).length);
-    setFilterCount("oral", publications.filter((p) => p.isOral).length);
+    setFilterCount("award", publications.filter((p) => p.isAward).length);
     setFilterCount("ccf-a", publications.filter((p) => p.ccf === "CCF-A").length);
     setFilterCount("ccf-b", publications.filter((p) => p.ccf === "CCF-B").length);
     setFilterCount("ccf-c", publications.filter((p) => p.ccf === "CCF-C").length);
@@ -293,8 +291,7 @@ layout: null
     const showConference = conferenceTick.checked;
     const showJournal = journalTick.checked;
     const showWorkshop = workshopTick.checked;
-    const showBestPaper = bestPaperTick.checked;
-    const showOral = oralTick.checked;
+    const showAward = awardTick.checked;
     const selectedCCF = getSelectedCCF();
     const sortVal = sortOrder;
     updateControlLabels();
@@ -308,8 +305,7 @@ layout: null
 
         const tagFilters = [];
         if (showWorkshop) tagFilters.push(p.isWorkshop);
-        if (showBestPaper) tagFilters.push(p.isBestPaper);
-        if (showOral) tagFilters.push(p.isOral);
+        if (showAward) tagFilters.push(p.isAward);
         if (tagFilters.length > 0 && !tagFilters.some(Boolean)) return false;
       }
 
@@ -338,8 +334,7 @@ layout: null
       conferenceTick.checked = false;
       journalTick.checked = false;
       workshopTick.checked = false;
-      bestPaperTick.checked = false;
-      oralTick.checked = false;
+      awardTick.checked = false;
       ccfATick.checked = false;
       ccfBTick.checked = false;
       ccfCTick.checked = false;
@@ -348,14 +343,13 @@ layout: null
     applyFiltersAndRender();
   });
 
-  [conferenceTick, journalTick, workshopTick, bestPaperTick, oralTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick].forEach((el) => {
+  [conferenceTick, journalTick, workshopTick, awardTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick].forEach((el) => {
     el.addEventListener("change", () => {
       const anySelected =
         conferenceTick.checked ||
         journalTick.checked ||
         workshopTick.checked ||
-        bestPaperTick.checked ||
-        oralTick.checked ||
+        awardTick.checked ||
         ccfATick.checked ||
         ccfBTick.checked ||
         ccfCTick.checked ||

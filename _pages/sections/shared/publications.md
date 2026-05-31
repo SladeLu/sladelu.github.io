@@ -54,12 +54,8 @@
   </div>
   <div class="pub-filter-group" role="group" aria-label="Publication highlight filters">
     <label class="pub-group-tick">
-      <input type="checkbox" id="pub-filter-bestpaper">
-      <span class="pub-filter-text">Best Paper<span class="pub-filter-count" data-pub-count="bestpaper"></span></span>
-    </label>
-    <label class="pub-group-tick">
-      <input type="checkbox" id="pub-filter-oral">
-      <span class="pub-filter-text">ORAL<span class="pub-filter-count" data-pub-count="oral"></span></span>
+      <input type="checkbox" id="pub-filter-award">
+      <span class="pub-filter-text">Award<span class="pub-filter-count" data-pub-count="award"></span></span>
     </label>
   </div>
 
