@@ -71,6 +71,30 @@ publications:
         }
 
   - type: "conference"
+    abbrv: "e-Energy'25"
+    author: "D. Wang, B. Liu, <u><b>Rui Lu</b></u>, Z. Zhang, and S. Zhu"
+    title: "StoreLLM: Energy Efficient Large Language Model Inference with Permanently Pre-stored Attention Matrices"
+    venue: "the 16th ACM International Conference on Future and Sustainable Energy Systems"
+    address: "Rotterdam, Netherlands"
+    date: "June 2025"
+    ccf: "CCF-0"
+    tags: ["Best Note Paper Candidate Award"]
+    hidden: true
+    links:
+      paper: "https://dl.acm.org/doi/abs/10.1145/3679240.3734604"
+      download: "https://www4.comp.polyu.edu.hk/~csdwang/Publication/eEnergy25-StoreLLM-final.pdf"
+      bibtex: |-
+        @inproceedings{wang2025storellm,
+          title={StoreLLM: Energy Efficient Large Language Model Inference with Permanently Pre-stored Attention Matrices},
+          author={Wang, D. and Liu, B. and Lu, Rui and Zhang, Z. and Zhu, S.},
+          booktitle={Proceedings of the 16th ACM International Conference on Future and Sustainable Energy Systems},
+          address={Rotterdam, Netherlands},
+          pages={398--406},
+          year={2025},
+          doi={10.1145/3679240.3734604}
+        }
+
+  - type: "conference"
     abbrv: "AAAI'25"
     author: "<u><b>Rui Lu</b></u>, B. Zhang, and D. Wang"
     title: "VVRec: Reconstruction Attacks on DL-based Volumetric Video Upstreaming via Latent Diffusion Model with Gamma Distribution"

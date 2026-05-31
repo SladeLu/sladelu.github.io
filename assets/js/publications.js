@@ -71,7 +71,9 @@ layout: null
     p.dateValue = parseDateValue(p.date);
     p.isHidden = p.hidden === true;
     p.isWorkshop = normalizedTags.includes("workshop");
-    p.isBestPaper = normalizedTags.includes("best paper");
+    p.hasBestPaperAward = normalizedTags.includes("best paper");
+    p.isBestNotePaperCandidate = normalizedTags.includes("best note paper candidate award");
+    p.isBestPaper = p.hasBestPaperAward || p.isBestNotePaperCandidate;
     p.isOral = normalizedTags.includes("oral");
   });
 
@@ -194,7 +196,8 @@ layout: null
 
     const workshopTag = p.isWorkshop ? `<span class="typemark" data-type="workshop">Workshop</span>` : "";
     const oralTag = p.isOral ? `<span class="typemark" data-type="oral">ORAL</span>` : "";
-    const bestPaperTag = p.isBestPaper ? `<span class="bestpaper-award">🏆 Best Paper</span>` : "";
+    const bestPaperTag = p.hasBestPaperAward ? `<span class="bestpaper-award">🏆 Best Paper</span>` : "";
+    const bestNotePaperCandidateTag = p.isBestNotePaperCandidate ? `<span class="bestpaper-award">Best Note Paper Candidate Award</span>` : "";
     const ccfBadge = p.ccf === "CCF-0" ? "" : `<span class="ccf-chip" data-ccf="${p.ccf}">${p.ccf}</span>`;
 
     const proceedingsLabel = `${hasValue(p.status) ? `${p.status} in ` : ""}Proc. of ${p.venue || ""}`;
@@ -213,6 +216,7 @@ layout: null
                 ${ccfBadge}
                 ${oralTag}
                 ${bestPaperTag}
+                ${bestNotePaperCandidateTag}
               </div>
               <div class="pub-title">${titleHtml}${citeButton}</div>
             </div>
