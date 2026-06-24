@@ -19,6 +19,8 @@ layout: null
       page: {{ paper.page | jsonify }},
       date: {{ paper.date | jsonify }},
       ccf: {{ paper.ccf | default: "CCF-0" | jsonify }},
+      isNew: {{ paper.new | default: false | jsonify }},
+      topics: {{ paper.topics | jsonify }},
       tags: {{ paper.tags | jsonify }},
       hidden: {{ paper.hidden | default: false | jsonify }},
       links: {{ paper.links | jsonify }}
@@ -63,11 +65,21 @@ layout: null
     return year * 100 + month;
   }
 
+  const topicMeta = {
+    privacy: { label: "Privacy" },
+    sustainability: { label: "Sustainable" },
+    performance: { label: "Performance" },
+    "edge-ai": { label: "Edge AI" }
+  };
+
   publications.forEach((p) => {
     const tags = Array.isArray(p.tags) ? p.tags : [];
     const normalizedTags = tags.map((t) => String(t).toLowerCase());
+    const topics = Array.isArray(p.topics) ? p.topics : [];
     p.normalizedTags = normalizedTags;
+    p.normalizedTopics = topics.map((t) => String(t).toLowerCase());
     p.ccf = hasValue(p.ccf) ? String(p.ccf).toUpperCase() : "CCF-0";
+    p.isNew = p.isNew === true;
     p.dateValue = parseDateValue(p.date);
     p.isHidden = p.hidden === true;
     p.isWorkshop = normalizedTags.includes("workshop");
@@ -82,13 +94,18 @@ layout: null
   const journalTick = document.getElementById("pub-filter-journal");
   const workshopTick = document.getElementById("pub-filter-workshop");
   const awardTick = document.getElementById("pub-filter-award");
+  const topicPrivacyTick = document.getElementById("pub-filter-topic-privacy");
+  const topicSustainabilityTick = document.getElementById("pub-filter-topic-sustainability");
+  const topicPerformanceTick = document.getElementById("pub-filter-topic-performance");
+  const topicEdgeAiTick = document.getElementById("pub-filter-topic-edge-ai");
   const ccfATick = document.getElementById("pub-filter-ccf-a");
   const ccfBTick = document.getElementById("pub-filter-ccf-b");
   const ccfCTick = document.getElementById("pub-filter-ccf-c");
   const ccfNoneTick = document.getElementById("pub-filter-ccf-none");
   const sortYearBtn = document.getElementById("pub-sort-year");
   const sortYearIcon = document.getElementById("pub-sort-year-icon");
-  const controls = [allTick, conferenceTick, journalTick, workshopTick, awardTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick, sortYearBtn, sortYearIcon];
+  const topicTicks = [topicPrivacyTick, topicSustainabilityTick, topicPerformanceTick, topicEdgeAiTick];
+  const controls = [allTick, conferenceTick, journalTick, workshopTick, awardTick, topicPrivacyTick, topicSustainabilityTick, topicPerformanceTick, topicEdgeAiTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick, sortYearBtn, sortYearIcon];
   if (controls.some((el) => !el)) return;
 
   let sortOrder = "new";
@@ -104,6 +121,9 @@ layout: null
     setFilterCount("journal", publications.filter((p) => p.type === "journal").length);
     setFilterCount("workshop", publications.filter((p) => p.isWorkshop).length);
     setFilterCount("award", publications.filter((p) => p.isAward).length);
+    Object.keys(topicMeta).forEach((topic) => {
+      setFilterCount(`topic-${topic}`, publications.filter((p) => p.normalizedTopics.includes(topic)).length);
+    });
     setFilterCount("ccf-a", publications.filter((p) => p.ccf === "CCF-A").length);
     setFilterCount("ccf-b", publications.filter((p) => p.ccf === "CCF-B").length);
     setFilterCount("ccf-c", publications.filter((p) => p.ccf === "CCF-C").length);
@@ -116,6 +136,15 @@ layout: null
     if (ccfBTick.checked) selected.push("CCF-B");
     if (ccfCTick.checked) selected.push("CCF-C");
     if (ccfNoneTick.checked) selected.push("CCF-0");
+    return selected;
+  }
+
+  function getSelectedTopics() {
+    const selected = [];
+    if (topicPrivacyTick.checked) selected.push("privacy");
+    if (topicSustainabilityTick.checked) selected.push("sustainability");
+    if (topicPerformanceTick.checked) selected.push("performance");
+    if (topicEdgeAiTick.checked) selected.push("edge-ai");
     return selected;
   }
 
@@ -141,6 +170,10 @@ layout: null
   function getCitationId(p, index) {
     const seed = `${p.abbrv || "pub"}-${p.title || index}`;
     return seed.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+
+  function formatVenueName(venue) {
+    return String(venue || "").replace(/^the\s+/i, "");
   }
 
   function renderDownloadMenu(links) {
@@ -197,11 +230,12 @@ layout: null
     const bestPaperTag = p.hasBestPaperAward ? `<span class="bestpaper-award">🏆 Best Paper</span>` : "";
     const bestNotePaperCandidateTag = p.isBestNotePaperCandidate ? `<span class="bestpaper-award">Best Note Paper Candidate Award</span>` : "";
     const ccfBadge = p.ccf === "CCF-0" ? "" : `<span class="ccf-chip" data-ccf="${p.ccf}">${p.ccf}</span>`;
-
-    const proceedingsLabel = `${hasValue(p.status) ? `${p.status} in ` : ""}Proc. of ${p.venue || ""}`;
+    const proceedingsLabel = `${hasValue(p.status) ? `${p.status} · ` : ""}${formatVenueName(p.venue)}`;
+    const conferenceDetails = [p.address, p.date].filter(hasValue).join(", ");
     const venueLine = p.type === "conference"
-      ? `<u><i>${proceedingsLabel}</i></u>, ${p.address || ""}, ${p.date || ""}`
+      ? `<u><i>${proceedingsLabel}</i></u>${conferenceDetails ? `, ${conferenceDetails}` : ""}`
       : `<u><i>${p.venue || ""}</i></u>${hasValue(p.page) ? `, ${p.page}` : ""}, ${p.date || ""}`;
+    const newPrefix = p.isNew ? `<span class="pub-title-new">✨</span> ` : "";
 
     return `
       <li class="pub-item">
@@ -216,7 +250,7 @@ layout: null
                 ${bestPaperTag}
                 ${bestNotePaperCandidateTag}
               </div>
-              <div class="pub-title">${titleHtml}${citeButton}</div>
+              <div class="pub-title">${newPrefix}${titleHtml}${citeButton}</div>
             </div>
             <span class="pub-toggle" aria-hidden="true">▾</span>
           </summary>
@@ -293,6 +327,7 @@ layout: null
     const showWorkshop = workshopTick.checked;
     const showAward = awardTick.checked;
     const selectedCCF = getSelectedCCF();
+    const selectedTopics = getSelectedTopics();
     const sortVal = sortOrder;
     updateControlLabels();
 
@@ -309,6 +344,7 @@ layout: null
         if (tagFilters.length > 0 && !tagFilters.some(Boolean)) return false;
       }
 
+      if (!showAll && selectedTopics.length > 0 && !selectedTopics.some((topic) => p.normalizedTopics.includes(topic))) return false;
       if (!showAll && selectedCCF.length > 0 && !selectedCCF.includes(p.ccf)) return false;
 
       return true;
@@ -335,6 +371,9 @@ layout: null
       journalTick.checked = false;
       workshopTick.checked = false;
       awardTick.checked = false;
+      topicTicks.forEach((tick) => {
+        tick.checked = false;
+      });
       ccfATick.checked = false;
       ccfBTick.checked = false;
       ccfCTick.checked = false;
@@ -343,13 +382,14 @@ layout: null
     applyFiltersAndRender();
   });
 
-  [conferenceTick, journalTick, workshopTick, awardTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick].forEach((el) => {
+  [conferenceTick, journalTick, workshopTick, awardTick, topicPrivacyTick, topicSustainabilityTick, topicPerformanceTick, topicEdgeAiTick, ccfATick, ccfBTick, ccfCTick, ccfNoneTick].forEach((el) => {
     el.addEventListener("change", () => {
       const anySelected =
         conferenceTick.checked ||
         journalTick.checked ||
         workshopTick.checked ||
         awardTick.checked ||
+        topicTicks.some((tick) => tick.checked) ||
         ccfATick.checked ||
         ccfBTick.checked ||
         ccfCTick.checked ||

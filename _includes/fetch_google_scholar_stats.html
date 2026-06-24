@@ -1,15 +1,32 @@
 {% if site.google_scholar_stats_enabled %}
 <script>
     $(document).ready(function () {
-        {% if site.google_scholar_stats_use_cdn %}
-        var gsDataBaseUrl = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@'
-        {% else %}
-        var gsDataBaseUrl = 'https://raw.githubusercontent.com/{{ site.repository }}/'
-        {% endif %}
-        $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
+        var scholarSettings = {
+            enabled: {{ site.data.firebase.google_scholar.enabled | default: false | jsonify }},
+            collection: {{ site.data.firebase.google_scholar.collection | default: "scholar_stats" | jsonify }},
+            document: {{ site.data.firebase.google_scholar.document | default: "profile" | jsonify }},
+            firebaseConfig: {
+                apiKey: {{ site.data.firebase.google_scholar.api_key | jsonify }},
+                authDomain: {{ site.data.firebase.google_scholar.auth_domain | jsonify }},
+                projectId: {{ site.data.firebase.google_scholar.project_id | jsonify }},
+                storageBucket: {{ site.data.firebase.google_scholar.storage_bucket | jsonify }},
+                messagingSenderId: {{ site.data.firebase.google_scholar.messaging_sender_id | jsonify }},
+                appId: {{ site.data.firebase.google_scholar.app_id | jsonify }}
+            }
+        };
+
+        function hasCompleteFirebaseConfig() {
+            return ["apiKey", "authDomain", "projectId", "appId"].every(function (key) {
+                var value = scholarSettings.firebaseConfig[key];
+                return typeof value === "string" && value.trim() !== "";
+            });
+        }
+
+        function applyScholarData(data) {
+            if (!data) return false;
             var totalCitation = data['citedby']
             var totalCitationEl = document.getElementById('total_cit');
-            if (totalCitationEl) {
+            if (totalCitationEl && totalCitation !== undefined && totalCitation !== null) {
                 totalCitationEl.innerHTML = totalCitation;
             }
             var citationEles = document.getElementsByClassName('show_paper_citations')
@@ -20,7 +37,45 @@
                     element.innerHTML = '| Citations: ' + numCitations;
                 }
             });
-        });
+            return true;
+        }
+
+        function fetchStaticScholarStats() {
+            {% if site.google_scholar_stats_use_cdn %}
+        var gsDataBaseUrl = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@main/'
+        {% else %}
+        var gsDataBaseUrl = 'https://raw.githubusercontent.com/{{ site.repository }}/main/'
+        {% endif %}
+            $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
+                applyScholarData(data);
+            });
+        }
+
+        if (scholarSettings.enabled && hasCompleteFirebaseConfig()) {
+            Promise.all([
+                import("https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"),
+                import("https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js")
+            ])
+                .then(function (modules) {
+                    var initializeApp = modules[0].initializeApp;
+                    var getFirestore = modules[1].getFirestore;
+                    var doc = modules[1].doc;
+                    var getDoc = modules[1].getDoc;
+                    var app = initializeApp(scholarSettings.firebaseConfig, "scholar-stats");
+                    var db = getFirestore(app);
+                    return getDoc(doc(db, scholarSettings.collection, scholarSettings.document));
+                })
+                .then(function (snap) {
+                    if (!snap.exists() || !applyScholarData(snap.data())) {
+                        fetchStaticScholarStats();
+                    }
+                })
+                .catch(function () {
+                    fetchStaticScholarStats();
+                });
+        } else {
+            fetchStaticScholarStats();
+        }
     })
 </script>
 {% endif %}

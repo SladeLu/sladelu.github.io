@@ -1,4 +1,7 @@
 _site/
+.jekyll-metadata
+__pycache__/
+*.pyc
 
 # Local test server files
 .jekyll-server/

@@ -60,7 +60,8 @@
 
 .pub-sort-btn:hover,
 .pub-tick:hover,
-.pub-filter-group:hover {
+.pub-filter-group:hover,
+.pub-topic-tick:hover {
   border-color: rgba(37, 99, 235, 0.42);
   box-shadow: 0 10px 22px -20px rgba(37, 99, 235, 0.72);
   transform: translateY(-1px);
@@ -116,7 +117,8 @@
 
 .pub-sort-btn:focus-visible,
 .pub-tick:has(input[type="checkbox"]:focus-visible),
-.pub-group-tick:has(input[type="checkbox"]:focus-visible) {
+.pub-group-tick:has(input[type="checkbox"]:focus-visible),
+.pub-topic-tick:has(input[type="checkbox"]:focus-visible) {
   outline: 3px solid rgba(37, 99, 235, 0.25);
   outline-offset: 2px;
 }
@@ -210,7 +212,8 @@
 }
 
 .pub-tick input[type="checkbox"],
-.pub-group-tick input[type="checkbox"] {
+.pub-group-tick input[type="checkbox"],
+.pub-topic-tick input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   position: relative;
@@ -227,13 +230,15 @@
 }
 
 .pub-tick input[type="checkbox"]:checked,
-.pub-group-tick input[type="checkbox"]:checked {
+.pub-group-tick input[type="checkbox"]:checked,
+.pub-topic-tick input[type="checkbox"]:checked {
   border-color: #2563eb;
   background: #2563eb;
 }
 
 .pub-tick input[type="checkbox"]:checked::after,
-.pub-group-tick input[type="checkbox"]:checked::after {
+.pub-group-tick input[type="checkbox"]:checked::after,
+.pub-topic-tick input[type="checkbox"]:checked::after {
   content: "";
   position: absolute;
   left: 4px;
@@ -255,6 +260,89 @@
   color: #1e3a8a;
 }
 
+.pub-topic-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.32rem;
+  flex-wrap: wrap;
+  min-height: 36px;
+  padding: 0.18rem 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pub-topic-row {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 0.18rem;
+  padding-top: 0.44rem;
+  border-top: 1px solid rgba(203, 213, 225, 0.58);
+}
+
+.pub-topic-label {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  margin: 0 0.12rem 0 0;
+  padding: 0 0.54rem 0 0.08rem;
+  border-right: 1px solid rgba(148, 163, 184, 0.34);
+  color: #64748b;
+  font-size: 0.78em;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pub-topic-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 0.62rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(203, 213, 225, 0.78);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #475569;
+  font-size: 0.84em;
+  font-weight: var(--pub-control-font-weight);
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.pub-topic-tick input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pub-topic-tick .pub-filter-count {
+  color: #94a3b8;
+}
+
+.pub-topic-tick input[type="checkbox"]:checked {
+  border-color: transparent;
+  background: transparent;
+}
+
+.pub-topic-tick:has(input[type="checkbox"]:checked) {
+  border-color: rgba(37, 99, 235, 0.32);
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.pub-topic-tick:has(input[type="checkbox"]:checked) .pub-filter-count {
+  color: #64748b;
+}
+
 .pub-list {
   list-style: none;
   margin: 0;
@@ -265,6 +353,7 @@
 }
 
 .pub-item {
+  position: relative;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   background: #fff;
@@ -560,6 +649,14 @@
   font-size: 1.02em;
   font-weight: 700;
   max-width: min(100%, 56rem);
+}
+
+.pub-title-new {
+  color: #1d4ed8;
+  font-size: 1.08em;
+  font-weight: 800;
+  font-style: italic;
+  white-space: nowrap;
 }
 
 .pub-meta {

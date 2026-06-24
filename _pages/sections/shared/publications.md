@@ -59,6 +59,28 @@
     </label>
   </div>
 
+  <div class="pub-topic-row">
+    <div class="pub-topic-filter-group" role="group" aria-label="Research topic filters">
+      <span class="pub-topic-label">Topics</span>
+      <label class="pub-topic-tick">
+        <input type="checkbox" id="pub-filter-topic-privacy">
+        <span class="pub-filter-text">Privacy<span class="pub-filter-count" data-pub-count="topic-privacy"></span></span>
+      </label>
+      <label class="pub-topic-tick">
+        <input type="checkbox" id="pub-filter-topic-sustainability">
+        <span class="pub-filter-text">Sustainable<span class="pub-filter-count" data-pub-count="topic-sustainability"></span></span>
+      </label>
+      <label class="pub-topic-tick">
+        <input type="checkbox" id="pub-filter-topic-performance">
+        <span class="pub-filter-text">Performance<span class="pub-filter-count" data-pub-count="topic-performance"></span></span>
+      </label>
+      <label class="pub-topic-tick">
+        <input type="checkbox" id="pub-filter-topic-edge-ai">
+        <span class="pub-filter-text">Edge AI<span class="pub-filter-count" data-pub-count="topic-edge-ai"></span></span>
+      </label>
+    </div>
+  </div>
+
 </div>
 
 <ul id="pub-list" class="pub-list"></ul>

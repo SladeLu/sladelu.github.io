@@ -8,3 +8,14 @@ mount_likes:
   messaging_sender_id: "672564522139"
   app_id: "1:672564522139:web:5f5f38a94d90ec0d1d2a3e"
   measurement_id: "G-K81W7MF8H1"
+
+google_scholar:
+  enabled: false
+  collection: "scholar_stats"
+  document: "profile"
+  api_key: ""
+  auth_domain: ""
+  project_id: ""
+  storage_bucket: ""
+  messaging_sender_id: ""
+  app_id: ""

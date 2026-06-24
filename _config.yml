@@ -1,10 +1,11 @@
 # Site Settings
-title                    : "Rui LU"
-title_zh                 : "卢睿"
+title                    : "Rui Lu (卢睿)"
+title_zh                 : "Rui Lu（卢睿）"
 description              : "Hong Kong Polytechnic Univ."
 description_zh           : "香港理工大学"
+url                      : "https://sladelu.github.io"
 repository               : "SladeLu/sladelu.github.io"
-google_scholar_stats_enabled : false
+google_scholar_stats_enabled : true
 google_scholar_stats_use_cdn : true
 
 google_analytics_id      :
@@ -16,7 +17,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Rui LU"
+  name             : "Rui Lu (卢睿)"
   avatar           : "/images/android-chrome-512x512.png"
   bio              : "Postdoctoral Fellow"
   location         : "Hong Kong"
@@ -36,6 +37,8 @@ exclude:
   - "*.sublime-workspace"
   - .asset-cache
   - .bundle
+  - .jekyll-metadata
+  - .jekyll-server
   - .jekyll-assets-cache
   - .sass-cache
   - .github

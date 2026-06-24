@@ -8,6 +8,8 @@ publications:
     address: "Baltimore, MD, US"
     date: "Aug. 2026"
     ccf: "CCF-A"
+    new: true
+    topics: ["privacy", "edge-ai"]
     tags: []
     hidden: false
     links:
@@ -32,6 +34,7 @@ publications:
     address: "Hong Kong"
     date: "Dec. 2025"
     ccf: "CCF-0"
+    topics: ["edge-ai", "performance"]
     tags: ["Workshop", "Best Paper"]
     hidden: false
     links:
@@ -48,6 +51,31 @@ publications:
         }
 
   - type: "conference"
+    abbrv: "HotCarbon'26"
+    author: "H. Zhang, S. Zhu, <u><b>Rui Lu</b></u>, and D. Wang"
+    title: "HotGPU: A Thermal Profile Dataset for Immersion-Cooling AI Datacenters"
+    venue: "the 5th Workshop on Sustainable Computer Systems"
+    status: "to be published"
+    address: "Seattle, WA, USA"
+    date: "July 2026"
+    ccf: "CCF-0"
+    new: true
+    topics: ["sustainability"]
+    tags: ["Workshop"]
+    hidden: true
+    links:
+      paper: ""
+      download: ""
+      bibtex: |-
+        @inproceedings{zhang2026hotgpu,
+          title={HotGPU: A Thermal Profile Dataset for Immersion-Cooling AI Datacenters},
+          author={Zhang, H. and Zhu, S. and Lu, Rui and Wang, D.},
+          booktitle={Proceedings of the 5th Workshop on Sustainable Computer Systems},
+          address={University of Washington, Seattle, WA, USA},
+          year={2026}
+        }
+
+  - type: "conference"
     abbrv: "HotCarbon'25"
     author: "<u><b>Rui Lu</b></u> and D. Wang"
     title: "A Thermal-aware Workload Scheduler for High-performance LLM Inference in Cooling-regulated Datacenters"
@@ -55,6 +83,7 @@ publications:
     address: "Cambridge, MA, US"
     date: "July 2025"
     ccf: "CCF-0"
+    topics: ["sustainability", "performance"]
     tags: ["Workshop"]
     hidden: true
     links:
@@ -78,6 +107,7 @@ publications:
     address: "Rotterdam, Netherlands"
     date: "June 2025"
     ccf: "CCF-0"
+    topics: ["sustainability", "performance"]
     tags: ["Best Note Paper Candidate Award"]
     hidden: true
     links:
@@ -102,6 +132,7 @@ publications:
     address: "PHL, PA, US"
     date: "Feb. 2025"
     ccf: "CCF-A"
+    topics: ["privacy"]
     tags: ["ORAL"]
     hidden: false
     links:
@@ -128,6 +159,7 @@ publications:
     address: "Ottawa, Canada"
     date: "Oct. 2023"
     ccf: "CCF-A"
+    topics: ["privacy"]
     tags: []
     hidden: false
     links:
@@ -152,6 +184,7 @@ publications:
     address: "Seattle, WA, US"
     date: "Dec. 2022"
     ccf: "CCF-C"
+    topics: ["privacy", "edge-ai"]
     tags: []
     hidden: true
     links:
@@ -176,6 +209,7 @@ publications:
     address: "Seattle, WA, US"
     date: "Dec. 2022"
     ccf: "CCF-C"
+    topics: ["performance", "edge-ai"]
     tags: []
     hidden: true
     links:
@@ -200,6 +234,8 @@ publications:
     page: "xxx"
     date: "Apr. 2026"
     ccf: "CCF-A"
+    new: true
+    topics: ["privacy"]
     tags: []
     hidden: false
     links:
@@ -222,6 +258,7 @@ publications:
     page: "vol. 24, no. 8, pp. 7538-7553"
     date: "May 2025"
     ccf: "CCF-A"
+    topics: ["performance", "edge-ai"]
     tags: []
     hidden: false
     links:
@@ -247,6 +284,7 @@ publications:
     page: "vol. 72, no. 12, pp. 3399-3415"
     date: "Dec. 2023"
     ccf: "CCF-A"
+    topics: ["performance", "edge-ai"]
     tags: []
     hidden: true
     links:
@@ -272,6 +310,7 @@ publications:
     page: "vol. 35, no. 6, pp. 163-170"
     date: "Nov./Dec. 2021"
     ccf: "CCF-0"
+    topics: ["edge-ai"]
     tags: []
     hidden: true
     links:
