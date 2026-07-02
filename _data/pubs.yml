@@ -87,8 +87,9 @@ publications:
     tags: ["Workshop"]
     hidden: true
     links:
-      paper: "https://dl.acm.org/doi/10.1145/3757892.3757906"
-      download: "https://dl.acm.org/doi/pdf/10.1145/3757892.3757906"
+      paper: "https://hotcarbon.org/assets/2025/paper-70.pdf"
+      download: "https://hotcarbon.org/assets/2025/paper-70.pdf"
+      slides: "https://hotcarbon.org/assets/2025/slides-70.pdf"
       bibtex: |-
         @inproceedings{lu2025thermal,
           title={A Thermal-aware Workload Scheduler for High-performance LLM Inference in Cooling-regulated Datacenters},
