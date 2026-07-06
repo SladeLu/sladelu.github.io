@@ -64,8 +64,8 @@ publications:
     tags: ["Workshop"]
     hidden: true
     links:
-      paper: ""
-      download: ""
+      paper: "https://hotcarbon.org/assets/2026/paper-42.pdf"
+      download: "https://hotcarbon.org/assets/2026/paper-42.pdf"
       bibtex: |-
         @inproceedings{zhang2026hotgpu,
           title={HotGPU: A Thermal Profile Dataset for Immersion-Cooling AI Datacenters},
