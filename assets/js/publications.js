@@ -231,7 +231,7 @@ layout: null
     const bestNotePaperCandidateTag = p.isBestNotePaperCandidate ? `<span class="bestpaper-award">Best Note Paper Candidate Award</span>` : "";
     const ccfBadge = p.ccf === "CCF-0" ? "" : `<span class="ccf-chip" data-ccf="${p.ccf}">${p.ccf}</span>`;
     const proceedingsLabel = `${hasValue(p.status) ? `${p.status} · ` : ""}${formatVenueName(p.venue)}`;
-    const conferenceDetails = [p.address, p.date].filter(hasValue).join(", ");
+    const conferenceDetails = [p.address, p.date, p.page].filter(hasValue).join(", ");
     const venueLine = p.type === "conference"
       ? `<u><i>${proceedingsLabel}</i></u>${conferenceDetails ? `, ${conferenceDetails}` : ""}`
       : `<u><i>${p.venue || ""}</i></u>${hasValue(p.page) ? `, ${p.page}` : ""}, ${p.date || ""}`;

@@ -30,8 +30,9 @@ publications:
     abbrv: "ECCAI'25"
     author: "<u><b>Rui Lu</b></u>, S. Shi, and D. Wang"
     title: "ECSAM: An Edge-cloud Video Analytics Architecture for the Segment Anything Model"
-    venue: "ACM ECCAI Workshop of the 21st CoNEXT 2025"
+    venue: "the 2025 ACM CoNEXT Workshop Edge-Cloud Collaboration for AI"
     address: "Hong Kong"
+    page: "pp. 17-23"
     date: "Dec. 2025"
     ccf: "CCF-0"
     topics: ["edge-ai", "performance"]
@@ -44,8 +45,10 @@ publications:
         @inproceedings{lu2025ecsam,
           title={ECSAM: An Edge-cloud Video Analytics Architecture for the Segment Anything Model},
           author={Lu, Rui and Shi, S. and Wang, D.},
-          booktitle={ACM ECCAI Workshop of the 21st CoNEXT 2025},
+          booktitle={Proceedings of the 2025 ACM CoNEXT Workshop Edge-Cloud Collaboration for AI},
+          pages={17--23},
           address={Hong Kong},
+          isbn={979-8-4007-2242-4},
           year={2025},
           doi={10.1145/3769696.3771216}
         }
