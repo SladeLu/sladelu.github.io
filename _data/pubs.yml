@@ -26,6 +26,29 @@ publications:
           year={2026}
         }
 
+  - type: "journal"
+    abbrv: "TOIT'26"
+    author: "<u><b>Rui Lu</b></u>, W. Wu, S. Shi, C. Hu, and D. Wang"
+    title: "A Privacy-preserving Edge-cloud Video Analytics System via Policy-based Frame Transformation"
+    venue: "to be published on Transactions on Internet Technology"
+    page: ""
+    date: "2026"
+    ccf: "CCF-B"
+    new: true
+    topics: ["privacy", "edge-ai"]
+    tags: []
+    hidden: false
+    links:
+      paper: ""
+      download: ""
+      bibtex: |-
+        @article{lu2026privacy,
+          title={A Privacy-preserving Edge-cloud Video Analytics System via Policy-based Frame Transformation},
+          author={Lu, Rui and Wu, Wenhan and Shi, Siping and Hu, Chuang and Wang, Dan},
+          journal={Transactions on Internet Technology},
+          year={2026}
+        }
+
   - type: "conference"
     abbrv: "ECCAI'25"
     author: "<u><b>Rui Lu</b></u>, S. Shi, and D. Wang"
