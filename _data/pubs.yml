@@ -39,14 +39,15 @@ publications:
     tags: []
     hidden: false
     links:
-      paper: ""
-      download: ""
+      paper: "https://dl.acm.org/doi/10.1145/3833875"
+      download: "https://dl.acm.org/doi/epdf/10.1145/3833875"
       bibtex: |-
         @article{lu2026privacy,
           title={A Privacy-preserving Edge-cloud Video Analytics System via Policy-based Frame Transformation},
           author={Lu, Rui and Wu, Wenhan and Shi, Siping and Hu, Chuang and Wang, Dan},
           journal={Transactions on Internet Technology},
-          year={2026}
+          year={2026},
+          doi={10.1145/3833875}
         }
 
   - type: "conference"
