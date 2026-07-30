@@ -8,7 +8,7 @@ layout: null
 
   const publications = [
     {% for paper in site.data.pubs.publications %}
-    {% unless paper.hidden %}
+    {% unless paper.hide_from_site %}
     {
       type: {{ paper.type | jsonify }},
       abbrv: {{ paper.abbrv | jsonify }},
@@ -24,6 +24,7 @@ layout: null
       topics: {{ paper.topics | jsonify }},
       tags: {{ paper.tags | jsonify }},
       hidden: {{ paper.hidden | default: false | jsonify }},
+      hideFromSite: {{ paper.hide_from_site | default: false | jsonify }},
       links: {{ paper.links | jsonify }}
     },
     {% endunless %}
@@ -91,7 +92,7 @@ layout: null
     p.isAward = p.hasBestPaperAward || p.isBestNotePaperCandidate || p.isOral;
   });
 
-  const visiblePublications = publications.filter((p) => !p.isHidden);
+  const visiblePublications = publications.filter((p) => !p.hideFromSite);
 
   const allTick = document.getElementById("pub-filter-all");
   const conferenceTick = document.getElementById("pub-filter-conference");

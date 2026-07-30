@@ -12,6 +12,7 @@ publications:
     topics: ["sustainability", "performance"]
     tags: []
     hidden: true
+    hide_from_site: true
     links:
       paper: ""
       download: ""
