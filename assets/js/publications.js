@@ -8,6 +8,7 @@ layout: null
 
   const publications = [
     {% for paper in site.data.pubs.publications %}
+    {% unless paper.hidden %}
     {
       type: {{ paper.type | jsonify }},
       abbrv: {{ paper.abbrv | jsonify }},
@@ -25,6 +26,7 @@ layout: null
       hidden: {{ paper.hidden | default: false | jsonify }},
       links: {{ paper.links | jsonify }}
     },
+    {% endunless %}
     {% endfor %}
   ];
 
@@ -89,6 +91,8 @@ layout: null
     p.isAward = p.hasBestPaperAward || p.isBestNotePaperCandidate || p.isOral;
   });
 
+  const visiblePublications = publications.filter((p) => !p.isHidden);
+
   const allTick = document.getElementById("pub-filter-all");
   const conferenceTick = document.getElementById("pub-filter-conference");
   const journalTick = document.getElementById("pub-filter-journal");
@@ -116,18 +120,18 @@ layout: null
   }
 
   function updateFilterCounts() {
-    setFilterCount("all", publications.length);
-    setFilterCount("conference", publications.filter((p) => p.type === "conference").length);
-    setFilterCount("journal", publications.filter((p) => p.type === "journal").length);
-    setFilterCount("workshop", publications.filter((p) => p.isWorkshop).length);
-    setFilterCount("award", publications.filter((p) => p.isAward).length);
+    setFilterCount("all", visiblePublications.length);
+    setFilterCount("conference", visiblePublications.filter((p) => p.type === "conference").length);
+    setFilterCount("journal", visiblePublications.filter((p) => p.type === "journal").length);
+    setFilterCount("workshop", visiblePublications.filter((p) => p.isWorkshop).length);
+    setFilterCount("award", visiblePublications.filter((p) => p.isAward).length);
     Object.keys(topicMeta).forEach((topic) => {
-      setFilterCount(`topic-${topic}`, publications.filter((p) => p.normalizedTopics.includes(topic)).length);
+      setFilterCount(`topic-${topic}`, visiblePublications.filter((p) => p.normalizedTopics.includes(topic)).length);
     });
-    setFilterCount("ccf-a", publications.filter((p) => p.ccf === "CCF-A").length);
-    setFilterCount("ccf-b", publications.filter((p) => p.ccf === "CCF-B").length);
-    setFilterCount("ccf-c", publications.filter((p) => p.ccf === "CCF-C").length);
-    setFilterCount("ccf-none", publications.filter((p) => p.ccf === "CCF-0").length);
+    setFilterCount("ccf-a", visiblePublications.filter((p) => p.ccf === "CCF-A").length);
+    setFilterCount("ccf-b", visiblePublications.filter((p) => p.ccf === "CCF-B").length);
+    setFilterCount("ccf-c", visiblePublications.filter((p) => p.ccf === "CCF-C").length);
+    setFilterCount("ccf-none", visiblePublications.filter((p) => p.ccf === "CCF-0").length);
   }
 
   function getSelectedCCF() {
@@ -331,7 +335,7 @@ layout: null
     const sortVal = sortOrder;
     updateControlLabels();
 
-    let filtered = publications.filter((p) => {
+    let filtered = visiblePublications.filter((p) => {
       if (!showAll) {
         if (showConference || showJournal) {
           if (p.type === "conference" && !showConference) return false;
