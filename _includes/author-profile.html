@@ -30,7 +30,20 @@
 <div itemscope itemtype="http://schema.org/Person" class="profile_box">
 
   <div class="author__avatar">
-    <img src="{{ author.avatar }}" class="author__avatar" alt="{{ author.name }}">
+    {% if author.avatar_slides and author.avatar_slides.size > 1 %}
+      <div class="author__avatar-slideshow" data-avatar-slideshow aria-label="{{ author.name }} profile images">
+        {% for slide in author.avatar_slides %}
+          <img
+            src="{{ slide.image }}"
+            class="author__avatar-slide{% if forloop.first %} is-active{% endif %}"
+            alt="{% if slide.alt %}{{ slide.alt }}{% else %}{{ author.name }}{% endif %}"
+            {% unless forloop.first %}loading="lazy"{% endunless %}
+          >
+        {% endfor %}
+      </div>
+    {% else %}
+      <img src="{{ author.avatar }}" class="author__avatar" alt="{{ author.name }}">
+    {% endif %}
   </div>
 
   <div class="author__content">

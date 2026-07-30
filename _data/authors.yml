@@ -1,6 +1,15 @@
 en:
   name: "Rui Lu (卢睿)"
-  avatar: "/images/android-chrome-512x512.png"
+  avatar: "/images/acadamic-image/android-chrome-512x512.png"
+  avatar_slides:
+    - image: "/images/acadamic-image/android-chrome-512x512.png"
+      alt: "Rui Lu"
+    - image: "/images/acadamic-image/android-chrome-192x192.png"
+      alt: "Rui Lu"
+    - image: "/images/acadamic-image/apple-touch-icon.png"
+      alt: "Rui Lu"
+    - image: "/images/android-chrome-192x192.png"
+      alt: "Rui Lu"
   bio: "Postdoctoral Fellow"
   location: "Hong Kong"
   googlescholar: "https://scholar.google.com/citations?user=n4rWRCYAAAAJ"
@@ -9,7 +18,16 @@ en:
 
 zh:
   name: "卢睿"
-  avatar: "/images/android-chrome-512x512.png"
+  avatar: "/images/acadamic-image/android-chrome-512x512.png"
+  avatar_slides:
+    - image: "/images/acadamic-image/android-chrome-512x512.png"
+      alt: "卢睿"
+    - image: "/images/acadamic-image/android-chrome-192x192.png"
+      alt: "卢睿"
+    - image: "/images/acadamic-image/apple-touch-icon.png"
+      alt: "卢睿"
+    - image: "/images/android-chrome-192x192.png"
+      alt: "卢睿"
   bio: "博士后研究员"
   location: "中国香港"
   googlescholar: "https://scholar.google.com/citations?user=n4rWRCYAAAAJ"

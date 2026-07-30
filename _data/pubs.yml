@@ -1,5 +1,29 @@
 publications:
   - type: "conference"
+    abbrv: "ASPLOS'27"
+    author: "S. Zhu, <u><b>Rui Lu</b></u>, H. Zhang, J. Zhang, and D. Wang"
+    title: "GiTT: Forecasting the GPU Thermal Profiles in AI Datacenters with Immersion Cooling Systems"
+    venue: "the ACM International Conference on Architectural Support for Programming Languages and Operating Systems"
+    status: "to be published"
+    address: ""
+    date: "2027"
+    ccf: "CCF-A"
+    new: true
+    topics: ["sustainability", "performance"]
+    tags: []
+    hidden: true
+    links:
+      paper: ""
+      download: ""
+      bibtex: |-
+        @inproceedings{zhu2027gitt,
+          title={GiTT: Forecasting the GPU Thermal Profiles in AI Datacenters with Immersion Cooling Systems},
+          author={Zhu, S. and Lu, Rui and Zhang, H. and Zhang, J. and Wang, D.},
+          booktitle={Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems},
+          year={2027}
+        }
+
+  - type: "conference"
     abbrv: "USENIX Security'26"
     author: "S. Shi, <u><b>Rui Lu</b></u>, D. Wang, and B. Zhang"
     title: "MEPS: Privacy-preserving Edge-cloud Video Foundation Model Inference with Privacy Protectability"
