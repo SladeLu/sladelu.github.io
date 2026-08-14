@@ -4,15 +4,14 @@ publications:
     author: "S. Zhu, <u><b>Rui Lu</b></u>, H. Zhang, J. Zhang, and D. Wang"
     title: "GiTT: Forecasting the GPU Thermal Profiles in AI Datacenters with Immersion Cooling Systems"
     venue: "the ACM International Conference on Architectural Support for Programming Languages and Operating Systems"
-    status: "to be published"
-    address: ""
-    date: "2027"
+    status: "Conditioned Accept"
+    address: "Heraklion, Crete, Greece"
+    date: "Apr. 2027"
     ccf: "CCF-A"
     new: true
     topics: ["sustainability", "performance"]
     tags: []
-    hidden: true
-    hide_from_site: true
+    hidden: false
     links:
       paper: ""
       download: ""
@@ -29,7 +28,7 @@ publications:
     author: "S. Shi, <u><b>Rui Lu</b></u>, D. Wang, and B. Zhang"
     title: "MEPS: Privacy-preserving Edge-cloud Video Foundation Model Inference with Privacy Protectability"
     venue: "the 35th USENIX Security Symposium"
-    status: "to be published"
+    status: ""
     address: "Baltimore, MD, US"
     date: "Aug. 2026"
     ccf: "CCF-A"
@@ -38,7 +37,8 @@ publications:
     tags: []
     hidden: false
     links:
-      download: ""
+      paper: "https://www.usenix.org/conference/usenixsecurity26/presentation/shi-siping"
+      download: "https://www.usenix.org/system/files/usenixsecurity26-shi-siping.pdf"
       slides: ""
       video: ""
       poster: ""
@@ -55,9 +55,9 @@ publications:
     abbrv: "TOIT'26"
     author: "<u><b>Rui Lu</b></u>, W. Wu, S. Shi, C. Hu, and D. Wang"
     title: "A Privacy-preserving Edge-cloud Video Analytics System via Policy-based Frame Transformation"
-    venue: "to be published on ACM Transactions on Internet Technology"
-    page: ""
-    date: "2026"
+    venue: "ACM Transactions on Internet Technology"
+    page: "Vol. 26, No. 3, Article No. 43, pp. 1-26"
+    date: "Aug. 2026"
     ccf: "CCF-B"
     new: true
     topics: ["privacy", "edge-ai"]
@@ -71,6 +71,11 @@ publications:
           title={A Privacy-preserving Edge-cloud Video Analytics System via Policy-based Frame Transformation},
           author={Lu, Rui and Wu, Wenhan and Shi, Siping and Hu, Chuang and Wang, Dan},
           journal={Transactions on Internet Technology},
+          volume={26},
+          number={3},
+          articleno={43},
+          pages={1--26},
+          month={aug},
           year={2026},
           doi={10.1145/3833875}
         }
@@ -79,9 +84,9 @@ publications:
     abbrv: "ECCAI'25"
     author: "<u><b>Rui Lu</b></u>, S. Shi, and D. Wang"
     title: "ECSAM: An Edge-cloud Video Analytics Architecture for the Segment Anything Model"
-    venue: "the 2025 ACM CoNEXT Workshop Edge-Cloud Collaboration for AI"
+    venue: "the ACM CoNEXT Workshop Edge-Cloud Collaboration for AI"
     address: "Hong Kong"
-    page: "pp. 17-23"
+    page: ""
     date: "Dec. 2025"
     ccf: "CCF-0"
     topics: ["edge-ai", "performance"]
@@ -94,7 +99,7 @@ publications:
         @inproceedings{lu2025ecsam,
           title={ECSAM: An Edge-cloud Video Analytics Architecture for the Segment Anything Model},
           author={Lu, Rui and Shi, S. and Wang, D.},
-          booktitle={Proceedings of the 2025 ACM CoNEXT Workshop Edge-Cloud Collaboration for AI},
+          booktitle={Proceedings of the ACM CoNEXT Workshop Edge-Cloud Collaboration for AI},
           pages={17--23},
           address={Hong Kong},
           isbn={979-8-4007-2242-4},
@@ -107,7 +112,7 @@ publications:
     author: "H. Zhang, S. Zhu, <u><b>Rui Lu</b></u>, and D. Wang"
     title: "HotGPU: A Thermal Profile Dataset for Immersion-Cooling AI Datacenters"
     venue: "the 5th Workshop on Sustainable Computer Systems"
-    status: "to be published"
+    status: ""
     address: "Seattle, WA, USA"
     date: "July 2026"
     ccf: "CCF-0"
@@ -284,7 +289,7 @@ publications:
     author: "<u><b>Rui Lu</b></u>, Y. Liu, D. Wang"
     title: "P4LLM: Protecting Embedding Privacy against Model Inversion Attacks for EaaS LLM Serving via Token-wise Partition and Perturbation"
     venue: "IEEE Transactions on Mobile Computing"
-    page: "vol. 25, no. 8, pp. 11506-11519"
+    page: "Vol. 25, No. 8, pp. 11506-11519"
     date: "Aug. 2026"
     ccf: "CCF-A"
     new: true
@@ -312,7 +317,7 @@ publications:
     author: "Y. Liu, <u><b>Rui Lu *</b></u>, D. Wang"
     title: "LVMScissor: Split and Schedule Large Vision Model Inference on Mobile Edges via Salp Swarm Algorithm"
     venue: "IEEE Transactions on Mobile Computing"
-    page: "vol. 24, no. 8, pp. 7538-7553"
+    page: "Vol. 24, No. 8, pp. 7538-7553"
     date: "May 2025"
     ccf: "CCF-A"
     topics: ["performance", "edge-ai"]
@@ -338,7 +343,7 @@ publications:
     author: "C. Hu, <u><b>Rui Lu</b></u>, Q. Sang, H. Liang, D. Wang, D. Cheng, J. Zhang, Q. Li, and J. Peng"
     title: "An Edge-side Real-time Video Analytics System with Dual Computing Resource Control"
     venue: "IEEE Transactions on Computers"
-    page: "vol. 72, no. 12, pp. 3399-3415"
+    page: "Vol. 72, No. 12, pp. 3399-3415"
     date: "Dec. 2023"
     ccf: "CCF-A"
     topics: ["performance", "edge-ai"]
@@ -364,7 +369,7 @@ publications:
     author: "C. Hu, <u><b>Rui Lu</b></u>, and D. Wang"
     title: "FEVA: A FEderated Video Analytics Architecture for Networked Smart Cameras"
     venue: "IEEE Network SI on Interplay Between Machine Learning and Networking Systems"
-    page: "vol. 35, no. 6, pp. 163-170"
+    page: "Vol. 35, No. 6, pp. 163-170"
     date: "Nov./Dec. 2021"
     ccf: "CCF-0"
     topics: ["edge-ai"]

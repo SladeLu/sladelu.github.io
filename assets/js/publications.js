@@ -178,7 +178,16 @@ layout: null
   }
 
   function formatVenueName(venue) {
-    return String(venue || "").replace(/^the\s+/i, "");
+    return String(venue || "")
+      .replace(/^the\s+/i, "")
+      .replace(/^\d{4}\s+/, "");
+  }
+
+  function formatConferenceDetail(detail) {
+    return String(detail || "")
+      .split(/\s*,\s*/)
+      .filter((part) => !/^(vol\.|no\.|article no\.)/i.test(part))
+      .join(", ");
   }
 
   function renderDownloadMenu(links) {
@@ -211,15 +220,15 @@ layout: null
     const kindLabel = p.type === "conference" ? "Conference" : "Journal";
 
     const links = [];
-    function pushDownloadItem(key, label) {
+    function pushDownloadItem(key, label, options = {}) {
       if (!p.links || !(key in p.links)) return;
       if (hasValue(p.links[key])) {
         links.push(`<a href="${p.links[key]}">${label}</a>`);
-      } else {
+      } else if (options.showPlaceholder) {
         links.push(`<button type="button" class="pub-download-placeholder" disabled title="To be published">${label}</button>`);
       }
     }
-    pushDownloadItem("download", "Paper");
+    pushDownloadItem("download", "Paper", { showPlaceholder: true });
     pushDownloadItem("slides", "Slides");
     pushDownloadItem("video", "Video");
     pushDownloadItem("poster", "Poster");
@@ -236,7 +245,7 @@ layout: null
     const bestNotePaperCandidateTag = p.isBestNotePaperCandidate ? `<span class="bestpaper-award">Best Note Paper Candidate Award</span>` : "";
     const ccfBadge = p.ccf === "CCF-0" ? "" : `<span class="ccf-chip" data-ccf="${p.ccf}">${p.ccf}</span>`;
     const proceedingsLabel = `${hasValue(p.status) ? `${p.status} · ` : ""}${formatVenueName(p.venue)}`;
-    const conferenceDetails = [p.address, p.date, p.page].filter(hasValue).join(", ");
+    const conferenceDetails = [formatConferenceDetail(p.page), p.address, p.date].filter(hasValue).join(", ");
     const venueLine = p.type === "conference"
       ? `<u><i>${proceedingsLabel}</i></u>${conferenceDetails ? `, ${conferenceDetails}` : ""}`
       : `<u><i>${p.venue || ""}</i></u>${hasValue(p.page) ? `, ${p.page}` : ""}, ${p.date || ""}`;
