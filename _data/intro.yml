@@ -2,7 +2,7 @@ en:
   title: "About me"
   copy_label: "[copy]"
   cv_label: "[Download CV]"
-  cv_url: "/files/cv.pdf"
+  cv_url: "/images/cv-ruilu.pdf"
   copy_text: "Rui Lu is a postdoctoral researcher at The Hong Kong Polytechnic University, starting in December 2024. He completed his Ph.D. in 2024 from the Department of Computing at The Hong Kong Polytechnic University. Before that, he graduated with a B.Eng in Computer Science and Technology from the Southern University of Science and Technology in 2019. His research interests are in edge computing systems and sustainable computing, particularly in performance optimization, privacy-preserving system design, and energy-efficient computing for emerging applications such as video analytics and large language model inference."
   body: |-
     I am currently a postdoctoral researcher, starting in Jan. 2025. I completed my Ph.D. in Dec. 2024 from the Department of Computing at The Hong Kong Polytechnic University ([HK PolyU](https://www.polyu.edu.hk/)).
@@ -13,7 +13,7 @@ zh:
   title: "个人简介"
   copy_label: "[复制]"
   cv_label: "[下载简历]"
-  cv_url: "/files/cv.pdf"
+  cv_url: "/images/cv-ruilu.pdf"
   copy_text: "卢睿目前是香港理工大学博士后研究员，于 2024 年 12 月入职。他于 2024 年在香港理工大学计算机系获得博士学位。此前，他于 2019 年毕业于南方科技大学，获得计算机科学与技术学士学位。他的研究兴趣包括边缘计算系统与可持续计算，尤其关注面向视频分析和大语言模型推理等新兴应用的性能优化、隐私保护系统设计和能效优化。"
   body: |-
     我目前是一名博士后研究员。我于 2024 年在香港理工大学计算机系获得博士学位([HK PolyU](https://www.polyu.edu.hk/))。在此之前，我于 2019 年毕业于南方科技大学([SUSTech](https://www.sustech.edu.cn/en/))，获得计算机科学与技术学士学位。
