@@ -15,7 +15,7 @@ lang: zh
 
 <span class='anchor' id='mount'></span>
 
-<details class="peak-trails">
+<details class="peak-trails" open>
   <summary class="peak-trails-summary">
     <span class="peak-trails-heading" role="heading" aria-level="1">🏔️ 山野足迹</span>
     <span class="peak-trails-toggle" aria-hidden="true">▾</span>
