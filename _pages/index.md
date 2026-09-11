@@ -12,6 +12,8 @@ redirect_from:
 
 {% include_relative sections/en/intro.md %}
 
+{% include_relative sections/shared/preprints.md %}
+
 {% include_relative sections/shared/publications.md %}
 
 {% include_relative sections/en/education.md %}

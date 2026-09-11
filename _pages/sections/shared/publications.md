@@ -4,7 +4,6 @@
 # 📝 Publications
 {% endif %}
 
-
 <div class="pub-controls" id="pub-controls">
   <div class="pub-primary-controls">
     <div class="pub-control pub-sort-control" aria-label="Publication sort controls">

@@ -11,6 +11,8 @@ lang: zh
 
 {% include_relative sections/zh/education.md %}
 
+{% include_relative sections/shared/preprints.md %}
+
 {% include_relative sections/shared/publications.md %}
 
 <span class='anchor' id='mount'></span>

@@ -397,3 +397,16 @@ patents:
     pid: "ZL20172049378.0"
   - title: "A new type of soil environment monitoring system"
     pid: "ZL201721384825.3"
+
+preprints:
+  - title: "GreenPassport: Request-Level Carbon Accounting for Cross-Border AI Inference"
+    author: "<u><b>Rui Lu</b></u>"
+    venue: "arXiv preprint"
+    arxiv: "2609.06784v1"
+    display_date: "2026.09"
+    date: "Sep. 2026"
+    topics: ["sustainability"]
+    links:
+      paper: "https://arxiv.org/abs/2609.06784"
+      html: "https://arxiv.org/html/2609.06784v1"
+      download: "https://arxiv.org/pdf/2609.06784v1"
