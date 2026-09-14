@@ -399,6 +399,18 @@ patents:
     pid: "ZL201721384825.3"
 
 preprints:
+  - title: "HeatCache: Thermal-aware Energy-efficient LLM Inference Scheduling for Chassis-level Liquid Cooling in Sustainable Edge Server Rooms"
+    author: "<u><b>Rui Lu</b></u>, H. Liang, K. Guan, and D. Wang"
+    venue: "arXiv preprint"
+    arxiv: "2609.12449v1"
+    display_date: "2026.09"
+    date: "Sep. 2026"
+    topics: ["sustainability", "performance"]
+    links:
+      paper: "https://arxiv.org/abs/2609.12449"
+      html: "https://arxiv.org/html/2609.12449v1"
+      download: "https://arxiv.org/pdf/2609.12449"
+
   - title: "GreenPassport: Request-Level Carbon Accounting for Cross-Border AI Inference"
     author: "<u><b>Rui Lu</b></u>"
     venue: "arXiv preprint"
