@@ -399,6 +399,18 @@ patents:
     pid: "ZL201721384825.3"
 
 preprints:
+  - title: "ETCInfer: An Energy-efficient Thermal-aware Cooling-joint Scheduler for LLM Inference in AI Datacenters"
+    author: "<u><b>Rui Lu</b></u>, R. Ge, H. Liang, X. Zhou, and D. Wang"
+    venue: "arXiv preprint"
+    arxiv: "2609.15230v1"
+    display_date: "2026.09"
+    date: "Sep. 2026"
+    topics: ["sustainability", "performance"]
+    links:
+      paper: "https://arxiv.org/abs/2609.15230"
+      html: "https://arxiv.org/html/2609.15230v1"
+      download: "https://arxiv.org/pdf/2609.15230"
+
   - title: "HeatCache: Thermal-aware Energy-efficient LLM Inference Scheduling for Chassis-level Liquid Cooling in Sustainable Edge Server Rooms"
     author: "<u><b>Rui Lu</b></u>, H. Liang, K. Guan, and D. Wang"
     venue: "arXiv preprint"
