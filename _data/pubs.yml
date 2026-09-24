@@ -411,6 +411,18 @@ preprints:
       html: "https://arxiv.org/html/2609.06784v1"
       download: "https://arxiv.org/pdf/2609.06784v1"
 
+  - title: "FedCoT-VQA: A Federated Learning and Unlearning Framework for Chain-of-Thought Planners in VideoQA"
+    author: "<u><b>Rui Lu</b></u>, T. Ling, D. Wang, and Q. Li"
+    venue: "arXiv preprint"
+    arxiv: "2609.26814v1"
+    display_date: "2026.03"
+    date: "Mar. 2026"
+    topics: ["privacy"]
+    links:
+      paper: "https://arxiv.org/abs/2609.26814"
+      html: "https://arxiv.org/html/2609.26814v1"
+      download: "https://arxiv.org/pdf/2609.26814"
+
   - title: "HeatCache: Thermal-aware Energy-efficient LLM Inference Scheduling for Chassis-level Liquid Cooling in Sustainable Edge Server Rooms"
     author: "<u><b>Rui Lu</b></u>, H. Liang, K. Guan, and D. Wang"
     venue: "arXiv preprint"
