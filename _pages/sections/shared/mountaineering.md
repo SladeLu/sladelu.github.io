@@ -12,17 +12,6 @@
                 <a href="{{ item.image_src }}" aria-label="View larger photo of {{ item.image_alt }}">
                     <img src="{{ item.image_src }}" alt="{{ item.image_alt }}">
                 </a>
-                {% assign location_badge = item.country_code %}
-                {% if location_badge %}
-                {% assign flag_code = location_badge | downcase %}
-                <span class="gallery-flag{% if item.badge_text %} gallery-flag-text{% endif %}" aria-label="{{ location_badge }} badge" title="{{ location_badge }}">
-                    {% if item.badge_text %}
-                    {{ item.badge_text }}
-                    {% else %}
-                    <img src="/images/flags/{{ flag_code }}.svg" alt="">
-                    {% endif %}
-                </span>
-                {% endif %}
                 <button
                     class="gallery-like"
                     type="button"
