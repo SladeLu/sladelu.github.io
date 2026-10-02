@@ -399,6 +399,18 @@ patents:
     pid: "ZL201721384825.3"
 
 preprints:
+  - title: "ThermE: Predictive Management of Shared Thermal Headroom for Sustained LLM Inference on Thermally Constrained Edge SoCs"
+    author: "<u><b>Rui Lu</b></u>, Y. Wang, and B. Liu"
+    venue: "arXiv preprint"
+    arxiv: "2610.00267v1"
+    display_date: "2026.09"
+    date: "Sep. 2026"
+    topics: ["sustainability", "performance", "edge-ai"]
+    links:
+      paper: "https://arxiv.org/abs/2610.00267"
+      html: "https://arxiv.org/html/2610.00267v1"
+      download: "https://arxiv.org/pdf/2610.00267"
+
   - title: "GreenPassport: Request-Level Carbon Accounting for Cross-Border AI Inference"
     author: "<u><b>Rui Lu</b></u>"
     venue: "arXiv preprint"
