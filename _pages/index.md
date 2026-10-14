@@ -16,6 +16,8 @@ redirect_from:
 
 {% include_relative sections/shared/publications.md %}
 
+{% include_relative sections/en/academic-service.md %}
+
 {% include_relative sections/en/education.md %}
 
 ***

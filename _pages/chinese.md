@@ -15,6 +15,8 @@ lang: zh
 
 {% include_relative sections/shared/publications.md %}
 
+{% include_relative sections/zh/academic-service.md %}
+
 <span class='anchor' id='mount'></span>
 
 <details class="peak-trails" open>
